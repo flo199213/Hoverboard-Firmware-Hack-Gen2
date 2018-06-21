@@ -14,7 +14,7 @@ The structure of the firmware is based on the firmware hack of Niklas Fauth (htt
 #### Hardware
 Picture...
 
-The hardware has two main boards, which are different equipped. They are connected via USART. Adiotinally there are some LED PCB connected which signalize the battery state and the error state. There is an programming connector for ST-Link/V2 and they break out GND, USART/I2C, 5V on a second pinhead.
+The hardware has two main boards, which are different equipped. They are connected via USART. Additionally there are some LED PCB connected which signalize the battery state and the error state. There is an programming connector for ST-Link/V2 and they break out GND, USART/I2C, 5V on a second pinhead.
 
 The reverse-engineered schematics of the mainboards can be found here:
 PDF...
