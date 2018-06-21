@@ -2,7 +2,7 @@ Hoverboard Hack Firmware Generation 2 for the Hoverboard with the two Mainboards
 
 ### Hoverboard-Firmware-Hack-Gen2
 
-This repo contains open source firmware for generic Hoverboards with two mainboards. It allows you to control the hardware of the new version of hoverboards (like the Mainboard, Motors and Battery) with an arduino or some other steering device for cool projects like driving armchairs, person-tracking transportation robots and every other application you can imagine that requires controlling the Motors.
+This repo contains open source firmware for generic Hoverboards with two mainboards. It allows you to control the hardware of the new version of hoverboards (like the Mainboard, Motors and Battery) with an arduino or some other steering device for projects like driving armchairs.
 
 The structure of the firmware is based on the firmware hack of Niklas Fauth (https://github.com/NiklasFauth/hoverboard-firmware-hack/). Because of a different model of processor (GD32F130C8 instead of STM32F103) it was not possible to use the same firmware and it has to be written from scratch (Different hardware, different, pins, different registers :( )
 
