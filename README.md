@@ -1,5 +1,3 @@
-Hoverboard Hack Firmware Generation 2 for the Hoverboard with the two Mainboards instead of the Sensorboards (See Pictures).
-
 #### Known Problems:
 ````
 - Currently no USART deactivation while interpreting steering input-frame -> wheel spinning undefined
@@ -7,6 +5,8 @@ Hoverboard Hack Firmware Generation 2 for the Hoverboard with the two Mainboards
 ````
 
 ### Hoverboard-Firmware-Hack-Gen2
+
+Hoverboard Hack Firmware Generation 2 for the Hoverboard with the two Mainboards instead of the Sensorboards (See Pictures).
 
 This repo contains open source firmware for generic Hoverboards with two mainboards. It allows you to control the hardware of the new version of hoverboards (like the Mainboard, Motors and Battery) with an arduino or some other steering device for projects like driving armchairs.
 
