@@ -1,6 +1,7 @@
-#### Known Problems:
+#### Updates:
 ````
-- Sadly, I can not support any issues. I'm not a student, less free time :)
+- Firmware is ready.
+- Sadly I can not support any issues. I'm not a student, less free time :)
 ````
 
 ### Hoverboard-Firmware-Hack-Gen2
