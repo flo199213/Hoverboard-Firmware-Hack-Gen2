@@ -1,7 +1,6 @@
 #### Known Problems:
 ````
-- Currently no USART deactivation while interpreting steering input-frame -> wheel spinning undefined
-- Communication arduino->masterboard not documented yet. Please wait, I'm not a student, less free time :)
+- Sadly, I can not support any issues. I'm not a student, less free time :)
 ````
 
 ### Hoverboard-Firmware-Hack-Gen2
