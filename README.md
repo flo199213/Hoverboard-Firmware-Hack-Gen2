@@ -1,4 +1,4 @@
-I started from Florian Repository ( https://github.com/flo199213/Hoverboard-Firmware-Hack-Gen2 )
+I started my code from Florian Repository ( https://github.com/flo199213/Hoverboard-Firmware-Hack-Gen2 )
 Florian rewrote the firmware for hoverboards composed by 2 boards, starting from Niklas repository ( https://github.com/NiklasFauth/hoverboard-firmware-hack/ )
 Niklas rewrote the firmware for hoverboards composed by a big board and sensor boards.
 
@@ -9,7 +9,20 @@ Second thing that i've done was to add PWM output in order to control a ESC conn
 
 Every time the robot moves, the blade starts to rotate at constant speed.
 
-NEXT things that I will do: add sensors and interlocks, create a docking station, realize the mechanical structure, inplement safety and automatic navigation algorithm.
+Third thing that I. ve done was to make the mechanical project (you find it in the folder LawnMowerMEchanicalProject).
+These are some images (the base is aluminium and the cover in polycarbonate):
+![otter](https://github.com/gaucho1978/LAWNMOWER-ROBOT-from-Hoverboard-/blob/master/LawnmowerMechanicalProject/3D%20PROJECT%20-%20INVENTOR%202014/pictures/bottom.png)
+![otter](https://github.com/gaucho1978/LAWNMOWER-ROBOT-from-Hoverboard-/blob/master/LawnmowerMechanicalProject/3D%20PROJECT%20-%20INVENTOR%202014/pictures/side.png)
+![otter](https://github.com/gaucho1978/LAWNMOWER-ROBOT-from-Hoverboard-/blob/master/LawnmowerMechanicalProject/3D%20PROJECT%20-%20INVENTOR%202014/pictures/top.png)
+![otter](https://github.com/gaucho1978/LAWNMOWER-ROBOT-from-Hoverboard-/blob/master/LawnmowerMechanicalProject/3D%20PROJECT%20-%20INVENTOR%202014/pictures/front.png)
+
+
+NEXT things that I will do: 
+- add sensors and interlocks to algorithm,
+- create a docking station for automatic recharge, 
+- realize the mechanical structure, 
+- inplement safety for automatic stopping blade 
+- implement automatic navigation algorithm.
 
 --------
 The hoverboard with 2 boards uses processor GD32F130C8 (instead of STM32F103 used on Niklas hoverboard) 
