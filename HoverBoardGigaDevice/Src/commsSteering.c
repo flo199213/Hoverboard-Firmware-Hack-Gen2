@@ -41,7 +41,15 @@
 
 // Only master communicates with steerin device
 #ifdef MASTER
+
+#ifdef DEBUG_ENABLED
+#define USART_STEER_TX_BYTES 27   // Transmit byte count including start '/' and stop character '\n'
+#endif
+
+#ifndef DEBUG_ENABLED
 #define USART_STEER_TX_BYTES 2   // Transmit byte count including start '/' and stop character '\n'
+#endif
+
 #define USART_STEER_RX_BYTES 8   // Receive byte count including start '/' and stop character '\n'
 
 extern uint8_t usartSteer_COM_rx_buf[USART_STEER_COM_RX_BUFFERSIZE];
@@ -60,10 +68,45 @@ extern int32_t speed;
 void SendSteerDevice(void)
 {
 	int index = 0;
+	#ifdef DEBUG_ENABLED
+		char charVal[5];
+	#endif
 	uint8_t buffer[USART_STEER_TX_BYTES];
 	
 	// Ask for steer input
 	buffer[index++] = '/';
+	
+	#ifdef DEBUG_ENABLED
+	//only for debug, send speed and steer via serial port:
+		buffer[index++] = 'S';
+		buffer[index++] = 'p';
+		buffer[index++] = 'e';
+		buffer[index++] = 'e';
+		buffer[index++] = 'd';
+		buffer[index++] = ':';	
+		
+		sprintf(charVal, "%05d", speed);
+		buffer[index++] = charVal[0];
+		buffer[index++] = charVal[1];
+		buffer[index++] = charVal[2];
+		buffer[index++] = charVal[3];
+		buffer[index++] = charVal[4];
+		buffer[index++] = ' ';
+		buffer[index++] = '-';
+		buffer[index++] = ' ';
+		buffer[index++] = 'S';
+		buffer[index++] = 't';
+		buffer[index++] = 'e';
+		buffer[index++] = 'e';
+		buffer[index++] = 'r';
+		buffer[index++] = ':';
+		sprintf(charVal, "%05d", steer);
+		buffer[index++] = charVal[0];
+		buffer[index++] = charVal[1];
+		buffer[index++] = charVal[2];
+		buffer[index++] = charVal[3];
+		buffer[index++] = charVal[4];
+	#endif
 	buffer[index++] = '\n';
 	
 	SendBuffer(USART_STEER_COM, buffer, index);

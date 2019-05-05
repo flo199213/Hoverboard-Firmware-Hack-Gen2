@@ -39,6 +39,8 @@
 #include "../Inc/bldc.h"
 #include "../Inc/commsMasterSlave.h"
 #include "../Inc/commsSteering.h"
+#include "../Inc/commsSteeringPWM.h"
+#include "../Inc/commsInterlocks.h"
 #include "../Inc/commsBluetooth.h"
 #include "stdio.h"
 #include "stdlib.h"
@@ -49,6 +51,11 @@
 #ifdef MASTER
 int32_t steer = 0; 												// global variable for steering. -1000 to 1000
 int32_t speed = 0; 												// global variable for speed.    -1000 to 1000
+int32_t actuatorSpeed = 0;								// actuator(lawnmower motor blade) speed. 0 to 1000
+FlagStatus panicButtonPressed = RESET;		//global variable. SET when pressed.
+FlagStatus it_is_Raining = RESET;					//global variable. SET when raining.
+	
+
 FlagStatus activateWeakening = RESET;			// global variable for weakening
 FlagStatus beepsBackwards = RESET;  			// global variable for beeps backwards
 			
@@ -265,6 +272,7 @@ int main (void)
 	FlagStatus enable = RESET;
 	FlagStatus enableSlave = RESET;
 	FlagStatus chargeStateLowActive = SET;
+	
 	int16_t sendSlaveValue = 0;
 	uint8_t sendSlaveIdentifier = 0;
 	int8_t index = 8;
@@ -281,12 +289,14 @@ int main (void)
   SystemCoreClockUpdate();
   SysTick_Config(SystemCoreClock / 100);
 	
+#ifdef DEBUG_ENABLED
 	// Init watchdog
 	if (Watchdog_init() == ERROR)
 	{
 		// If an error accours with watchdog initialization do not start device
 		while(1);
 	}
+#endif
 	
 	// Init Interrupts
 	Interrupt_init();
@@ -337,11 +347,20 @@ int main (void)
 	{
 #ifdef MASTER
 		steerCounter++;	
+		#ifdef DEBUG_ENABLED
+		if ((steerCounter % 40) == 0)
+		{	
+			// send steering data
+			SendSteerDevice();
+		}
+		#endif
+		#ifndef DEBUG_ENABLED
 		if ((steerCounter % 2) == 0)
 		{	
 			// Request steering data
 			SendSteerDevice();
 		}
+		#endif
 		
 		// Calculate expo rate for less steering with higher speeds
 		expo = MAP((float)ABS(speed), 0, 1000, 1, 0.5);
@@ -443,6 +462,10 @@ int main (void)
 			ShutOff();
     }
 
+		if(panicButtonPressed==SET){
+			ShutOff();
+    }
+		
 		// Shut device off when button is pressed
 		if (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN))
 		{

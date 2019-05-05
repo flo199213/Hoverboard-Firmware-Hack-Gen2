@@ -36,6 +36,9 @@
 #include "../Inc/led.h"
 #include "../Inc/commsMasterSlave.h"
 #include "../Inc/commsSteering.h"
+#include "../Inc/commsSteeringPWM.h"
+#include "../Inc/commsInterlocks.h"
+#include "../Inc/commsActuator.h"
 #include "../Inc/commsBluetooth.h"
 
 uint32_t msTicks;
@@ -69,7 +72,7 @@ void ResetTimeout(void)
 
 //----------------------------------------------------------------------------
 // Timer13_Update_Handler
-// Is called when upcouting of timer13 is finished and the UPDATE-flag is set
+// Is called when upcounting of timer13 is finished and the UPDATE-flag is set
 // -> period of timer13 running with 1kHz -> interrupt every 1ms
 //----------------------------------------------------------------------------
 void TIMER13_IRQHandler(void)
@@ -111,6 +114,12 @@ void TIMER13_IRQHandler(void)
 	// Update LED program
 	CalculateLEDProgram();
 #endif
+
+#ifdef MASTER
+			//READ interlocks
+			checkInterlockInputs();
+#endif
+	
 	
 	// Clear timer update interrupt flag
 	timer_interrupt_flag_clear(TIMER13, TIMER_INT_UP);
@@ -126,6 +135,15 @@ void TIMER0_BRK_UP_TRG_COM_IRQHandler(void)
 {
 	// Start ADC conversion
 	adc_software_trigger_enable(ADC_REGULAR_CHANNEL);
+	#ifdef MASTER
+		// check pwm SPEED input signal
+		#ifdef REMOTE_CONTROL_PWM
+			CheckPWMRemoteControlInput();
+		#endif
+	UpdateActuatorOutput();
+	#endif
+	
+	
 	
 	// Clear timer update interrupt flag
 	timer_interrupt_flag_clear(TIMER_BLDC, TIMER_INT_UP);
