@@ -73,6 +73,15 @@
 #ifdef MASTER
 #define SPEED_COEFFICIENT   -1
 #define STEER_COEFFICIENT   1
+
+#define REMOTE_CONTROL_PWM          //comment this line if pwm REMOTE CONTROL input is not connected
+
+#define DEBUG_ENABLED				//comment this line if your are deploying your final code. 
+														//This variable will bypass watchdog so it allows to place breakpoints 
+														//in the code while debugging your code. commenting this line with 
+														//breakpoints in the code will result in a stop of the program execution.
+														//it allows also to print on the serial line of the master board the speed and 
+														//steer values
 #endif
 
 #endif

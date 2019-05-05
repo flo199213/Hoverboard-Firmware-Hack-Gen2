@@ -47,7 +47,7 @@
 #define LOWER_LED_PIN GPIO_PIN_0
 #define LOWER_LED_PORT GPIOA
 
-// Mosfet output
+// Mosfet output - On master board this is the lawnmower blade motor pwm output
 #define MOSFET_OUT_PIN GPIO_PIN_13
 #define MOSFET_OUT_PORT GPIOC
 
@@ -123,11 +123,35 @@
 // Charge state defines
 #define CHARGE_STATE_PIN GPIO_PIN_0
 #define CHARGE_STATE_PORT GPIOF
+
+// PWM SPEED INPUT DEFINITION - X1-4 input (PB4)
+#define SPEED_PWM_PIN GPIO_PIN_4
+#define SPEED_PWM_PORT GPIOB
+
+// PWM STEER INPUT DEFINITION - X1-5 input (PB5)
+#define STEER_PWM_PIN GPIO_PIN_5
+#define STEER_PWM_PORT GPIOB
+
+//PANIC BUTTON L2 INPUT (PA11)
+#define PANIC_BUTTON_PIN GPIO_PIN_11
+#define PANIC_BUTTON_PORT GPIOA
+
+//rain sensor L1 (PA7)
+#define RAIN_SENSOR_PIN GPIO_PIN_7
+#define RAIN_SENSOR_PORT GPIOA
+
+
+// PWM ACTUATOR OUTPUT DEFINITION - X1-4 OUTPUT (PB3)
+#define ACTUATOR_PIN GPIO_PIN_3
+#define ACTUATOR_PORT GPIOB
+
+
+
 #endif
 
 // Debug pin defines
-#define DEBUG_PIN GPIO_PIN_4
-#define DEBUG_PORT GPIOB
+//#define DEBUG_PIN GPIO_PIN_4
+//#define DEBUG_PORT GPIOB
 
 // ADC value conversion defines
 #define MOTOR_AMP_CONV_DC_AMP 0.201465201465  // 3,3V * 1/3 - 0,004Ohm * IL(ampere) = (ADC-Data/4095) *3,3V
