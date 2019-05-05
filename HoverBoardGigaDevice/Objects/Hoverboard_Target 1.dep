@@ -1,0 +1,756 @@
+Dependencies for Project 'Hoverboard', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Src\main.c)(0x5CCEA37D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/it.h)(0x5CB79476)
+I (Src\../Inc/bldc.h)(0x5CB79476)
+I (Src\../Inc/commsMasterSlave.h)(0x5CB79476)
+I (Src\../Inc/commsSteering.h)(0x5CB79476)
+I (Src\../Inc/commsSteeringPWM.h)(0x5CC4352E)
+I (Src\../Inc/commsInterlocks.h)(0x5CC1F953)
+I (Src\../Inc/commsBluetooth.h)(0x5CB79476)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\arm_math.h)(0x5C8FA234)
+F (.\Src\bldc.c)(0x5CBCD9D5)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\bldc.o --omf_browse .\objects\bldc.crf --depend .\objects\bldc.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+F (.\Src\setup.c)(0x5CC5D187)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\setup.o --omf_browse .\objects\setup.crf --depend .\objects\setup.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/it.h)(0x5CB79476)
+F (.\Src\it.c)(0x5CC42B00)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\it.o --omf_browse .\objects\it.crf --depend .\objects\it.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/it.h)(0x5CB79476)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/bldc.h)(0x5CB79476)
+I (Src\../Inc/led.h)(0x5CB79477)
+I (Src\../Inc/commsMasterSlave.h)(0x5CB79476)
+I (Src\../Inc/commsSteering.h)(0x5CB79476)
+I (Src\../Inc/commsSteeringPWM.h)(0x5CC4352E)
+I (Src\../Inc/commsInterlocks.h)(0x5CC1F953)
+I (Src\../Inc/commsActuator.h)(0x5CBE30E6)
+I (Src\../Inc/commsBluetooth.h)(0x5CB79476)
+F (.\Src\comms.c)(0x5CB79479)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\comms.o --omf_browse .\objects\comms.crf --depend .\objects\comms.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (.\Src\commsBluetooth.c)(0x5CB79479)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\commsbluetooth.o --omf_browse .\objects\commsbluetooth.crf --depend .\objects\commsbluetooth.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/comms.h)(0x5CB79476)
+I (Src\../Inc/commsMasterSlave.h)(0x5CB79476)
+I (Src\../Inc/commsBluetooth.h)(0x5CB79476)
+I (Src\../Inc/led.h)(0x5CB79477)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F218C)
+F (.\Src\commsSteering.c)(0x5CC78B58)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\commssteering.o --omf_browse .\objects\commssteering.crf --depend .\objects\commssteering.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/it.h)(0x5CB79476)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/comms.h)(0x5CB79476)
+I (Src\../Inc/commsSteering.h)(0x5CB79476)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/bldc.h)(0x5CB79476)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F218C)
+F (.\Src\commsMasterSlave.c)(0x5CCE9B7B)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\commsmasterslave.o --omf_browse .\objects\commsmasterslave.crf --depend .\objects\commsmasterslave.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/it.h)(0x5CB79476)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/comms.h)(0x5CB79476)
+I (Src\../Inc/commsMasterSlave.h)(0x5CB79476)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/bldc.h)(0x5CB79476)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F218C)
+F (.\Src\led.c)(0x5CB7947A)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/led.h)(0x5CB79477)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+F (.\Src\commsActuator.c)(0x5CCEA37D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\commsactuator.o --omf_browse .\objects\commsactuator.crf --depend .\objects\commsactuator.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/it.h)(0x5CB79476)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/comms.h)(0x5CB79476)
+I (Src\../Inc/commsActuator.h)(0x5CBE30E6)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/bldc.h)(0x5CB79476)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F218C)
+F (.\Src\commsInterlocks.c)(0x5CC1F953)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\commsinterlocks.o --omf_browse .\objects\commsinterlocks.crf --depend .\objects\commsinterlocks.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/it.h)(0x5CB79476)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/comms.h)(0x5CB79476)
+I (Src\../Inc/commsInterlocks.h)(0x5CC1F953)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/bldc.h)(0x5CB79476)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F218C)
+F (.\Src\commsSteeringPWM.c)(0x5CCEA37D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\commssteeringpwm.o --omf_browse .\objects\commssteeringpwm.crf --depend .\objects\commssteeringpwm.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+I (Src\../Inc/it.h)(0x5CB79476)
+I (Src\../Inc/../Inc/config.h)(0x5CC786CB)
+I (Src\../Inc/comms.h)(0x5CB79476)
+I (Src\../Inc/commsSteeringPWM.h)(0x5CC4352E)
+I (Src\../Inc/setup.h)(0x5CB79477)
+I (Src\../Inc/defines.h)(0x5CCE9B7B)
+I (Src\../Inc/bldc.h)(0x5CB79476)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F218C)
+F (.\Inc\defines.h)(0x5CCE9B7B)()
+F (.\Inc\config.h)(0x5CC786CB)()
+F (.\Inc\bldc.h)(0x5CB79476)()
+F (.\Inc\setup.h)(0x5CB79477)()
+F (.\Inc\it.h)(0x5CB79476)()
+F (.\Inc\comms.h)(0x5CB79476)()
+F (.\Inc\commsBluetooth.h)(0x5CB79476)()
+F (.\Inc\commsSteering.h)(0x5CB79476)()
+F (.\Inc\commsMasterSlave.h)(0x5CB79476)()
+F (.\Inc\led.h)(0x5CB79477)()
+F (.\Inc\commsActuator.h)(0x5CBE30E6)()
+F (.\Inc\commsInterlocks.h)(0x5CC1F953)()
+F (.\Inc\commsSteeringPWM.h)(0x5CC4352E)()
+F (RTE\Device\GD32F130C8\gd32f1x0_adc.c)(0x5CB79477)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_adc.o --omf_browse .\objects\gd32f1x0_adc.crf --depend .\objects\gd32f1x0_adc.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_dbg.c)(0x5CB79477)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_dbg.o --omf_browse .\objects\gd32f1x0_dbg.crf --depend .\objects\gd32f1x0_dbg.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_dma.c)(0x5CB79477)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_dma.o --omf_browse .\objects\gd32f1x0_dma.crf --depend .\objects\gd32f1x0_dma.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_fwdgt.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_fwdgt.o --omf_browse .\objects\gd32f1x0_fwdgt.crf --depend .\objects\gd32f1x0_fwdgt.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_gpio.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_gpio.o --omf_browse .\objects\gd32f1x0_gpio.crf --depend .\objects\gd32f1x0_gpio.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_i2c.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_i2c.o --omf_browse .\objects\gd32f1x0_i2c.crf --depend .\objects\gd32f1x0_i2c.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_misc.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_misc.o --omf_browse .\objects\gd32f1x0_misc.crf --depend .\objects\gd32f1x0_misc.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_opa.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_opa.o --omf_browse .\objects\gd32f1x0_opa.crf --depend .\objects\gd32f1x0_opa.d)
+F (RTE\Device\GD32F130C8\gd32f1x0_pmu.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_pmu.o --omf_browse .\objects\gd32f1x0_pmu.crf --depend .\objects\gd32f1x0_pmu.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_rcu.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_rcu.o --omf_browse .\objects\gd32f1x0_rcu.crf --depend .\objects\gd32f1x0_rcu.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_syscfg.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_syscfg.o --omf_browse .\objects\gd32f1x0_syscfg.crf --depend .\objects\gd32f1x0_syscfg.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_timer.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_timer.o --omf_browse .\objects\gd32f1x0_timer.crf --depend .\objects\gd32f1x0_timer.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_usart.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_usart.o --omf_browse .\objects\gd32f1x0_usart.crf --depend .\objects\gd32f1x0_usart.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\gd32f1x0_wwdgt.c)(0x5CB79478)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_wwdgt.o --omf_browse .\objects\gd32f1x0_wwdgt.crf --depend .\objects\gd32f1x0_wwdgt.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)
+F (RTE\Device\GD32F130C8\startup_gd32f1x0.s)(0x5CB79479)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include--pd "__UVISION_VERSION SETA 527" --pd "_RTE_ SETA 1" --pd "GD32F130_150 SETA 1"--list .\listings\startup_gd32f1x0.lst --xref -o .\objects\startup_gd32f1x0.o --depend .\objects\startup_gd32f1x0.d)
+F (RTE\Device\GD32F130C8\system_gd32f1x0.c)(0x5CB79479)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include-I.\RTE\_Target_1-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-IC:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="527" -D_RTE_ -DGD32F130_150-o .\objects\system_gd32f1x0.o --omf_browse .\objects\system_gd32f1x0.crf --depend .\objects\system_gd32f1x0.d)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\core_cm3.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C0576)
+I (.\RTE\_Target_1\RTE_Components.h)(0x5CB9D98C)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B03D8)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B03DA)
+I (C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B03D8)

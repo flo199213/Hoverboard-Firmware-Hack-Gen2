@@ -1,0 +1,170 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.27.1.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Gaucho HP Inc., HP Inc., LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.27.1.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.27.1.0
+Dialog DLL:      DCM.DLL V1.17.2.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.6.0
+Dialog DLL:      TCM.DLL V1.36.1.0
+ 
+<h2>Project:</h2>
+C:\Users\GauchoHP\Desktop\tosaerba\Hoverboard-con2schede_flo199213\HoverBoardGigaDevice_ModifiedByGaucho2\Hoverboard.uvprojx
+Project File Date:  04/27/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+compiling setup.c...
+compiling bldc.c...
+compiling main.c...
+compiling comms.c...
+compiling it.c...
+compiling commsBluetooth.c...
+compiling led.c...
+compiling commsSteering.c...
+compiling commsMasterSlave.c...
+Src\commsMasterSlave.c(115): warning:  #550-D: variable "mosfetOut"  was set but never used
+  	FlagStatus mosfetOut = RESET;
+Src\commsMasterSlave.c: 1 warning, 0 errors
+compiling commsActuator.c...
+compiling commsInterlocks.c...
+compiling commsSteeringPWM.c...
+compiling gd32f1x0_dbg.c...
+compiling gd32f1x0_adc.c...
+compiling gd32f1x0_dma.c...
+compiling gd32f1x0_fwdgt.c...
+compiling gd32f1x0_gpio.c...
+compiling gd32f1x0_i2c.c...
+compiling gd32f1x0_opa.c...
+compiling gd32f1x0_misc.c...
+compiling gd32f1x0_pmu.c...
+compiling gd32f1x0_rcu.c...
+compiling gd32f1x0_syscfg.c...
+compiling gd32f1x0_timer.c...
+compiling gd32f1x0_wwdgt.c...
+compiling gd32f1x0_usart.c...
+assembling startup_gd32f1x0.s...
+compiling system_gd32f1x0.c...
+linking...
+Program Size: Code=23920 RO-data=1144 RW-data=132 ZI-data=2276  
+".\Objects\Hoverboard.axf" - 0 Error(s), 1 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.5.1.pack
+                ARM.CMSIS.5.5.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.2.0
+
+Package Vendor: GigaDevice
+                http://gd32mcu.21ic.com/data/documents/yingyongruanjian/GigaDevice.GD32F1x0_DFP.3.1.1.pack
+                GigaDevice.GD32F1x0_DFP.3.1.1
+                GigaDevice GD32F1x0 Series Device Support and Examples
+   * Component: ADC Version: 3.1.0
+   * Component: DMA Version: 3.1.0
+   * Component: FWDGT Version: 3.1.0
+   * Component: GPIO Version: 3.1.0
+   * Component: I2C Version: 3.1.0
+   * Component: MCUDBG Version: 3.1.0
+   * Component: MISC Version: 3.1.0
+   * Component: OPA Version: 3.1.0
+   * Component: PMU Version: 3.1.0
+   * Component: RCU Version: 3.1.0
+   * Component: SYSCFG Version: 3.1.0
+   * Component: TIMER Version: 3.1.0
+   * Component: USART Version: 3.1.0
+   * Component: WWDGT Version: 3.1.0
+   * Component: GD32F1x0_libopt Version: 3.1.0
+   * Component: Startup Version: 3.1.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\GauchoHP\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include
+  C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc
+  C:\Users\GauchoHP\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.2.0
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:ADC:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_adc.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_adc.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:DMA:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_dma.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_dma.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:FWDGT:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_fwdgt.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:GPIO:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_gpio.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:I2C:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_i2c.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:MCUDBG:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_dbg.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:MISC:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_misc.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_misc.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:OPA:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_opa.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_opa.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:PMU:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_pmu.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:RCU:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_rcu.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:SYSCFG:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_syscfg.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:TIMER:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_timer.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_timer.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:USART:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_usart.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_usart.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:WWDGT:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_wwdgt.c
+
+   * Component: GigaDevice::Device:GD32F1x0_libopt:3.1.0
+      Include file:  Device\Include\gd32f1x0_libopt.h
+
+   * Component: GigaDevice::Device:Startup:3.1.0
+      Include file:  Device\Include\gd32f1x0.h
+      Source file:   Device\Source\startup_gd32f1x0.s
+      Source file:   Device\Source\system_gd32f1x0.c
+Build Time Elapsed:  00:00:05
+</pre>
+</body>
+</html>
