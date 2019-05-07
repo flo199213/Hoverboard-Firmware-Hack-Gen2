@@ -14592,6 +14592,7 @@ super fast rectifier, 2 A</description>
 <part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/2V" package3d_urn="urn:adsk.eagle:package:23490/1" value="4,7K"/>
 <part name="R52" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/2V" package3d_urn="urn:adsk.eagle:package:23490/1" value="1K"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -15521,6 +15522,10 @@ MPU6050.SCL: PB8 (I2C2)</text>
 <attribute name="NAME" x="125.69" y="46.4986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="125.69" y="41.198" size="1.778" layer="96"/>
 </instance>
+<instance part="C3" gate="G$1" x="166" y="49" smashed="yes">
+<attribute name="NAME" x="167.524" y="49.381" size="1.778" layer="95"/>
+<attribute name="VALUE" x="167.524" y="44.301" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -15597,6 +15602,10 @@ MPU6050.SCL: PB8 (I2C2)</text>
 <segment>
 <pinref part="GND20" gate="1" pin="GND"/>
 <wire x1="141.5" y1="42.42" x2="141.5" y2="37.54" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="166" y1="43.92" x2="166" y2="37.54" width="0.1524" layer="91"/>
+<wire x1="166" y1="37.54" x2="141.5" y2="37.54" width="0.1524" layer="91"/>
+<junction x="141.5" y="37.54"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -15880,6 +15889,10 @@ MPU6050.SCL: PB8 (I2C2)</text>
 <segment>
 <pinref part="R67" gate="G$1" pin="2"/>
 <wire x1="141.5" y1="64.58" x2="141.5" y2="66.96" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="166" y1="51.54" x2="166" y2="64.58" width="0.1524" layer="91"/>
+<wire x1="166" y1="64.58" x2="141.5" y2="64.58" width="0.1524" layer="91"/>
+<junction x="141.5" y="64.58"/>
 </segment>
 </net>
 <net name="N$59" class="0">
