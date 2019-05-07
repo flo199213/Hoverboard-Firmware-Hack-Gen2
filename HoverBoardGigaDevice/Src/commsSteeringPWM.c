@@ -43,7 +43,7 @@ void CheckPWMRemoteControlInput(void)
 		
 		//if we are moving, controlled by RC, activate PWM output to control the blade of the lawnmower 
 		if(speed>50 || speed<-50 ){
-			actuatorSpeed=500;
+			actuatorSpeed=250;
 		}else{
 			actuatorSpeed=0;
 		}

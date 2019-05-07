@@ -163,8 +163,8 @@ void CheckUSARTMasterSlaveInput(uint8_t USARTBuffer[])
 	upperLED = (byte & BIT(0)) ? SET : RESET;
 	
 	// Set functions according to the variables
-	//gpio_bit_write(MOSFET_OUT_PORT, MOSFET_OUT_PIN, mosfetOut);  //this is not used by master. We will reuse this gpio to control the lawnmower blade
-	gpio_bit_write(UPPER_LED_PORT, UPPER_LED_PIN, upperLED);
+	gpio_bit_write(MOSFET_OUT_PORT, MOSFET_OUT_PIN, mosfetOut);  
+	gpio_bit_write(UPPER_LED_PORT, UPPER_LED_PIN, upperLED);  
 	gpio_bit_write(LOWER_LED_PORT, LOWER_LED_PIN, lowerLED);
 #endif
 #ifdef SLAVE

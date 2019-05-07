@@ -536,7 +536,7 @@ void ShutOff(void)
 //----------------------------------------------------------------------------
 void ShowBatteryState(uint32_t pin)
 {
-	gpio_bit_write(LED_GREEN_PORT, LED_GREEN, pin == LED_GREEN ? SET : RESET);
+	// gpio_bit_write(LED_GREEN_PORT, LED_GREEN, pin == LED_GREEN ? SET : RESET); //commented cause this pin is used to activate the motor with the blade of the lawnmower
 	gpio_bit_write(LED_ORANGE_PORT, LED_ORANGE, pin == LED_ORANGE ? SET : RESET);
 	gpio_bit_write(LED_RED_PORT, LED_RED, pin == LED_RED ? SET : RESET);
 }
