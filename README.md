@@ -22,15 +22,18 @@ This repo contains open source firmware that has been deveoped and tested on HOV
 #### Hardware
 
 The HOVER-1 Ultra has two sepparate motor controller boards, usually configured as a master and a slave with a USART Serial port passing commands and data back and forth.
+
 There is a sets of pads that can be used to program the processor using a ST-Link/V2.
+
 There is also a set of pads that can be used for a remote monitor /control port.
 
 ---
 
 #### Flashing
+
 The firmware is built with Keil (free up to 32KByte). 
 To build the firmware, open the Keil project file (includes in repository).
 
-- If you never flashed your mainboard before, the controller is locked. To unlock the flash, use STM32 ST-LINK Utility or openOCD.
-- To flash the STM32, use the STM32 ST-LINK Utility as well, ST-Flash utility or Keil by itself.
+- If the controller boards contain the original firmware, they will need to be unlocked. To do this, use the STM32 ST-LINK Utility.
+- To flash the STM32, use the STM32 ST-LINK Utility, or use Keil and run the code in debug mode, which will download the code first.
 - Hold the powerbutton while flashing the firmware, as the controller releases the power latch and switches itself off during flashing
