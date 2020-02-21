@@ -1,0 +1,168 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Phil Malone, Mr. Phil, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  d:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.0.0
+Dialog DLL:      TCM.DLL V1.36.5.0
+ 
+<h2>Project:</h2>
+D:\Users\Phil\GitHub\HUGS\HUGS\HUGS.uvprojx
+Project File Date:  02/19/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling main.c...
+Src\main.c(37): error:  #5: cannot open source input file "../Inc/commsBluetooth.h": No such file or directory
+  #include "../Inc/commsBluetooth.h"
+Src\main.c: 0 warnings, 1 error
+compiling setup.c...
+compiling bldc.c...
+compiling it.c...
+Src\it.c(34): error:  #5: cannot open source input file "../Inc/commsBluetooth.h": No such file or directory
+  #include "../Inc/commsBluetooth.h"
+Src\it.c: 0 warnings, 1 error
+compiling comms.c...
+compiling commsSteering.c...
+compiling commsMasterSlave.c...
+compiling led.c...
+compiling gd32f1x0_dbg.c...
+compiling gd32f1x0_adc.c...
+compiling gd32f1x0_dma.c...
+compiling gd32f1x0_fwdgt.c...
+compiling gd32f1x0_gpio.c...
+compiling gd32f1x0_opa.c...
+compiling gd32f1x0_i2c.c...
+compiling gd32f1x0_misc.c...
+compiling gd32f1x0_pmu.c...
+compiling gd32f1x0_rcu.c...
+compiling gd32f1x0_syscfg.c...
+compiling gd32f1x0_timer.c...
+compiling gd32f1x0_wwdgt.c...
+compiling gd32f1x0_usart.c...
+assembling startup_gd32f1x0.s...
+compiling system_gd32f1x0.c...
+".\Objects\Hoverboard.axf" - 2 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ARM.CMSIS.5.6.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.3.0
+
+Package Vendor: GigaDevice
+                http://gd32mcu.21ic.com/data/documents/yingyongruanjian/GigaDevice.GD32F1x0_DFP.3.1.1.pack
+                GigaDevice.GD32F1x0_DFP.3.1.1
+                GigaDevice GD32F1x0 Series Device Support and Examples
+   * Component: ADC Version: 3.1.0
+   * Component: DMA Version: 3.1.0
+   * Component: FWDGT Version: 3.1.0
+   * Component: GPIO Version: 3.1.0
+   * Component: I2C Version: 3.1.0
+   * Component: MCUDBG Version: 3.1.0
+   * Component: MISC Version: 3.1.0
+   * Component: OPA Version: 3.1.0
+   * Component: PMU Version: 3.1.0
+   * Component: RCU Version: 3.1.0
+   * Component: SYSCFG Version: 3.1.0
+   * Component: TIMER Version: 3.1.0
+   * Component: USART Version: 3.1.0
+   * Component: WWDGT Version: 3.1.0
+   * Component: GD32F1x0_libopt Version: 3.1.0
+   * Component: Startup Version: 3.1.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc
+  d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.3.0
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:ADC:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_adc.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_adc.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:DMA:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_dma.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_dma.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:FWDGT:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_fwdgt.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:GPIO:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_gpio.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:I2C:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_i2c.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:MCUDBG:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_dbg.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:MISC:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_misc.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_misc.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:OPA:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_opa.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_opa.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:PMU:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_pmu.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:RCU:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_rcu.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:SYSCFG:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_syscfg.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:TIMER:3.1.0
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_timer.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_timer.h
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:USART:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_usart.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_usart.c
+
+   * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:WWDGT:3.1.0
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_wwdgt.c
+
+   * Component: GigaDevice::Device:GD32F1x0_libopt:3.1.0
+      Include file:  Device\Include\gd32f1x0_libopt.h
+
+   * Component: GigaDevice::Device:Startup:3.1.0
+      Source file:   Device\Source\startup_gd32f1x0.s
+      Source file:   Device\Source\system_gd32f1x0.c
+      Include file:  Device\Include\gd32f1x0.h
+Target not created.
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>

@@ -510,13 +510,13 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\objects\startup_gd32f1x0.d -o.\objects\startup_gd32f1x0.o -I.\RT
-E\_Target_1 -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include -IC:\Keil_v5\AR
-M\PACK\GigaDevice\GD32F1x0_DFP\3.1.0\Device\Firmware\Peripherals\inc -IC:\Keil_
-v5\ARM\PACK\GigaDevice\GD32F1x0_DFP\3.1.0\Device\Include --predefine="__EVAL SE
-TA 1" --predefine="__UVISION_VERSION SETA 525" --predefine="_RTE_ SETA 1" --pre
-define="GD32F1x0 SETA 1" --predefine="GD32F130_150 SETA 1" --predefine="USE_STD
-PERIPH_DRIVER SETA 1" --list=.\listings\startup_gd32f1x0.lst RTE\Device\GD32F13
-0C8\startup_gd32f1x0.s
+E\_Target_1 -Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\
+Include -Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\D
+evice\Firmware\Peripherals\inc -Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevi
+ce\GD32F1x0_DFP\3.1.1\Device\Include --predefine="__EVAL SETA 1" --predefine="_
+_UVISION_VERSION SETA 529" --predefine="_RTE_ SETA 1" --predefine="GD32F130_150
+ SETA 1" --list=.\listings\startup_gd32f1x0.lst RTE\Device\GD32F130C8\startup_g
+d32f1x0.s
 
 
 
@@ -1284,4 +1284,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-416 symbols in table
+414 symbols in table
