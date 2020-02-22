@@ -30,8 +30,8 @@
 #include "../Inc/config.h"
 
 
-#define USART_MASTERSLAVE_RX_BUFFERSIZE 1
-#define USART_MASTERSLAVE_DATA_RX_ADDRESS ((uint32_t)0x40004424)
+#define USART_HUGS_RX_BUFFERSIZE 1
+#define USART_HUGS_DATA_RX_ADDRESS ((uint32_t)0x40004424)
 
 #define USART_STEER_COM_RX_BUFFERSIZE 1
 #define USART_STEER_COM_DATA_RX_ADDRESS ((uint32_t)0x40013824)
@@ -69,7 +69,7 @@ void ADC_init(void);
 //----------------------------------------------------------------------------
 // Initializes the usart master slave
 //----------------------------------------------------------------------------
-void USART_MasterSlave_init(void);
+void USART_HUGS_init(void);
 
 //----------------------------------------------------------------------------
 // Initializes the steer/bluetooth usart

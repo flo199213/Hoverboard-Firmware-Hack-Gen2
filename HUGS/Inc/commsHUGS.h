@@ -23,8 +23,8 @@
 * GNU General Public License for more details.
 */
 
-#ifndef COMMSMASTERSLAVE_H
-#define COMMSMASTERSLAVE_H
+#ifndef COMMSHUGS_H
+#define COMMSHUGS_H
 
 #include "gd32f1x0.h"
 #include "../Inc/config.h"

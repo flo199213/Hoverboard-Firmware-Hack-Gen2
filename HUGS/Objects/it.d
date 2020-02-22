@@ -29,5 +29,5 @@
 .\objects\it.o: Src\../Inc/defines.h
 .\objects\it.o: Src\../Inc/bldc.h
 .\objects\it.o: Src\../Inc/led.h
-.\objects\it.o: Src\../Inc/commsMasterSlave.h
+.\objects\it.o: Src\../Inc/commsHUGS.h
 .\objects\it.o: Src\../Inc/commsSteering.h

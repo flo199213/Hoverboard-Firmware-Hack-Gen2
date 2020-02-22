@@ -26,7 +26,7 @@
 #include "gd32f1x0.h"
 #include "../Inc/it.h"
 #include "../Inc/comms.h"
-#include "../Inc/commsMasterSlave.h"
+#include "../Inc/commsHUGS.h"
 #include "../Inc/setup.h"
 #include "../Inc/config.h"
 #include "../Inc/defines.h"
@@ -35,15 +35,14 @@
 #include "string.h"
 
 #ifdef MASTER
-#define USART_MASTERSLAVE_TX_BYTES 10  // Transmit byte count including start '/' and stop character '\n'
-#define USART_MASTERSLAVE_RX_BYTES 5   // Receive byte count including start '/' and stop character '\n'
+#define USART_HUGS_TX_BYTES 10  // Transmit byte count including start '/' and stop character '\n'
+#define USART_HUGS_RX_BYTES 5   // Receive byte count including start '/' and stop character '\n'
 
 // Variables which will be written by slave frame
-extern FlagStatus beepsBackwards;
 #endif
 #ifdef SLAVE
-#define USART_MASTERSLAVE_TX_BYTES 5   // Transmit byte count including start '/' and stop character '\n'
-#define USART_MASTERSLAVE_RX_BYTES 10  // Receive byte count including start '/' and stop character '\n'
+#define USART_HUGS_TX_BYTES 5   // Transmit byte count including start '/' and stop character '\n'
+#define USART_HUGS_RX_BYTES 10  // Receive byte count including start '/' and stop character '\n'
 
 // Variables which will be send to master
 FlagStatus upperLEDMaster = RESET;
@@ -59,9 +58,9 @@ int16_t realSpeedMaster = 0;
 void CheckGeneralValue(uint8_t identifier, int16_t value);
 #endif
 
-extern uint8_t usartMasterSlave_rx_buf[USART_MASTERSLAVE_RX_BUFFERSIZE];
+extern uint8_t usartMasterSlave_rx_buf[USART_HUGS_RX_BUFFERSIZE];
 static uint8_t sMasterSlaveRecord = 0;
-static uint8_t sUSARTMasterSlaveRecordBuffer[USART_MASTERSLAVE_RX_BYTES];
+static uint8_t sUSARTMasterSlaveRecordBuffer[USART_HUGS_RX_BYTES];
 static uint8_t sUSARTMasterSlaveRecordBufferCounter = 0;
 
 void CheckUSARTMasterSlaveInput(uint8_t u8USARTBuffer[]);
@@ -87,7 +86,7 @@ void UpdateUSARTMasterSlaveInput(void)
 		sUSARTMasterSlaveRecordBuffer[sUSARTMasterSlaveRecordBufferCounter] = character;
 		sUSARTMasterSlaveRecordBufferCounter++;
 		
-		if (sUSARTMasterSlaveRecordBufferCounter >= USART_MASTERSLAVE_RX_BYTES)
+		if (sUSARTMasterSlaveRecordBufferCounter >= USART_HUGS_RX_BYTES)
 		{
 			sUSARTMasterSlaveRecordBufferCounter = 0;
 			sMasterSlaveRecord = 0;
@@ -129,17 +128,17 @@ void CheckUSARTMasterSlaveInput(uint8_t USARTBuffer[])
 	
 	// Check start and stop character
 	if ( USARTBuffer[0] != '/' ||
-		USARTBuffer[USART_MASTERSLAVE_RX_BYTES - 1] != '\n')
+		USARTBuffer[USART_HUGS_RX_BYTES - 1] != '\n')
 	{
 		return;
 	}
 	
 	// Calculate CRC (first bytes except crc and stop byte)
-	crc = CalcCRC(USARTBuffer, USART_MASTERSLAVE_RX_BYTES - 3);
+	crc = CalcCRC(USARTBuffer, USART_HUGS_RX_BYTES - 3);
 	
 	// Check CRC
-	if ( USARTBuffer[USART_MASTERSLAVE_RX_BYTES - 3] != ((crc >> 8) & 0xFF) ||
-		USARTBuffer[USART_MASTERSLAVE_RX_BYTES - 2] != (crc & 0xFF))
+	if ( USARTBuffer[USART_HUGS_RX_BYTES - 3] != ((crc >> 8) & 0xFF) ||
+		USARTBuffer[USART_HUGS_RX_BYTES - 2] != (crc & 0xFF))
 	{
 		return;
 	}
@@ -152,7 +151,6 @@ void CheckUSARTMasterSlaveInput(uint8_t USARTBuffer[])
 	//none = (byte & BIT(6)) ? SET : RESET;
 	//none = (byte & BIT(5)) ? SET : RESET;
 	//none = (byte & BIT(4)) ? SET : RESET;
-	beepsBackwards = (byte & BIT(3)) ? SET : RESET;
 	mosfetOut = (byte & BIT(2)) ? SET : RESET;
 	lowerLED = (byte & BIT(1)) ? SET : RESET;
 	upperLED = (byte & BIT(0)) ? SET : RESET;
@@ -187,7 +185,7 @@ void CheckUSARTMasterSlaveInput(uint8_t USARTBuffer[])
 	if (shutoff == SET)
 	{
 		// Disable usart
-		usart_deinit(USART_MASTERSLAVE);
+		usart_deinit(USART_HUGS);
 		
 		// Set pwm and enable to off
 		SetEnable(RESET);
@@ -224,7 +222,7 @@ void SendSlave(int16_t pwmSlave, FlagStatus enable, FlagStatus shutoff, FlagStat
 {
 	uint8_t index = 0;
 	uint16_t crc = 0;
-	uint8_t buffer[USART_MASTERSLAVE_TX_BYTES];
+	uint8_t buffer[USART_HUGS_TX_BYTES];
 	
 	// Format pwmValue and general value
 	int16_t sendPwm = CLAMP(pwmSlave, -1000, 1000);
@@ -258,7 +256,7 @@ void SendSlave(int16_t pwmSlave, FlagStatus enable, FlagStatus shutoff, FlagStat
   // Stop byte
   buffer[index++] = '\n';
 	
-	SendBuffer(USART_MASTERSLAVE, buffer, index);
+	SendBuffer(USART_HUGS, buffer, index);
 }
 #endif
 #ifdef SLAVE
@@ -269,7 +267,7 @@ void SendMaster(FlagStatus upperLEDMaster, FlagStatus lowerLEDMaster, FlagStatus
 {
 	uint8_t index = 0;
 	uint16_t crc = 0;
-	uint8_t buffer[USART_MASTERSLAVE_TX_BYTES];
+	uint8_t buffer[USART_HUGS_TX_BYTES];
 	
 	uint8_t sendByte = 0;
 	sendByte |= (0 << 7);
@@ -293,7 +291,7 @@ void SendMaster(FlagStatus upperLEDMaster, FlagStatus lowerLEDMaster, FlagStatus
   // Stop byte
   buffer[index++] = '\n';
 	
-	SendBuffer(USART_MASTERSLAVE, buffer, index);
+	SendBuffer(USART_HUGS, buffer, index);
 }
 
 //----------------------------------------------------------------------------

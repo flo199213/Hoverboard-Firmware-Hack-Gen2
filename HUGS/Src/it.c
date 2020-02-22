@@ -29,7 +29,7 @@
 #include "../Inc/config.h"
 #include "../Inc/bldc.h"
 #include "../Inc/led.h"
-#include "../Inc/commsMasterSlave.h"
+#include "../Inc/commsHUGS.h"
 #include "../Inc/commsSteering.h"
 
 uint32_t msTicks;
@@ -40,10 +40,8 @@ FlagStatus timedOut = SET;
 uint32_t hornCounter_ms = 0;
 #endif
 
-extern int32_t steer;
 extern int32_t speed;
 extern FlagStatus activateWeakening;
-extern FlagStatus beepsBackwards;
 
 //----------------------------------------------------------------------------
 // SysTick_Handler
@@ -73,11 +71,7 @@ void TIMER13_IRQHandler(void)
 		// First timeout reset all process values
 		if (timedOut == RESET)
 		{
-#ifdef MASTER
-			steer = 0;
 			speed = 0;
-			beepsBackwards = RESET;
-#endif
 #ifdef SLAVE
 			SetPWM(0);
 #endif

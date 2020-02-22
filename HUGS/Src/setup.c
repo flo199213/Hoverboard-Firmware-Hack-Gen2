@@ -41,7 +41,7 @@ timer_oc_parameter_struct timerBldc_oc_parameter_struct;
 
 // DMA (USART) structs
 dma_parameter_struct dma_init_struct_usart;
-uint8_t usartMasterSlave_rx_buf[USART_MASTERSLAVE_RX_BUFFERSIZE];
+uint8_t usartMasterSlave_rx_buf[USART_HUGS_RX_BUFFERSIZE];
 uint8_t usartSteer_COM_rx_buf[USART_STEER_COM_RX_BUFFERSIZE];
 
 // DMA (ADC) structs
@@ -153,13 +153,13 @@ void GPIO_init(void)
 	gpio_mode_set(HALL_B_PORT , GPIO_MODE_INPUT, GPIO_PUPD_NONE, HALL_B_PIN);
 	gpio_mode_set(HALL_C_PORT , GPIO_MODE_INPUT, GPIO_PUPD_NONE, HALL_C_PIN);	
 	
-	// Init USART_MASTERSLAVE
-	gpio_mode_set(USART_MASTERSLAVE_TX_PORT , GPIO_MODE_AF, GPIO_PUPD_PULLUP, USART_MASTERSLAVE_TX_PIN);	
-	gpio_mode_set(USART_MASTERSLAVE_RX_PORT , GPIO_MODE_AF, GPIO_PUPD_PULLUP, USART_MASTERSLAVE_RX_PIN);
-	gpio_output_options_set(USART_MASTERSLAVE_TX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, USART_MASTERSLAVE_TX_PIN);
-	gpio_output_options_set(USART_MASTERSLAVE_RX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, USART_MASTERSLAVE_RX_PIN);	
-	gpio_af_set(USART_MASTERSLAVE_TX_PORT, GPIO_AF_1, USART_MASTERSLAVE_TX_PIN);
-	gpio_af_set(USART_MASTERSLAVE_RX_PORT, GPIO_AF_1, USART_MASTERSLAVE_RX_PIN);
+	// Init USART_HUGS
+	gpio_mode_set(USART_HUGS_TX_PORT , GPIO_MODE_AF, GPIO_PUPD_PULLUP, USART_HUGS_TX_PIN);	
+	gpio_mode_set(USART_HUGS_RX_PORT , GPIO_MODE_AF, GPIO_PUPD_PULLUP, USART_HUGS_RX_PIN);
+	gpio_output_options_set(USART_HUGS_TX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, USART_HUGS_TX_PIN);
+	gpio_output_options_set(USART_HUGS_RX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, USART_HUGS_RX_PIN);	
+	gpio_af_set(USART_HUGS_TX_PORT, GPIO_AF_1, USART_HUGS_TX_PIN);
+	gpio_af_set(USART_HUGS_RX_PORT, GPIO_AF_1, USART_HUGS_RX_PIN);
 	
 	// Init ADC pins
 	gpio_mode_set(VBATT_PORT, GPIO_MODE_ANALOG, GPIO_PUPD_NONE, VBATT_PIN);
@@ -382,25 +382,25 @@ void ADC_init(void)
 //----------------------------------------------------------------------------
 // Initializes the usart master slave
 //----------------------------------------------------------------------------
-void USART_MasterSlave_init(void)
+void USART_HUGS_init(void)
 {
 	// Enable ADC and DMA clock
 	rcu_periph_clock_enable(RCU_USART1);
 	rcu_periph_clock_enable(RCU_DMA);
 	
 	// Init USART for 115200 baud, 8N1
-	usart_baudrate_set(USART_MASTERSLAVE, 115200);
-	usart_parity_config(USART_MASTERSLAVE, USART_PM_NONE);
-	usart_word_length_set(USART_MASTERSLAVE, USART_WL_8BIT);
-	usart_stop_bit_set(USART_MASTERSLAVE, USART_STB_1BIT);
-	usart_oversample_config(USART_MASTERSLAVE, USART_OVSMOD_16);
+	usart_baudrate_set(USART_HUGS, 115200);
+	usart_parity_config(USART_HUGS, USART_PM_NONE);
+	usart_word_length_set(USART_HUGS, USART_WL_8BIT);
+	usart_stop_bit_set(USART_HUGS, USART_STB_1BIT);
+	usart_oversample_config(USART_HUGS, USART_OVSMOD_16);
 	
 	// Enable both transmitter and receiver
-	usart_transmit_config(USART_MASTERSLAVE, USART_TRANSMIT_ENABLE);
-	usart_receive_config(USART_MASTERSLAVE, USART_RECEIVE_ENABLE);
+	usart_transmit_config(USART_HUGS, USART_TRANSMIT_ENABLE);
+	usart_receive_config(USART_HUGS, USART_RECEIVE_ENABLE);
 	
 	// Enable USART
-	usart_enable(USART_MASTERSLAVE);
+	usart_enable(USART_HUGS);
 	
 	// Interrupt channel 3/4 enable
 	nvic_irq_enable(DMA_Channel3_4_IRQn, 2, 0);
@@ -411,8 +411,8 @@ void USART_MasterSlave_init(void)
 	dma_init_struct_usart.memory_addr = (uint32_t)usartMasterSlave_rx_buf;
 	dma_init_struct_usart.memory_inc = DMA_MEMORY_INCREASE_ENABLE;
 	dma_init_struct_usart.memory_width = DMA_MEMORY_WIDTH_8BIT;
-	dma_init_struct_usart.number = USART_MASTERSLAVE_RX_BUFFERSIZE;
-	dma_init_struct_usart.periph_addr = USART_MASTERSLAVE_DATA_RX_ADDRESS;
+	dma_init_struct_usart.number = USART_HUGS_RX_BUFFERSIZE;
+	dma_init_struct_usart.periph_addr = USART_HUGS_DATA_RX_ADDRESS;
 	dma_init_struct_usart.periph_inc = DMA_PERIPH_INCREASE_DISABLE;
 	dma_init_struct_usart.periph_width = DMA_PERIPHERAL_WIDTH_8BIT;
 	dma_init_struct_usart.priority = DMA_PRIORITY_ULTRA_HIGH;
@@ -423,7 +423,7 @@ void USART_MasterSlave_init(void)
 	dma_memory_to_memory_disable(DMA_CH4);
 
 	// USART DMA enable for transmission and receive
-	usart_dma_receive_config(USART_MASTERSLAVE, USART_DENR_ENABLE);
+	usart_dma_receive_config(USART_HUGS, USART_DENR_ENABLE);
 	
 	// Enable DMA transfer complete interrupt
 	dma_interrupt_enable(DMA_CH4, DMA_CHXCTL_FTFIE);

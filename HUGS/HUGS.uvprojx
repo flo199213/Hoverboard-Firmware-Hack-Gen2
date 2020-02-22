@@ -413,14 +413,14 @@
               <FilePath>.\Src\commsSteering.c</FilePath>
             </File>
             <File>
-              <FileName>commsMasterSlave.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Src\commsMasterSlave.c</FilePath>
-            </File>
-            <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>commsHUGS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\commsHUGS.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -463,14 +463,14 @@
               <FilePath>.\Inc\commsSteering.h</FilePath>
             </File>
             <File>
-              <FileName>commsMasterSlave.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Inc\commsMasterSlave.h</FilePath>
-            </File>
-            <File>
               <FileName>led.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\led.h</FilePath>
+            </File>
+            <File>
+              <FileName>commsHUGS.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\commsHUGS.h</FilePath>
             </File>
           </Files>
         </Group>
