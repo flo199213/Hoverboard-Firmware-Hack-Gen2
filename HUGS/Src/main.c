@@ -49,7 +49,12 @@ extern float realSpeed; 									// global variable for real Speed
 	
 extern FlagStatus timedOut;								// Timeoutvariable set by timeout timer
 
-uint32_t inactivity_timeout_counter = 0;	// Inactivity counter
+extern bool			HUGS_Enabled;							// Set by HUGS communications
+extern bool			HUGS_ESTOP;
+extern uint16_t	HUGS_WatchDog;
+
+uint16_t command_timeout_counter = 0;	    // motor safety counter ms From last command
+uint32_t inactivity_timeout_counter = 0;	// Inactivity counter ms From last command
 
 void ShowBatteryState(uint32_t pin);
 void ShutOff(void);
@@ -61,11 +66,7 @@ void ShutOff(void);
 //----------------------------------------------------------------------------
 int main (void)
 {
-#ifdef MASTER
-	FlagStatus enable = RESET;
 	FlagStatus chargeStateLowActive = SET;
-	int16_t scaledSpeed = 0;
-#endif
 	
 	//SystemClock_Config();
   SystemCoreClockUpdate();
@@ -115,26 +116,15 @@ int main (void)
 
   while(1)
 	{
-		
-	  // Each speedvalue or steervalue between 50 and -50 means absolutely no pwm
-		scaledSpeed = speed < 50 && speed > -50 ? 0 : CLAMP(speed, -1000, 1000) * SPEED_COEFFICIENT;
-
 		// Read charge state
 		chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
 		
-		// Enable is depending on charger is connected or not
-		enable = chargeStateLowActive;
-		
-		// Enable channel output
-		SetEnable(enable);
-
 		// Show green battery symbol when battery level BAT_LOW_LVL1 is reached
     if (batteryVoltage > BAT_LOW_LVL1)
 		{
 			// Show green battery light
 			ShowBatteryState(LED_GREEN);
 		}
-
 		// Make silent sound and show orange battery symbol when battery level BAT_LOW_LVL2 is reached
     else if (batteryVoltage > BAT_LOW_LVL2 && batteryVoltage < BAT_LOW_LVL1)
 		{
@@ -159,18 +149,8 @@ int main (void)
 			ShutOff();
     }
 		
-		// Derermine "alive" activity later
-    if (1)
-		{
-      inactivity_timeout_counter = 0;
-    }
-		else
-		{
-      inactivity_timeout_counter++;
-    }
-		
 		// Shut off device after INACTIVITY_TIMEOUT in minutes
-    if (inactivity_timeout_counter > (INACTIVITY_TIMEOUT * 60 * 1000) / (DELAY_IN_MAIN_LOOP + 1))
+    if (inactivity_timeout_counter++ > (INACTIVITY_TIMEOUT * 60 * 1000) / (DELAY_IN_MAIN_LOOP + 1))
 		{ 
       ShutOff();
     }
@@ -187,8 +167,6 @@ int main (void)
 //----------------------------------------------------------------------------
 void ShutOff(void)
 {
-	int index = 0;
-
 	// Disable usart
 	usart_deinit(USART_HUGS);
 	

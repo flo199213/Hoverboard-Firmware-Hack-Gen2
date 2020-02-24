@@ -36,12 +36,9 @@ uint32_t msTicks;
 uint32_t timeoutCounter_ms = 0;
 FlagStatus timedOut = SET;
 
-#ifdef SLAVE
-uint32_t hornCounter_ms = 0;
-#endif
-
 extern int32_t speed;
 extern FlagStatus activateWeakening;
+extern int32_t HUGS_WatchDog;
 
 //----------------------------------------------------------------------------
 // SysTick_Handler
@@ -66,15 +63,13 @@ void ResetTimeout(void)
 //----------------------------------------------------------------------------
 void TIMER13_IRQHandler(void)
 {	
-	if (timeoutCounter_ms > TIMEOUT_MS)
+	if (timeoutCounter_ms > HUGS_WatchDog)
 	{
 		// First timeout reset all process values
 		if (timedOut == RESET)
 		{
 			speed = 0;
-#ifdef SLAVE
 			SetPWM(0);
-#endif
 		}
 		
 		timedOut = SET;
@@ -85,21 +80,6 @@ void TIMER13_IRQHandler(void)
 		timeoutCounter_ms++;
 	}
 
-#ifdef SLAVE
-	if (hornCounter_ms >= 2000)
-	{
-		// Avoid horn to be activated longer than 2 seconds
-		SetUpperLEDMaster(RESET);
-	}
-	else if (hornCounter_ms < 2000)
-	{
-		hornCounter_ms++;
-	}
-	
-	// Update LED program
-	CalculateLEDProgram();
-#endif
-	
 	// Clear timer update interrupt flag
 	timer_interrupt_flag_clear(TIMER13, TIMER_INT_UP);
 }
@@ -150,14 +130,8 @@ void DMA_Channel1_2_IRQHandler(void)
 	// USART steer/bluetooth RX
 	if (dma_interrupt_flag_get(DMA_CH2, DMA_INT_FLAG_FTF))
 	{
-#ifdef MASTER
 		// Update USART steer input mechanism
 		UpdateUSARTSteerInput();
-#endif
-#ifdef SLAVE
-		// Update USART bluetooth input mechanism
-		UpdateUSARTBluetoothInput();
-#endif
 		dma_interrupt_flag_clear(DMA_CH2, DMA_INT_FLAG_FTF);        
 	}
 }
@@ -173,7 +147,7 @@ void DMA_Channel3_4_IRQHandler(void)
 	if (dma_interrupt_flag_get(DMA_CH4, DMA_INT_FLAG_FTF))
 	{
 		// Update USART master slave input mechanism
-		UpdateUSARTMasterSlaveInput();
+		UpdateUSARTHUGSInput();
 		
 		dma_interrupt_flag_clear(DMA_CH4, DMA_INT_FLAG_FTF);        
 	}

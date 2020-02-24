@@ -63,9 +63,4 @@
 // ###### ARMCHAIR ######
 #define FILTER_SHIFT 12 						// Low-pass filter for pwm, rank k=12
 
-#ifdef MASTER
-#define SPEED_COEFFICIENT   -1
-#define STEER_COEFFICIENT   1
-#endif
-
 #endif

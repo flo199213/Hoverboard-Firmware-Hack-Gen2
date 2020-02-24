@@ -34,254 +34,154 @@
 #include "stdio.h"
 #include "string.h"
 
-#ifdef MASTER
-#define USART_HUGS_TX_BYTES 10  // Transmit byte count including start '/' and stop character '\n'
-#define USART_HUGS_RX_BYTES 5   // Receive byte count including start '/' and stop character '\n'
+#define HUGS_MAX_DATA 3   // Max variable Data Length'
+#define HUGS_EOM_OFFSET 7				// Location of EOM char based on variable data length
+#define USART_HUGS_TX_BYTES (HUGS_MAX_DATA + 8)  // Max buffeer size including
+#define USART_HUGS_RX_BYTES (HUGS_MAX_DATA + 8)  // start '/' and stop character '\n'
 
-// Variables which will be written by slave frame
-#endif
-#ifdef SLAVE
-#define USART_HUGS_TX_BYTES 5   // Transmit byte count including start '/' and stop character '\n'
-#define USART_HUGS_RX_BYTES 10  // Receive byte count including start '/' and stop character '\n'
+static bool 	 sHUGSRecord = FALSE;
+extern uint8_t usartHUGS_rx_buf[USART_HUGS_RX_BUFFERSIZE];
+static uint8_t sUSARTHUGSRecordBuffer[USART_HUGS_RX_BYTES];
+static uint8_t sUSARTHUGSRecordBufferCounter = 0;
 
-// Variables which will be send to master
-FlagStatus upperLEDMaster = RESET;
-FlagStatus lowerLEDMaster = RESET;
-FlagStatus mosfetOutMaster = RESET;
-FlagStatus beepsBackwardsMaster = RESET;
-
-// Variables which will be written by master frame
-int16_t currentDCMaster = 0;
-int16_t batteryMaster = 0;
-int16_t realSpeedMaster = 0;
-
-void CheckGeneralValue(uint8_t identifier, int16_t value);
-#endif
-
-extern uint8_t usartMasterSlave_rx_buf[USART_HUGS_RX_BUFFERSIZE];
-static uint8_t sMasterSlaveRecord = 0;
-static uint8_t sUSARTMasterSlaveRecordBuffer[USART_HUGS_RX_BYTES];
-static uint8_t sUSARTMasterSlaveRecordBufferCounter = 0;
-
-void CheckUSARTMasterSlaveInput(uint8_t u8USARTBuffer[]);
-void SendBuffer(uint32_t usart_periph, uint8_t buffer[], uint8_t length);
+void CheckUSARTHUGSInput(uint8_t u8USARTBuffer[]);
+void SendHUGSReply(void);
 uint16_t CalcCRC(uint8_t *ptr, int count);
 
+typedef enum {NOP = 0, RSP, ENA, DIS, SSP, SAP, SRP, DOG, XXX=0xFF} CMD_ID;
+typedef enum {NOR = 0, SPE, APO, RPO, VOL, AMP, TMP} RSP_ID;
+
+// Variables updated by HUGS Message
+uint8_t	  HUGS_Destination = 0;
+uint8_t	  HUGS_Sequence = 0;
+CMD_ID    HUGS_CommandID = NOP;
+RSP_ID		HUGS_ResponseID = NOR;
+bool			HUGS_Enabled = FALSE;
+bool			HUGS_ESTOP = FALSE;
+uint32_t	HUGS_WatchDog = TIMEOUT_MS;
+
+
 //----------------------------------------------------------------------------
-// Update USART master slave input
+// Update USART HUGS input
 //----------------------------------------------------------------------------
-void UpdateUSARTMasterSlaveInput(void)
+void UpdateUSARTHUGSInput(void)
 {
-	uint8_t character = usartMasterSlave_rx_buf[0];
+	uint8_t character = usartHUGS_rx_buf[0];
+	uint8_t length;
 	
 	// Start character is captured, start record
 	if (character == '/')
 	{
-		sUSARTMasterSlaveRecordBufferCounter = 0;
-		sMasterSlaveRecord = 1;
+		sUSARTHUGSRecordBufferCounter = 0;
+		sHUGSRecord = TRUE;
 	}
 
-	if (sMasterSlaveRecord)
+	// Process the new charcter
+	if (sHUGSRecord)
 	{
-		sUSARTMasterSlaveRecordBuffer[sUSARTMasterSlaveRecordBufferCounter] = character;
-		sUSARTMasterSlaveRecordBufferCounter++;
+		sUSARTHUGSRecordBuffer[sUSARTHUGSRecordBufferCounter] = character;
+		sUSARTHUGSRecordBufferCounter++;
 		
-		if (sUSARTMasterSlaveRecordBufferCounter >= USART_HUGS_RX_BYTES)
-		{
-			sUSARTMasterSlaveRecordBufferCounter = 0;
-			sMasterSlaveRecord = 0;
+	  // Check to see if we know the length yet
+		if (sUSARTHUGSRecordBufferCounter > 1) {
 			
-			// Check input
-			CheckUSARTMasterSlaveInput (sUSARTMasterSlaveRecordBuffer);
+			// Check for an invalid length, or a completed message
+			if ((length = sUSARTHUGSRecordBuffer[1]) > HUGS_MAX_DATA){
+				// Bad data length
+				sUSARTHUGSRecordBufferCounter = 0;
+				sHUGSRecord = FALSE;
+			}
+			else if (sUSARTHUGSRecordBufferCounter >=  (length + HUGS_EOM_OFFSET))
+			{
+				// Completed message lemgth
+				sUSARTHUGSRecordBufferCounter = 0;
+				sHUGSRecord = FALSE;
+			
+				// Check input
+				CheckUSARTHUGSInput (sUSARTHUGSRecordBuffer);
+			}
 		}
 	}
 }
 
 //----------------------------------------------------------------------------
-// Check USART master slave input
+// Check USART HUGS input
 //----------------------------------------------------------------------------
-void CheckUSARTMasterSlaveInput(uint8_t USARTBuffer[])
+void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 {
-#ifdef MASTER
-	// Result variables
-	FlagStatus upperLED = RESET;
-	FlagStatus lowerLED = RESET;
-	FlagStatus mosfetOut = RESET;
-	
-	// Auxiliary variables
-	uint8_t byte;
-#endif
-#ifdef SLAVE
-	// Result variables
-	int16_t pwmSlave = 0;
-	FlagStatus enable = RESET;
-	FlagStatus shutoff = RESET;
-	FlagStatus chargeStateLowActive = SET;
-	
-	// Auxiliary variables
-	uint8_t identifier = 0;
-	int16_t value = 0;
-	uint8_t byte;
-#endif
 	// Auxiliary variables
 	uint16_t crc;
+	uint8_t	length = USARTBuffer[1];	
 	
 	// Check start and stop character
 	if ( USARTBuffer[0] != '/' ||
-		USARTBuffer[USART_HUGS_RX_BYTES - 1] != '\n')
+		USARTBuffer[length + HUGS_EOM_OFFSET ] != '\n')
 	{
 		return;
 	}
 	
-	// Calculate CRC (first bytes except crc and stop byte)
-	crc = CalcCRC(USARTBuffer, USART_HUGS_RX_BYTES - 3);
+	// Calculate CRC (first bytes up to, not including crc)
+	crc = CalcCRC(USARTBuffer, length + 5 );
+	crc = 0; //  remove this later
 	
 	// Check CRC
-	if ( USARTBuffer[USART_HUGS_RX_BYTES - 3] != ((crc >> 8) & 0xFF) ||
-		USARTBuffer[USART_HUGS_RX_BYTES - 2] != (crc & 0xFF))
+	if ( USARTBuffer[length + 5] != ((crc >> 8) & 0xFF) ||
+		USARTBuffer[length + 6] != (crc & 0xFF))
 	{
 		return;
 	}
 	
-#ifdef MASTER
-	// Calculate setvalues for LED and mosfets
-	byte = USARTBuffer[1];
+	// command is valid.  Process it now
+	HUGS_Destination  = USARTBuffer[2] & 0x0F;
+	HUGS_Sequence     = (USARTBuffer[2] >> 4) & 0x0F;
+	HUGS_CommandID		= (CMD_ID)USARTBuffer[3] ;
+	HUGS_ResponseID		= (RSP_ID)USARTBuffer[4] ;
 	
-	//none = (byte & BIT(7)) ? SET : RESET;
-	//none = (byte & BIT(6)) ? SET : RESET;
-	//none = (byte & BIT(5)) ? SET : RESET;
-	//none = (byte & BIT(4)) ? SET : RESET;
-	mosfetOut = (byte & BIT(2)) ? SET : RESET;
-	lowerLED = (byte & BIT(1)) ? SET : RESET;
-	upperLED = (byte & BIT(0)) ? SET : RESET;
-	
-	// Set functions according to the variables
-	gpio_bit_write(MOSFET_OUT_PORT, MOSFET_OUT_PIN, mosfetOut);
-	gpio_bit_write(UPPER_LED_PORT, UPPER_LED_PIN, upperLED);
-	gpio_bit_write(LOWER_LED_PORT, LOWER_LED_PIN, lowerLED);
-#endif
-#ifdef SLAVE
-	// Calculate result pwm value -1000 to 1000
-	pwmSlave = (int16_t)((USARTBuffer[1] << 8) | USARTBuffer[2]);
-	
-	// Get identifier
-	identifier = USARTBuffer[3];
-	
-	// Calculate result general value
-	value = (int16_t)((USARTBuffer[4] << 8) | USARTBuffer[5]);
-	
-	// Calculate setvalues for enable and shutoff
-	byte = USARTBuffer[6];
-	
-	shutoff = (byte & BIT(7)) ? SET : RESET;
-	//none = (byte & BIT(6)) ? SET : RESET;
-	//none = (byte & BIT(5)) ? SET : RESET;
-	//none = (byte & BIT(4)) ? SET : RESET;
-	//none = (byte & BIT(3)) ? SET : RESET;
-	//none = (byte & BIT(2)) ? SET : RESET;
-	chargeStateLowActive = (byte & BIT(1)) ? SET : RESET;
-	enable = (byte & BIT(0)) ? SET : RESET;
-	
-	if (shutoff == SET)
-	{
-		// Disable usart
-		usart_deinit(USART_HUGS);
+	switch(HUGS_CommandID) {
+		case ENA:
+			HUGS_Enabled = TRUE;
+			HUGS_ESTOP = FALSE;
+			SetEnable(SET);
+			break;
+
+		case DIS:
+			HUGS_Enabled = FALSE;
+			SetEnable(RESET);
+		  break;
 		
-		// Set pwm and enable to off
-		SetEnable(RESET);
-		SetPWM(0);
-		
-		gpio_bit_write(SELF_HOLD_PORT, SELF_HOLD_PIN, RESET);
-		while(1)
-		{
-			// Reload watchdog until device is off
-			fwdgt_counter_reload();
-		}
+		case XXX:
+			HUGS_ESTOP = TRUE;
+			SetEnable(RESET);
+		  break;
+
+		case SSP:
+			SetPWM((int8_t)USARTBuffer[5] * 10);
+		  break;
+
+		case DOG:
+			SetPWM((int8_t)USARTBuffer[5] * 10);
+		  break;
+
+		default:
+		  break;
 	}
-	
-	// Set functions according to the variables
-	gpio_bit_write(LED_GREEN_PORT, LED_GREEN, chargeStateLowActive == SET ? SET : RESET);
-	gpio_bit_write(LED_RED_PORT, LED_RED, chargeStateLowActive == RESET ? SET : RESET);
-	SetEnable(enable);
-	SetPWM(pwmSlave);
-	CheckGeneralValue(identifier, value);
-	
+
 	// Send answer
-	SendMaster(upperLEDMaster, lowerLEDMaster, mosfetOutMaster, beepsBackwardsMaster);
+	SendHUGSReply();
 	
 	// Reset the pwm timout to avoid stopping motors
 	ResetTimeout();
-#endif
 }
-
-#ifdef MASTER
+	
 //----------------------------------------------------------------------------
-// Send slave frame via USART
+// Send reply frame via USART
 //----------------------------------------------------------------------------
-void SendSlave(int16_t pwmSlave, FlagStatus enable, FlagStatus shutoff, FlagStatus chargeState, uint8_t identifier, int16_t value)
+void SendHUGSReply()
 {
 	uint8_t index = 0;
 	uint16_t crc = 0;
 	uint8_t buffer[USART_HUGS_TX_BYTES];
 	
-	// Format pwmValue and general value
-	int16_t sendPwm = CLAMP(pwmSlave, -1000, 1000);
-	uint16_t sendPwm_Uint = (uint16_t)(sendPwm);
-	uint16_t value_Uint = (uint16_t)(value);
-	
-	uint8_t sendByte = 0;
-	sendByte |= (shutoff << 7);
-	sendByte |= (0 << 6);
-	sendByte |= (0 << 5);
-	sendByte |= (0 << 4);
-	sendByte |= (0 << 3);
-	sendByte |= (0 << 2);
-	sendByte |= (chargeState << 1);
-	sendByte |= (enable << 0);
-	
-	// Send answer
-	buffer[index++] = '/';
-	buffer[index++] = (sendPwm_Uint >> 8) & 0xFF;
-	buffer[index++] = sendPwm_Uint & 0xFF;
-	buffer[index++] = identifier;
-	buffer[index++] = (value_Uint >> 8) & 0xFF;
-	buffer[index++] = value_Uint & 0xFF;	
-	buffer[index++] = sendByte;
-	
-	// Calculate CRC
-  crc = CalcCRC(buffer, index);
-  buffer[index++] = (crc >> 8) & 0xFF;
-  buffer[index++] = crc & 0xFF;
-
-  // Stop byte
-  buffer[index++] = '\n';
-	
-	SendBuffer(USART_HUGS, buffer, index);
-}
-#endif
-#ifdef SLAVE
-//----------------------------------------------------------------------------
-// Send master frame via USART
-//----------------------------------------------------------------------------
-void SendMaster(FlagStatus upperLEDMaster, FlagStatus lowerLEDMaster, FlagStatus mosfetOutMaster, FlagStatus beepsBackwards)
-{
-	uint8_t index = 0;
-	uint16_t crc = 0;
-	uint8_t buffer[USART_HUGS_TX_BYTES];
-	
-	uint8_t sendByte = 0;
-	sendByte |= (0 << 7);
-	sendByte |= (0 << 6);
-	sendByte |= (0 << 5);
-	sendByte |= (0 << 4);
-	sendByte |= (beepsBackwards << 3);
-	sendByte |= (mosfetOutMaster << 2);
-	sendByte |= (lowerLEDMaster << 1);
-	sendByte |= (upperLEDMaster << 0);
-	
-	// Send answer
-	buffer[index++] = '/';
-	buffer[index++] = sendByte;
 	
 	// Calculate CRC
   crc = CalcCRC(buffer, index);
@@ -294,114 +194,3 @@ void SendMaster(FlagStatus upperLEDMaster, FlagStatus lowerLEDMaster, FlagStatus
 	SendBuffer(USART_HUGS, buffer, index);
 }
 
-//----------------------------------------------------------------------------
-// Checks input value from master to set value depending on identifier
-//----------------------------------------------------------------------------
-void CheckGeneralValue(uint8_t identifier, int16_t value)
-{
-	switch(identifier)
-	{
-		case 0:
-			currentDCMaster = value;
-			break;
-		case 1:
-			batteryMaster = value;
-			break;
-		case 2:
-			realSpeedMaster = value;
-			break;
-		case 3:
-			break;
-		default:
-			break;
-	}
-}
-
-//----------------------------------------------------------------------------
-// Returns current value sent by master
-//----------------------------------------------------------------------------
-int16_t GetCurrentDCMaster(void)
-{
-	return currentDCMaster;
-}
-
-//----------------------------------------------------------------------------
-// Returns battery value sent by master
-//----------------------------------------------------------------------------
-int16_t GetBatteryMaster(void)
-{
-	return batteryMaster;
-}
-
-//----------------------------------------------------------------------------
-// Returns realspeed value sent by master
-//----------------------------------------------------------------------------
-int16_t GetRealSpeedMaster(void)
-{
-	return realSpeedMaster;
-}
-
-//----------------------------------------------------------------------------
-// Sets upper LED value which will be send to master
-//----------------------------------------------------------------------------
-void SetUpperLEDMaster(FlagStatus value)
-{
-	upperLEDMaster = value;
-}
-
-//----------------------------------------------------------------------------
-// Returns upper LED value sent by master
-//----------------------------------------------------------------------------
-FlagStatus GetUpperLEDMaster(void)
-{
-	return upperLEDMaster;
-}
-
-//----------------------------------------------------------------------------
-// Sets lower LED value which will be send to master
-//----------------------------------------------------------------------------
-void SetLowerLEDMaster(FlagStatus value)
-{
-	lowerLEDMaster = value;
-}
-
-//----------------------------------------------------------------------------
-// Returns lower LED value sent by master
-//----------------------------------------------------------------------------
-FlagStatus GetLowerLEDMaster(void)
-{
-	return lowerLEDMaster;
-}
-
-//----------------------------------------------------------------------------
-// Sets mosfetOut value which will be send to master
-//----------------------------------------------------------------------------
-void SetMosfetOutMaster(FlagStatus value)
-{
-	mosfetOutMaster = value;
-}
-
-//----------------------------------------------------------------------------
-// Returns MosfetOut value sent by master
-//----------------------------------------------------------------------------
-FlagStatus GetMosfetOutMaster(void)
-{
-	return mosfetOutMaster;
-}
-
-//----------------------------------------------------------------------------
-// Sets beepsBackwards value which will be send to master
-//----------------------------------------------------------------------------
-void SetBeepsBackwardsMaster(FlagStatus value)
-{
-	beepsBackwardsMaster = value;
-}
-
-//----------------------------------------------------------------------------
-// Returns beepsBackwardsMaster value sent by master
-//----------------------------------------------------------------------------
-FlagStatus GetBeepsBackwardsMaster(void)
-{
-	return beepsBackwardsMaster;
-}
-#endif

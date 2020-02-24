@@ -32,74 +32,11 @@
 //----------------------------------------------------------------------------
 // Update USART master slave input
 //----------------------------------------------------------------------------
-void UpdateUSARTMasterSlaveInput(void);
-
-#ifdef MASTER
-//----------------------------------------------------------------------------
-// Send slave frame via USART
-//----------------------------------------------------------------------------
-void SendSlave(int16_t pwmSlave, FlagStatus enable, FlagStatus shutoff, FlagStatus chargeState, uint8_t identifier, int16_t value);
-#endif
-#ifdef SLAVE
-//----------------------------------------------------------------------------
-// Send master frame via USART
-//----------------------------------------------------------------------------
-void SendMaster(FlagStatus upperLEDMaster, FlagStatus lowerLEDMaster, FlagStatus mosfetOutMaster, FlagStatus beepsBackwards);
+void UpdateUSARTHUGSInput(void);
 
 //----------------------------------------------------------------------------
-// Returns current value sent by master
+// Send reply frame via USART
 //----------------------------------------------------------------------------
-int16_t GetCurrentDCMaster(void);
-
-//----------------------------------------------------------------------------
-// Returns battery value sent by master
-//----------------------------------------------------------------------------
-int16_t GetBatteryMaster(void);
-
-//----------------------------------------------------------------------------
-// Returns realspeed value sent by master
-//----------------------------------------------------------------------------
-int16_t GetRealSpeedMaster(void);
-
-//----------------------------------------------------------------------------
-// Sets upper LED value which will be send to master
-//----------------------------------------------------------------------------
-void SetUpperLEDMaster(FlagStatus value);
-
-//----------------------------------------------------------------------------
-// Returns upper LED value sent by master
-//----------------------------------------------------------------------------
-FlagStatus GetUpperLEDMaster(void);
-
-//----------------------------------------------------------------------------
-// Sets lower LED value which will be send to master
-//----------------------------------------------------------------------------
-void SetLowerLEDMaster(FlagStatus value);
-
-//----------------------------------------------------------------------------
-// Returns lower LED value sent by master
-//----------------------------------------------------------------------------
-FlagStatus GetLowerLEDMaster(void);
-	
-//----------------------------------------------------------------------------
-// Sets mosfetOut value which will be send to master
-//----------------------------------------------------------------------------
-void SetMosfetOutMaster(FlagStatus value);
-
-//----------------------------------------------------------------------------
-// Returns MosfetOut value sent by master
-//----------------------------------------------------------------------------
-FlagStatus GetMosfetOutMaster(void);
-
-//----------------------------------------------------------------------------
-// Sets beepsBackwards value which will be send to master
-//----------------------------------------------------------------------------
-void SetBeepsBackwardsMaster(FlagStatus value);
-
-//----------------------------------------------------------------------------
-// Returns beepsBackwardsMaster value sent by master
-//----------------------------------------------------------------------------
-FlagStatus GetBeepsBackwardsMaster(void);
-#endif
+void SendHUGSReply(void);
 
 #endif

@@ -162,23 +162,6 @@ void CalculateBLDC(void)
     batteryVoltage = batteryVoltage * 0.999 + ((float)adc_buffer.v_batt * ADC_BATTERY_VOLT) * 0.001;
   }
 	
-#ifdef MASTER
-	// Create square wave for buzzer
-  buzzerTimer++;
-  if (buzzerFreq != 0 && (buzzerTimer / 5000) % (buzzerPattern + 1) == 0)
-	{
-    if (buzzerTimer % buzzerFreq == 0)
-		{
-			buzzerToggle = buzzerToggle == RESET ? SET : RESET; // toggle variable
-		  gpio_bit_write(BUZZER_PORT, BUZZER_PIN, buzzerToggle);
-    }
-  }
-	else
-	{
-		gpio_bit_write(BUZZER_PORT, BUZZER_PIN, RESET);
-  }
-#endif
-	
 	// Calculate current DC
 	currentDC = ABS((adc_buffer.current_dc - offsetdc) * MOTOR_AMP_CONV_DC_AMP);
 

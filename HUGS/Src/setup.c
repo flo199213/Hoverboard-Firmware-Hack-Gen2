@@ -41,7 +41,7 @@ timer_oc_parameter_struct timerBldc_oc_parameter_struct;
 
 // DMA (USART) structs
 dma_parameter_struct dma_init_struct_usart;
-uint8_t usartMasterSlave_rx_buf[USART_HUGS_RX_BUFFERSIZE];
+uint8_t usartHUGS_rx_buf[USART_HUGS_RX_BUFFERSIZE];
 uint8_t usartSteer_COM_rx_buf[USART_STEER_COM_RX_BUFFERSIZE];
 
 // DMA (ADC) structs
@@ -408,7 +408,7 @@ void USART_HUGS_init(void)
 	// Initialize DMA channel 4 for USART_SLAVE RX
 	dma_deinit(DMA_CH4);
 	dma_init_struct_usart.direction = DMA_PERIPHERAL_TO_MEMORY;
-	dma_init_struct_usart.memory_addr = (uint32_t)usartMasterSlave_rx_buf;
+	dma_init_struct_usart.memory_addr = (uint32_t)usartHUGS_rx_buf;
 	dma_init_struct_usart.memory_inc = DMA_MEMORY_INCREASE_ENABLE;
 	dma_init_struct_usart.memory_width = DMA_MEMORY_WIDTH_8BIT;
 	dma_init_struct_usart.number = USART_HUGS_RX_BUFFERSIZE;
