@@ -123,16 +123,13 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 
 	// Calculate CRC (first bytes up to, not including crc)
 	crc = CalcCRC(USARTBuffer, length + 5 );
-	crc = 0; //  remove this later
 	
 	// Check CRC
-	/*
 	if ( USARTBuffer[length + 5] != ((crc >> 8) & 0xFF) ||
 		USARTBuffer[length + 6] != (crc & 0xFF))
 	{
 		return;
 	}
-	*/
 	
 	// command is valid.  Process it now
 	HUGS_Destination  = USARTBuffer[2] & 0x0F;
@@ -158,6 +155,7 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 		  break;
 
 		case SSP:
+			SetEnable(SET);  /// remove this later
 			SetPWM((int8_t)USARTBuffer[5] * 10);
 		  break;
 
@@ -181,22 +179,35 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 //----------------------------------------------------------------------------
 void SendHUGSReply()
 {
-	uint8_t index = 0;
+	uint8_t length = 0;
 	uint16_t crc = 0;
 	uint8_t buffer[USART_HUGS_TX_BYTES];
 	
 	
-	// Calculate CRC
-  crc = CalcCRC(buffer, index);
 	buffer[0] = '/';
 	buffer[1] = 0;
 	buffer[2] = HUGS_Sequence << 4;
 	buffer[3] = RSP;
 	buffer[4] = HUGS_ResponseID;
-  buffer[5] = (crc >> 8) & 0xFF;
-  buffer[6] = crc & 0xFF;
-	buffer[7] = '\n';
 
-	SendBuffer(USART_HUGS, buffer, buffer[1] + 8);
+	switch(HUGS_ResponseID) {
+		case SPE:
+			  length = 1;
+				buffer[5] = GetPWM() / 10;
+			break;
+		
+		default:
+			break;
+	}
+
+	buffer[1] = length;
+	
+	// Calculate CRC
+  crc = CalcCRC(buffer, length + 5);
+  buffer[length + 5] = (crc >> 8) & 0xFF;
+  buffer[length + 6] = crc & 0xFF;
+	buffer[length + 7] = '\n';
+	
+	SendBuffer(USART_HUGS, buffer, length + 8);
 }
 

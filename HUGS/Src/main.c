@@ -179,6 +179,16 @@ int main (void)
 //----------------------------------------------------------------------------
 void ShutOff(void)
 {
+	int index = 0;
+	buzzerPattern = 0;
+	
+	for (; index < 8; index++)
+	{
+		buzzerFreq = index;
+		Delay(10);
+	}
+	buzzerFreq = 0;
+
 	// Disable usart
 	usart_deinit(USART_HUGS);
 	

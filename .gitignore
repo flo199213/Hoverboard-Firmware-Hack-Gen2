@@ -2,3 +2,6 @@
 *.htm
 *.dep
 *.ids
+*.phil
+*.crf
+*.hex
