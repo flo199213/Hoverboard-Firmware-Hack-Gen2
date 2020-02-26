@@ -91,7 +91,7 @@ void UpdateUSARTHUGSInput(void)
 				sUSARTHUGSRecordBufferCounter = 0;
 				sHUGSRecord = FALSE;
 			}
-			else if (sUSARTHUGSRecordBufferCounter >=  (length + HUGS_EOM_OFFSET))
+			else if (sUSARTHUGSRecordBufferCounter >  (length + HUGS_EOM_OFFSET))
 			{
 				// Completed message lemgth
 				sUSARTHUGSRecordBufferCounter = 0;
@@ -112,24 +112,27 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	// Auxiliary variables
 	uint16_t crc;
 	uint8_t	length = USARTBuffer[1];	
-	
+
+
 	// Check start and stop character
 	if ( USARTBuffer[0] != '/' ||
 		USARTBuffer[length + HUGS_EOM_OFFSET ] != '\n')
 	{
 		return;
 	}
-	
+
 	// Calculate CRC (first bytes up to, not including crc)
 	crc = CalcCRC(USARTBuffer, length + 5 );
 	crc = 0; //  remove this later
 	
 	// Check CRC
+	/*
 	if ( USARTBuffer[length + 5] != ((crc >> 8) & 0xFF) ||
 		USARTBuffer[length + 6] != (crc & 0xFF))
 	{
 		return;
 	}
+	*/
 	
 	// command is valid.  Process it now
 	HUGS_Destination  = USARTBuffer[2] & 0x0F;
@@ -185,12 +188,15 @@ void SendHUGSReply()
 	
 	// Calculate CRC
   crc = CalcCRC(buffer, index);
-  buffer[index++] = (crc >> 8) & 0xFF;
-  buffer[index++] = crc & 0xFF;
+	buffer[0] = '/';
+	buffer[1] = 0;
+	buffer[2] = HUGS_Sequence << 4;
+	buffer[3] = RSP;
+	buffer[4] = HUGS_ResponseID;
+  buffer[5] = (crc >> 8) & 0xFF;
+  buffer[6] = crc & 0xFF;
+	buffer[7] = '\n';
 
-  // Stop byte
-  buffer[index++] = '\n';
-	
-	SendBuffer(USART_HUGS, buffer, index);
+	SendBuffer(USART_HUGS, buffer, buffer[1] + 8);
 }
 

@@ -53,6 +53,10 @@ extern bool			HUGS_Enabled;							// Set by HUGS communications
 extern bool			HUGS_ESTOP;
 extern uint16_t	HUGS_WatchDog;
 
+extern uint8_t buzzerFreq;    						// global variable for the buzzer pitch. can be 1, 2, 3, 4, 5, 6, 7...
+extern uint8_t buzzerPattern; 						// global variable for the buzzer pattern. can be 1, 2, 3, 4, 5, 6, 7...
+
+
 uint16_t command_timeout_counter = 0;	    // motor safety counter ms From last command
 uint32_t inactivity_timeout_counter = 0;	// Inactivity counter ms From last command
 
@@ -107,6 +111,12 @@ int main (void)
 	// Init usart steer/bluetooth
 	USART_Steer_COM_init();
 
+	// Startup-Sound
+	buzzerFreq = 7;
+  Delay(100);
+	fwdgt_counter_reload();
+  buzzerFreq = 0;
+
 	// Wait until button is pressed
 	while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN))
 	{
@@ -116,6 +126,8 @@ int main (void)
 
   while(1)
 	{
+
+
 		// Read charge state
 		chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
 		

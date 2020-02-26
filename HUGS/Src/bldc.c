@@ -148,6 +148,18 @@ void CalculateBLDC(void)
 	int b = 0;     // blue   = phase B
 	int g = 0;     // green  = phase C
 	
+	// Create square wave for buzzer
+	buzzerTimer++;
+	if (buzzerFreq != 0 && (buzzerTimer / 5000) % (buzzerPattern + 1) == 0){
+		if (buzzerTimer % buzzerFreq == 0){
+			buzzerToggle = buzzerToggle == RESET ? SET : RESET; // toggle variable
+			gpio_bit_write(BUZZER_PORT, BUZZER_PIN, buzzerToggle);
+		}
+	}else{
+		gpio_bit_write(BUZZER_PORT, BUZZER_PIN, RESET);
+	}
+
+	
 	// Calibrate ADC offsets for the first 1000 cycles
   if (offsetcount < 1000)
 	{  

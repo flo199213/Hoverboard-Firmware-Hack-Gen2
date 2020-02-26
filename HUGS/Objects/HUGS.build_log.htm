@@ -17,7 +17,7 @@ Library Manager: ArmAr.exe V5.06 update 6 (build 750)
 Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
 CPU DLL:         SARMCM3.DLL V5.29.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      UL2CM3.DLL V1.163.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
@@ -27,18 +27,12 @@ Project File Date:  02/21/2020
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling bldc.c...
-compiling setup.c...
-compiling main.c...
-Src\main.c(69): warning:  #550-D: variable "chargeStateLowActive"  was set but never used
-  	FlagStatus chargeStateLowActive = SET;
-Src\main.c: 1 warning, 0 errors
-compiling it.c...
-compiling led.c...
-compiling commsSteering.c...
 compiling commsHUGS.c...
+Src\commsHUGS.c(113): warning:  #550-D: variable "crc"  was set but never used
+  	uint16_t crc;
+Src\commsHUGS.c: 1 warning, 0 errors
 linking...
-Program Size: Code=19096 RO-data=404 RW-data=100 ZI-data=2292  
+Program Size: Code=19252 RO-data=404 RW-data=100 ZI-data=2292  
 FromELF: creating hex file...
 ".\Objects\HUGS.axf" - 0 Error(s), 1 Warning(s).
 
@@ -82,16 +76,16 @@ Package Vendor: GigaDevice
    * Component: ARM::CMSIS:CORE:5.3.0
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:ADC:3.1.0
-      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_adc.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_adc.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_adc.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:DMA:3.1.0
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_dma.h
       Source file:   Device\Firmware\Peripherals\src\gd32f1x0_dma.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:FWDGT:3.1.0
-      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h
       Source file:   Device\Firmware\Peripherals\src\gd32f1x0_fwdgt.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:GPIO:3.1.0
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h
@@ -106,36 +100,36 @@ Package Vendor: GigaDevice
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:MISC:3.1.0
-      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_misc.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_misc.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_misc.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:OPA:3.1.0
       Source file:   Device\Firmware\Peripherals\src\gd32f1x0_opa.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_opa.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:PMU:3.1.0
-      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h
       Source file:   Device\Firmware\Peripherals\src\gd32f1x0_pmu.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:RCU:3.1.0
-      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_rcu.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_rcu.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:SYSCFG:3.1.0
-      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h
       Source file:   Device\Firmware\Peripherals\src\gd32f1x0_syscfg.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:TIMER:3.1.0
-      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_timer.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_timer.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_timer.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:USART:3.1.0
-      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_usart.c
       Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_usart.h
+      Source file:   Device\Firmware\Peripherals\src\gd32f1x0_usart.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:WWDGT:3.1.0
-      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h
       Source file:   Device\Firmware\Peripherals\src\gd32f1x0_wwdgt.c
+      Include file:  Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h
 
    * Component: GigaDevice::Device:GD32F1x0_libopt:3.1.0
       Include file:  Device\Include\gd32f1x0_libopt.h
@@ -144,7 +138,7 @@ Package Vendor: GigaDevice
       Include file:  Device\Include\gd32f1x0.h
       Source file:   Device\Source\startup_gd32f1x0.s
       Source file:   Device\Source\system_gd32f1x0.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
