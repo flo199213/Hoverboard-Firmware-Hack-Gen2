@@ -38,18 +38,25 @@
 #define HUGS_EOM_OFFSET 7				// Location of EOM char based on variable data length
 #define USART_HUGS_TX_BYTES (HUGS_MAX_DATA + 8)  // Max buffeer size including
 #define USART_HUGS_RX_BYTES (HUGS_MAX_DATA + 8)  // start '/' and stop character '\n'
+#define MM_PER_CYCLE 36 //  36.11
 
 static bool 	 sHUGSRecord = FALSE;
+
 extern uint8_t usartHUGS_rx_buf[USART_HUGS_RX_BUFFERSIZE];
 static uint8_t sUSARTHUGSRecordBuffer[USART_HUGS_RX_BYTES];
 static uint8_t sUSARTHUGSRecordBufferCounter = 0;
+
+extern uint16_t batteryVoltagemV;
+extern uint16_t currentDCmA     ;
+extern int16_t  realSpeedmmPS   ;
+extern int32_t  cycles      ;
 
 void CheckUSARTHUGSInput(uint8_t u8USARTBuffer[]);
 void SendHUGSReply(void);
 uint16_t CalcCRC(uint8_t *ptr, int count);
 
-typedef enum {NOP = 0, RSP, ENA, DIS, SSP, SAP, SRP, DOG, XXX=0xFF} CMD_ID;
-typedef enum {NOR = 0, SPE, APO, RPO, VOL, AMP, TMP} RSP_ID;
+typedef enum {NOP = 0, RSP, ENA, DIS, POW, ABS, REL, DOG, RES} CMD_ID;
+typedef enum {NOR = 0, VEL, POS, VOL, AMP, SPE} RSP_ID;
 
 // Variables updated by HUGS Message
 uint8_t	  HUGS_Destination = 0;
@@ -57,8 +64,7 @@ uint8_t	  HUGS_Sequence = 0;
 CMD_ID    HUGS_CommandID = NOP;
 RSP_ID		HUGS_ResponseID = NOR;
 bool			HUGS_Enabled = FALSE;
-bool			HUGS_ESTOP = FALSE;
-uint32_t	HUGS_WatchDog = TIMEOUT_MS;
+uint16_t	HUGS_WatchDog = 2000 ; // TIMEOUT_MS;
 
 
 //----------------------------------------------------------------------------
@@ -113,7 +119,6 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	uint16_t crc;
 	uint8_t	length = USARTBuffer[1];	
 
-
 	// Check start and stop character
 	if ( USARTBuffer[0] != '/' ||
 		USARTBuffer[length + HUGS_EOM_OFFSET ] != '\n')
@@ -140,7 +145,6 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	switch(HUGS_CommandID) {
 		case ENA:
 			HUGS_Enabled = TRUE;
-			HUGS_ESTOP = FALSE;
 			SetEnable(SET);
 			break;
 
@@ -149,18 +153,20 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 			SetEnable(RESET);
 		  break;
 		
-		case XXX:
-			HUGS_ESTOP = TRUE;
-			SetEnable(RESET);
-		  break;
-
-		case SSP:
-			SetEnable(SET);  /// remove this later
+		case POW:
+			HUGS_Enabled = TRUE;
+			SetEnable(SET);  
 			SetPWM((int8_t)USARTBuffer[5] * 10);
 		  break;
 
 		case DOG:
-			SetPWM((int8_t)USARTBuffer[5] * 10);
+			// save the new watchdog count (in ms)
+			HUGS_WatchDog = ((uint16_t)USARTBuffer[5] << 8) +  (uint16_t)USARTBuffer[6];
+		  break;
+
+		case RES:
+			// reset the current wheel position
+			cycles = 0;
 		  break;
 
 		default:
@@ -179,23 +185,54 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 //----------------------------------------------------------------------------
 void SendHUGSReply()
 {
-	uint8_t length = 0;
+	uint8_t length = 1;
 	uint16_t crc = 0;
 	uint8_t buffer[USART_HUGS_TX_BYTES];
+	uint8_t bitStatus = 0;
+	int32_t positionMm;
 	
 	
 	buffer[0] = '/';
-	buffer[1] = 0;
+	buffer[1] = 1;
 	buffer[2] = HUGS_Sequence << 4;
 	buffer[3] = RSP;
 	buffer[4] = HUGS_ResponseID;
+	buffer[5] = bitStatus;
 
 	switch(HUGS_ResponseID) {
 		case SPE:
-			  length = 1;
-				buffer[5] = GetPWM() / 10;
+			  length = 2;
+				buffer[6] = GetPWM() / 10;
 			break;
 		
+		case VOL:
+			  length = 3;
+				buffer[6] = batteryVoltagemV >> 8;
+				buffer[7] = batteryVoltagemV & 0xFF ;
+			break;
+
+		case AMP:
+			  length = 3;
+				buffer[6] = currentDCmA >> 8;
+				buffer[7] = currentDCmA & 0xFF ;
+			break;
+
+		case VEL:
+			  length = 3;
+				buffer[6] = realSpeedmmPS >> 8;
+				buffer[7] = realSpeedmmPS & 0xFF ;
+		
+			break;
+
+		case POS:
+			  length = 5;
+				positionMm = cycles * MM_PER_CYCLE ;
+				buffer[6] = (positionMm >> 24) & 0xFF;
+				buffer[7] = (positionMm >> 16) & 0xFF;
+				buffer[8] = (positionMm >>  8) & 0xFF;
+				buffer[9] = (positionMm) & 0xFF;
+			break;
+
 		default:
 			break;
 	}

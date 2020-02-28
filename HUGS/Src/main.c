@@ -43,15 +43,12 @@
 int32_t speed = 0; 												// global variable for speed.    -1000 to 1000
 FlagStatus activateWeakening = RESET;			// global variable for weakening
 			
-extern float batteryVoltage; 							// global variable for battery voltage
-extern float currentDC; 									// global variable for current dc
-extern float realSpeed; 									// global variable for real Speed
+extern uint16_t batteryVoltagemV;					// global variable for battery voltage
 	
 extern FlagStatus timedOut;								// Timeoutvariable set by timeout timer
 
 extern bool			HUGS_Enabled;							// Set by HUGS communications
 extern bool			HUGS_ESTOP;
-extern uint16_t	HUGS_WatchDog;
 
 extern uint8_t buzzerFreq;    						// global variable for the buzzer pitch. can be 1, 2, 3, 4, 5, 6, 7...
 extern uint8_t buzzerPattern; 						// global variable for the buzzer pattern. can be 1, 2, 3, 4, 5, 6, 7...
@@ -126,25 +123,23 @@ int main (void)
 
   while(1)
 	{
-
-
 		// Read charge state
 		chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
 		
 		// Show green battery symbol when battery level BAT_LOW_LVL1 is reached
-    if (batteryVoltage > BAT_LOW_LVL1)
+    if (batteryVoltagemV > BAT_LOW_LVL1_MV)
 		{
 			// Show green battery light
 			ShowBatteryState(LED_GREEN);
 		}
 		// Make silent sound and show orange battery symbol when battery level BAT_LOW_LVL2 is reached
-    else if (batteryVoltage > BAT_LOW_LVL2 && batteryVoltage < BAT_LOW_LVL1)
+    else if (batteryVoltagemV > BAT_LOW_LVL2_MV && batteryVoltagemV < BAT_LOW_LVL1_MV)
 		{
 			// Show orange battery light
 			ShowBatteryState(LED_ORANGE);
     }
 		// Make even more sound and show red battery symbol when battery level BAT_LOW_DEAD is reached
-		else if  (batteryVoltage > BAT_LOW_DEAD && batteryVoltage < BAT_LOW_LVL2)
+		else if  (batteryVoltagemV > BAT_LOW_DEAD_MV && batteryVoltagemV < BAT_LOW_LVL2_MV)
 		{
 			// Show red battery light
 			ShowBatteryState(LED_RED);

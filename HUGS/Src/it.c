@@ -38,7 +38,7 @@ FlagStatus timedOut = SET;
 
 extern int32_t speed;
 extern FlagStatus activateWeakening;
-extern int32_t HUGS_WatchDog;
+extern int16_t HUGS_WatchDog;
 
 //----------------------------------------------------------------------------
 // SysTick_Handler

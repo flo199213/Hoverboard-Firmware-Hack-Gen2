@@ -31,10 +31,15 @@
 // Internal constants
 const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2000
 
-// Global variables for voltage and current
-float batteryVoltage = 40.0;
-float currentDC = 0.0;
-float realSpeed = 0.0;
+const int32_t WHEEL_PERIMETER = 542 ;  // mm
+const int32_t SPEED_CONVERSION_FACTOR = 1156000 ;  // (((WHEEL_PERIMETER/90.0)*6.0)/31.25)*1000000 ; //90=steps in one turn of wheel, 6=steps in one turn of the phases, 31.25=time duration in usec for each speedcounter increment, 1000000 = conversion from mm/uS to mm/Sec
+
+uint16_t batteryVoltagemV = 40000;
+uint16_t currentDCmA      = 0;
+int16_t realSpeedmmPS     = 0;
+int32_t cycles            = 0;
+int32_t speedCounter 			= 0;
+int8_t  stepDir						= 0;
 
 // Timeoutvariable set by timeout timer
 extern FlagStatus timedOut;
@@ -61,7 +66,6 @@ uint8_t buzzerPattern = 0;
 uint16_t buzzerTimer = 0;
 int16_t offsetcount = 0;
 int16_t offsetdc = 2000;
-uint32_t speedCounter = 0;
 
 //----------------------------------------------------------------------------
 // Commutation table
@@ -155,6 +159,7 @@ void CalculateBLDC(void)
 	int y = 0;     // yellow = phase A
 	int b = 0;     // blue   = phase B
 	int g = 0;     // green  = phase C
+	int8_t stepDif;
 	
 	// Create square wave for buzzer
 	buzzerTimer++;
@@ -176,17 +181,19 @@ void CalculateBLDC(void)
     return;
   }
 	
-	// Calculate battery voltage every 100 cycles
+	// Calculate battery voltage & current every 100 cycles
   if (buzzerTimer % 100 == 0)
 	{
-    batteryVoltage = batteryVoltage * 0.999 + ((float)adc_buffer.v_batt * ADC_BATTERY_VOLT) * 0.001;
+		uint16_t tempV = (uint16_t)(((uint32_t)adc_buffer.v_batt * ADC_BATTERY_MICRO_VOLT) / 1000);
+ 		uint16_t tempI = (uint16_t)((ABS((adc_buffer.current_dc - offsetdc) * MOTOR_AMP_CONV_DC_MICRO_AMP)) / 1000);
+
+		batteryVoltagemV 	+= ((tempV - batteryVoltagemV) / 100);
+		currentDCmA 			+= ((tempI - currentDCmA) / 100);
   }
 	
-	// Calculate current DC
-	currentDC = ABS((adc_buffer.current_dc - offsetdc) * MOTOR_AMP_CONV_DC_AMP);
 
   // Disable PWM when current limit is reached (current chopping), enable is not set or timeout is reached
-	if (currentDC > DC_CUR_LIMIT || bldc_enable == RESET || timedOut == SET)
+	if (currentDCmA > DC_CUR_LIMIT_MA || bldc_enable == RESET || timedOut == SET)
 	{
 		timer_automatic_output_disable(TIMER_BLDC);		
   }
@@ -204,6 +211,15 @@ void CalculateBLDC(void)
   hall = hall_a * 1 + hall_b * 2 + hall_c * 4;
   pos = hall_to_pos[hall];
 	
+	// Determine if we are stepping forward or backwards
+	if (pos != lastPos) {
+		stepDif = pos - lastPos;
+		if ((stepDif == 1) ||  (stepDif == -5))
+			stepDir = -1;
+		else if ((stepDif == -1) || (stepDif == 5))
+			stepDir = +1;
+	}
+	
 	// Calculate low-pass filter for pwm value
 	filter_reg = filter_reg - (filter_reg >> FILTER_SHIFT) + bldc_inputFilterPwm;
 	bldc_outputFilterPwm = filter_reg >> FILTER_SHIFT;
@@ -217,23 +233,22 @@ void CalculateBLDC(void)
 	timer_channel_output_pulse_value_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_Y, CLAMP(y + pwm_res / 2, 10, pwm_res-10));
 	
 	// Increments with 62.5us
-	if(speedCounter < 4000) // No speed after 250ms
+	if((speedCounter < 16000) && (speedCounter > -16000)) // No speed after 1000 ms
 	{
-		speedCounter++;
+		speedCounter += stepDir;
+	} else {
+		speedCounter = 0;
+		realSpeedmmPS = 0;
 	}
 	
 	// Every time position reaches value 1, one round is performed (rising edge)
 	if (lastPos != 1 && pos == 1)
 	{
-		realSpeed = 1991.81f / (float)speedCounter; //[km/h]
-		speedCounter = 0;
-	}
-	else
-	{
-		if (speedCounter >= 4000)
-		{
-			realSpeed = 0;
+		if (speedCounter != 0) {
+			realSpeedmmPS = SPEED_CONVERSION_FACTOR / speedCounter; //  [mm/S]
+			speedCounter = 0;
 		}
+		cycles += stepDir;
 	}
 
 	// Safe last position
