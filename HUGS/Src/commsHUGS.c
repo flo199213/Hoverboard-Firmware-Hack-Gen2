@@ -34,13 +34,13 @@
 #include "stdio.h"
 #include "string.h"
 
-#define HUGS_MAX_DATA 3   // Max variable Data Length'
+#define HUGS_MAX_DATA 5  			  // Max variable Data Length'
 #define HUGS_EOM_OFFSET 7				// Location of EOM char based on variable data length
 #define USART_HUGS_TX_BYTES (HUGS_MAX_DATA + 8)  // Max buffeer size including
 #define USART_HUGS_RX_BYTES (HUGS_MAX_DATA + 8)  // start '/' and stop character '\n'
 #define MM_PER_CYCLE 36 //  36.11
 
-static bool 	 sHUGSRecord = FALSE;
+static bool 	  sHUGSRecord = FALSE;
 
 extern uint8_t usartHUGS_rx_buf[USART_HUGS_RX_BUFFERSIZE];
 static uint8_t sUSARTHUGSRecordBuffer[USART_HUGS_RX_BYTES];
@@ -54,17 +54,20 @@ extern int32_t  cycles      ;
 void CheckUSARTHUGSInput(uint8_t u8USARTBuffer[]);
 void SendHUGSReply(void);
 uint16_t CalcCRC(uint8_t *ptr, int count);
+void ShutOff(void);
 
-typedef enum {NOP = 0, RSP, ENA, DIS, POW, ABS, REL, DOG, RES} CMD_ID;
-typedef enum {NOR = 0, VEL, POS, VOL, AMP, SPE} RSP_ID;
+
+typedef enum {NOP = 0, RSP, ENA, DIS, POW, ABS, REL, DOG, RES, XXX = 0xFF} CMD_ID;
+typedef enum {NOR = 0, SVEL, SPOS, SVOL, SAMP, SPOW, SDOG} RSP_ID;
 
 // Variables updated by HUGS Message
+uint16_t	HUGS_WatchDog = 1000 ; // TIMEOUT_MS;
 uint8_t	  HUGS_Destination = 0;
 uint8_t	  HUGS_Sequence = 0;
 CMD_ID    HUGS_CommandID = NOP;
 RSP_ID		HUGS_ResponseID = NOR;
 bool			HUGS_Enabled = FALSE;
-uint16_t	HUGS_WatchDog = 2000 ; // TIMEOUT_MS;
+
 
 
 //----------------------------------------------------------------------------
@@ -169,6 +172,11 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 			cycles = 0;
 		  break;
 
+		case XXX:
+			// powerdown
+			ShutOff();
+		  break;
+
 		default:
 		  break;
 	}
@@ -200,37 +208,42 @@ void SendHUGSReply()
 	buffer[5] = bitStatus;
 
 	switch(HUGS_ResponseID) {
-		case SPE:
-			  length = 2;
-				buffer[6] = GetPWM() / 10;
-			break;
-		
-		case VOL:
-			  length = 3;
-				buffer[6] = batteryVoltagemV >> 8;
-				buffer[7] = batteryVoltagemV & 0xFF ;
-			break;
-
-		case AMP:
-			  length = 3;
-				buffer[6] = currentDCmA >> 8;
-				buffer[7] = currentDCmA & 0xFF ;
-			break;
-
-		case VEL:
+		case SVEL:
 			  length = 3;
 				buffer[6] = realSpeedmmPS >> 8;
 				buffer[7] = realSpeedmmPS & 0xFF ;
-		
 			break;
 
-		case POS:
+		case SPOS:
 			  length = 5;
 				positionMm = cycles * MM_PER_CYCLE ;
 				buffer[6] = (positionMm >> 24) & 0xFF;
 				buffer[7] = (positionMm >> 16) & 0xFF;
 				buffer[8] = (positionMm >>  8) & 0xFF;
 				buffer[9] = (positionMm) & 0xFF;
+			break;
+
+		case SVOL:
+			  length = 3;
+				buffer[6] = batteryVoltagemV >> 8;
+				buffer[7] = batteryVoltagemV & 0xFF ;
+			break;
+
+		case SAMP:
+			  length = 3;
+				buffer[6] = currentDCmA >> 8;
+				buffer[7] = currentDCmA & 0xFF ;
+			break;
+
+		case SPOW:
+			  length = 2;
+				buffer[6] = GetPWM() / 10;
+			break;
+		
+		case SDOG:
+			  length = 3;
+				buffer[6] = HUGS_WatchDog >> 8;
+				buffer[7] = HUGS_WatchDog & 0xFF ;
 			break;
 
 		default:

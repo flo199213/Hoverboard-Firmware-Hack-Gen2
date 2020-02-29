@@ -59,11 +59,11 @@ void ResetTimeout(void)
 //----------------------------------------------------------------------------
 // Timer13_Update_Handler
 // Is called when upcouting of timer13 is finished and the UPDATE-flag is set
-// -> period of timer13 running with 1kHz -> interrupt every 1ms
+// -> period of timer13 running with 1kHz -> interrupt every 1ms  (actually 500 uS)
 //----------------------------------------------------------------------------
 void TIMER13_IRQHandler(void)
 {	
-	if (timeoutCounter_ms > HUGS_WatchDog)
+	if (timeoutCounter_ms > (HUGS_WatchDog << 1))
 	{
 		// First timeout reset all process values
 		if (timedOut == RESET)

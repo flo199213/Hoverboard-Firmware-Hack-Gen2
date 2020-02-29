@@ -29,7 +29,7 @@ I (Src\../Inc/setup.h)(0x5E55F8B5)
 I (Src\../Inc/../Inc/config.h)(0x5E57EEFA)
 I (Src\../Inc/defines.h)(0x5E57E7C2)
 I (Src\../Inc/it.h)(0x5E50A8E7)
-I (Src\../Inc/bldc.h)(0x5E56929D)
+I (Src\../Inc/bldc.h)(0x5E59236B)
 I (Src\../Inc/commsHUGS.h)(0x5E55F8B5)
 I (Src\../Inc/commsSteering.h)(0x5E50A8E7)
 I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B88EA)
@@ -64,7 +64,7 @@ I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Fi
 I (Src\../Inc/setup.h)(0x5E55F8B5)
 I (Src\../Inc/../Inc/config.h)(0x5E57EEFA)
 I (Src\../Inc/defines.h)(0x5E57E7C2)
-F (.\Src\setup.c)(0x5E55F8B5)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\setup.o --omf_browse .\objects\setup.crf --depend .\objects\setup.d)
+F (.\Src\setup.c)(0x5E593B87)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\setup.o --omf_browse .\objects\setup.crf --depend .\objects\setup.d)
 I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
 I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
@@ -93,7 +93,7 @@ I (Src\../Inc/setup.h)(0x5E55F8B5)
 I (Src\../Inc/../Inc/config.h)(0x5E57EEFA)
 I (Src\../Inc/defines.h)(0x5E57E7C2)
 I (Src\../Inc/it.h)(0x5E50A8E7)
-F (.\Src\it.c)(0x5E57E149)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\it.o --omf_browse .\objects\it.crf --depend .\objects\it.d)
+F (.\Src\it.c)(0x5E593B87)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\it.o --omf_browse .\objects\it.crf --depend .\objects\it.d)
 I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
 I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
@@ -121,7 +121,7 @@ I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Fi
 I (Src\../Inc/it.h)(0x5E50A8E7)
 I (Src\../Inc/../Inc/config.h)(0x5E57EEFA)
 I (Src\../Inc/defines.h)(0x5E57E7C2)
-I (Src\../Inc/bldc.h)(0x5E56929D)
+I (Src\../Inc/bldc.h)(0x5E59236B)
 I (Src\../Inc/led.h)(0x5E50A8E7)
 I (Src\../Inc/commsHUGS.h)(0x5E55F8B5)
 I (Src\../Inc/commsSteering.h)(0x5E50A8E7)
@@ -181,7 +181,7 @@ I (Src\../Inc/comms.h)(0x5E50A8E7)
 I (Src\../Inc/commsSteering.h)(0x5E50A8E7)
 I (Src\../Inc/setup.h)(0x5E55F8B5)
 I (Src\../Inc/defines.h)(0x5E57E7C2)
-I (Src\../Inc/bldc.h)(0x5E56929D)
+I (Src\../Inc/bldc.h)(0x5E59236B)
 I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B88EA)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B88E8)
 F (.\Src\led.c)(0x5E50A8E7)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
@@ -212,7 +212,7 @@ I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Fi
 I (Src\../Inc/led.h)(0x5E50A8E7)
 I (Src\../Inc/../Inc/config.h)(0x5E57EEFA)
 I (Src\../Inc/defines.h)(0x5E57E7C2)
-F (.\Src\commsHUGS.c)(0x5E58986C)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\commshugs.o --omf_browse .\objects\commshugs.crf --depend .\objects\commshugs.d)
+F (.\Src\commsHUGS.c)(0x5E598F71)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\commshugs.o --omf_browse .\objects\commshugs.crf --depend .\objects\commshugs.d)
 I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
 I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
@@ -243,12 +243,12 @@ I (Src\../Inc/comms.h)(0x5E50A8E7)
 I (Src\../Inc/commsHUGS.h)(0x5E55F8B5)
 I (Src\../Inc/setup.h)(0x5E55F8B5)
 I (Src\../Inc/defines.h)(0x5E57E7C2)
-I (Src\../Inc/bldc.h)(0x5E56929D)
+I (Src\../Inc/bldc.h)(0x5E59236B)
 I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B88EA)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B88E8)
 F (.\Inc\defines.h)(0x5E57E7C2)()
 F (.\Inc\config.h)(0x5E57EEFA)()
-F (.\Inc\bldc.h)(0x5E56929D)()
+F (.\Inc\bldc.h)(0x5E59236B)()
 F (.\Inc\setup.h)(0x5E55F8B5)()
 F (.\Inc\it.h)(0x5E50A8E7)()
 F (.\Inc\comms.h)(0x5E50A8E7)()

@@ -45,7 +45,7 @@ void SetPWM(int16_t setPwm);
 int16_t GetPWM(void);
 
 //----------------------------------------------------------------------------
-// Calculation-Routine for BLDC => calculates with 16kHz
+// Calculation-Routine for BLDC => calculates with 32kHz
 //----------------------------------------------------------------------------
 void CalculateBLDC(void);
 
