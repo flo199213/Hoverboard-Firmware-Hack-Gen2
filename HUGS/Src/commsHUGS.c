@@ -58,9 +58,10 @@ void ShutOff(void);
 
 
 typedef enum {NOP = 0, RSP, ENA, DIS, POW, ABS, REL, DOG, RES, XXX = 0xFF} CMD_ID;
-typedef enum {NOR = 0, SVEL, SPOS, SVOL, SAMP, SPOW, SDOG} RSP_ID;
+typedef enum {NOR = 0, SVEL, SPOS, SVOL, SAMP, SPOW, SDOG, STOP} RSP_ID;
 
 // Variables updated by HUGS Message
+bool			HUGS_ESTOP = FALSE;
 uint16_t	HUGS_WatchDog = 1000 ; // TIMEOUT_MS;
 uint8_t	  HUGS_Destination = 0;
 uint8_t	  HUGS_Sequence = 0;
@@ -174,7 +175,8 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 
 		case XXX:
 			// powerdown
-			ShutOff();
+			HUGS_ESTOP = TRUE;
+			HUGS_ResponseID = STOP;
 		  break;
 
 		default:
@@ -244,6 +246,10 @@ void SendHUGSReply()
 			  length = 3;
 				buffer[6] = HUGS_WatchDog >> 8;
 				buffer[7] = HUGS_WatchDog & 0xFF ;
+			break;
+
+		case STOP:
+			  length = 1;
 			break;
 
 		default:

@@ -162,6 +162,10 @@ int main (void)
       ShutOff();
     }
 
+		if (HUGS_ESTOP) {
+      ShutOff();
+		}
+		
 		Delay(DELAY_IN_MAIN_LOOP);
 		
 		// Reload watchdog (watchdog fires after 1,6 seconds)
