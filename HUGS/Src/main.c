@@ -123,6 +123,12 @@ int main (void)
 
   while(1)
 	{
+		// Shut device if ESTOP requested or when button is pressed
+		if (HUGS_ESTOP  || gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN))
+		{
+			ShutOff();
+    }
+
 		// Read charge state
 		chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
 		
@@ -149,23 +155,12 @@ int main (void)
 			ShutOff();
     }
 
-		// Shut device off when button is pressed
-		if (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN))
-		{
-      while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)) {}
-			ShutOff();
-    }
-		
 		// Shut off device after INACTIVITY_TIMEOUT in minutes
     if (inactivity_timeout_counter++ > (INACTIVITY_TIMEOUT * 60 * 1000) / (DELAY_IN_MAIN_LOOP + 1))
 		{ 
       ShutOff();
     }
 
-		if (HUGS_ESTOP) {
-      ShutOff();
-		}
-		
 		Delay(DELAY_IN_MAIN_LOOP);
 		
 		// Reload watchdog (watchdog fires after 1,6 seconds)
@@ -180,8 +175,19 @@ void ShutOff(void)
 {
 	int index = 0;
 	buzzerPattern = 0;
+
+	// Reload watchdog (watchdog fires after 1,6 seconds)
+	fwdgt_counter_reload();
 	
-	for (; index < 8; index++)
+	// Ensure that drive is off and estop status set.
+	SetPWM(0);
+	HUGS_Enabled = FALSE;
+	HUGS_ESTOP   = TRUE;	
+	SetEnable(RESET);
+	SendHUGSReply();			// Transfer ESTOP to Controller
+
+	// Play shutdown sound
+	for (index = 0; index < 8; index++)
 	{
 		buzzerFreq = index;
 		Delay(10);
@@ -191,9 +197,7 @@ void ShutOff(void)
 	// Disable usart
 	usart_deinit(USART_HUGS);
 	
-	// Set pwm and enable to off
-	SetEnable(RESET);
-	
+	// Turn off power
 	gpio_bit_write(SELF_HOLD_PORT, SELF_HOLD_PIN, RESET);
 	while(1)
 	{

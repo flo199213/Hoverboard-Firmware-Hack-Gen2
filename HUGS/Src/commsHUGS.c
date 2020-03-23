@@ -198,7 +198,7 @@ void SendHUGSReply()
 	uint8_t length = 1;
 	uint16_t crc = 0;
 	uint8_t buffer[USART_HUGS_TX_BYTES];
-	uint8_t bitStatus = 0;
+	uint8_t bitStatus = HUGS_ESTOP ? 0x01 : 0x00;
 	int32_t positionMm;
 	
 	
