@@ -27,3 +27,4 @@
 .\objects\bldc.o: Src\../Inc/setup.h
 .\objects\bldc.o: Src\../Inc/../Inc/config.h
 .\objects\bldc.o: Src\../Inc/defines.h
+.\objects\bldc.o: Src\../Inc/bldc.h

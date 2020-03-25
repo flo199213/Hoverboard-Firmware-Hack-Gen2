@@ -28,25 +28,35 @@
 #include "../Inc/defines.h"
 #include "../Inc/config.h"
 
+#include "../Inc/bldc.h"
+
 // Internal constants
 const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2000
 
 const int32_t WHEEL_PERIMETER = 542 ;  // mm
 const int32_t SPEED_CONVERSION_FACTOR = 1156000 ;  // (((WHEEL_PERIMETER/90.0)*6.0)/31.25)*1000000 ; //90=steps in one turn of wheel, 6=steps in one turn of the phases, 31.25=time duration in usec for each speedcounter increment, 1000000 = conversion from mm/uS to mm/Sec
+const int16_t MAX_PHASE_PERIOD  = 3560 ; // one phase count @ 0.1 RPS
+
+const int16_t kP = 3;
+
+int16_t speedError;
 
 uint16_t batteryVoltagemV = 40000;
 uint16_t currentDCmA      = 0;
-int16_t realSpeedmmPS     = 0;
+int16_t realSpeedRPS      = 0;
 int32_t cycles            = 0;
-int32_t speedCounter 			= 0;
+int16_t speedCounter 			= 0;
+int16_t phasePeriod 			= 0;
 int8_t  stepDir						= 0;
 
 // Timeoutvariable set by timeout timer
 extern FlagStatus timedOut;
 
 // Variables to be set from the main routine
-int16_t bldc_inputFilterPwm = 0;
-FlagStatus bldc_enable = RESET;
+int16_t 		bldcInputPwm = 0;
+FlagStatus 	bldcEnable 			= RESET;
+int16_t 		speedSetpoint     = 0;
+bool				constantSpeed			= FALSE;
 
 // ADC buffer to be filled by DMA
 adc_buf_t adc_buffer;
@@ -58,14 +68,22 @@ uint8_t hall_c;
 uint8_t hall;
 uint8_t pos;
 uint8_t lastPos;
-int16_t bldc_outputFilterPwm = 0;
-int32_t filter_reg;
+
 FlagStatus buzzerToggle = RESET;
 uint8_t buzzerFreq = 0;
 uint8_t buzzerPattern = 0;
 uint16_t buzzerTimer = 0;
 int16_t offsetcount = 0;
 int16_t offsetdc = 2000;
+
+// Low Pass Filter Regs
+int32_t phasePeriodFilterReg = 0;
+int16_t filteredPhasePeriod = 0;
+
+int32_t PWMFilterReg   = 0;
+int16_t bldcFilteredPwm = 0;
+
+
 
 //----------------------------------------------------------------------------
 // Commutation table
@@ -132,7 +150,27 @@ __INLINE void blockPWM(int pwm, int pwmPos, int *y, int *b, int *g)
 //----------------------------------------------------------------------------
 void SetEnable(FlagStatus setEnable)
 {
-	bldc_enable = setEnable;
+	bldcEnable = setEnable;
+}
+
+//----------------------------------------------------------------------------
+// Set speed -100 to 100
+//----------------------------------------------------------------------------
+void SetSpeed(int16_t speed)
+{
+	constantSpeed = TRUE;
+	speedSetpoint = CLAMP(speed, -1000, 1000);
+}
+
+//----------------------------------------------------------------------------
+// Set power -100 to 100
+//----------------------------------------------------------------------------
+void SetPower(int16_t power)
+{
+	constantSpeed = FALSE;
+	speedSetpoint = 0;
+	// InitPID();
+	SetPWM(power);
 }
 
 //----------------------------------------------------------------------------
@@ -140,15 +178,31 @@ void SetEnable(FlagStatus setEnable)
 //----------------------------------------------------------------------------
 void SetPWM(int16_t setPwm)
 {
-	bldc_inputFilterPwm = CLAMP(setPwm, -1000, 1000);
+	bldcInputPwm = CLAMP(setPwm, -1000, 1000);
 }
+
 
 //----------------------------------------------------------------------------
 // Get pwm -1000 to 1000
 //----------------------------------------------------------------------------
 int16_t GetPWM()
 {
-	return bldc_inputFilterPwm;
+	return bldcFilteredPwm;
+}
+
+//----------------------------------------------------------------------------
+// Get pwm -1000 to 1000
+//----------------------------------------------------------------------------
+int16_t GetSpeed()
+{
+	if (filteredPhasePeriod == MAX_PHASE_PERIOD) {
+		realSpeedRPS = 0 ;
+	}
+	else{
+		realSpeedRPS = (35600 / filteredPhasePeriod) * stepDir ;
+	}
+	
+	return realSpeedRPS;
 }
 
 //----------------------------------------------------------------------------
@@ -174,16 +228,14 @@ void CalculateBLDC(void)
 
 	
 	// Calibrate ADC offsets for the first 1000 cycles
-  if (offsetcount < 1000)
-	{  
+  if (offsetcount < 1000) {  
     offsetcount++;
     offsetdc = (adc_buffer.current_dc + offsetdc) / 2;
     return;
   }
 	
 	// Calculate battery voltage & current every 100 cycles
-  if (buzzerTimer % 100 == 0)
-	{
+  if (buzzerTimer % 100 == 0) {
 		uint16_t tempV = (uint16_t)(((uint32_t)adc_buffer.v_batt * ADC_BATTERY_MICRO_VOLT) / 1000);
  		uint16_t tempI = (uint16_t)((ABS((adc_buffer.current_dc - offsetdc) * MOTOR_AMP_CONV_DC_MICRO_AMP)) / 1000);
 
@@ -193,12 +245,9 @@ void CalculateBLDC(void)
 	
 
   // Disable PWM when current limit is reached (current chopping), enable is not set or timeout is reached
-	if (currentDCmA > DC_CUR_LIMIT_MA || bldc_enable == RESET || timedOut == SET)
-	{
+	if (currentDCmA > DC_CUR_LIMIT_MA || bldcEnable == RESET || timedOut == SET) {
 		timer_automatic_output_disable(TIMER_BLDC);		
-  }
-	else
-	{
+  } else {
 		timer_automatic_output_enable(TIMER_BLDC);
   }
 	
@@ -211,8 +260,12 @@ void CalculateBLDC(void)
   hall = hall_a * 1 + hall_b * 2 + hall_c * 4;
   pos = hall_to_pos[hall];
 	
-	// Determine if we are stepping forward or backwards
+	// Are we switching phases?  If so, time to calculate phase period 
 	if (pos != lastPos) {
+		phasePeriod = speedCounter;
+		speedCounter = 0;
+		
+		// Check direction of rotation
 		stepDif = pos - lastPos;
 		if ((stepDif == 1) ||  (stepDif == -5))
 			stepDir = -1;
@@ -220,37 +273,54 @@ void CalculateBLDC(void)
 			stepDir = +1;
 	}
 	
+	// Calculate low-pass filter for phase Period
+	phasePeriodFilterReg = phasePeriodFilterReg - (phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT) + phasePeriod;
+	filteredPhasePeriod = phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT;
+	
+	// if we are running constant speed mode, determine desired PWM
+	if (constantSpeed) {
+		// determine speed error
+		speedError = (speedSetpoint - realSpeedRPS);
+		
+		// Generate output
+		SetPWM (speedSetpoint + (speedError * kP)) ;
+	}
+	
 	// Calculate low-pass filter for pwm value
-	filter_reg = filter_reg - (filter_reg >> FILTER_SHIFT) + bldc_inputFilterPwm;
-	bldc_outputFilterPwm = filter_reg >> FILTER_SHIFT;
+	PWMFilterReg = PWMFilterReg - (PWMFilterReg >> PWM_FILTER_SHIFT) + bldcInputPwm;
+	bldcFilteredPwm = PWMFilterReg >> PWM_FILTER_SHIFT;
 	
   // Update PWM channels based on position y(ellow), b(lue), g(reen)
-  blockPWM(bldc_outputFilterPwm, pos, &y, &b, &g);
+  blockPWM(bldcFilteredPwm, pos, &y, &b, &g);
 	
 	// Set PWM output (pwm_res/2 is the mean value, setvalue has to be between 10 and pwm_res-10)
 	timer_channel_output_pulse_value_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_G, CLAMP(g + pwm_res / 2, 10, pwm_res-10));
 	timer_channel_output_pulse_value_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_B, CLAMP(b + pwm_res / 2, 10, pwm_res-10));
 	timer_channel_output_pulse_value_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_Y, CLAMP(y + pwm_res / 2, 10, pwm_res-10));
 	
-	// Increments with 62.5us
-	if((speedCounter < 16000) && (speedCounter > -16000)) // No speed after 1000 ms
-	{
-		speedCounter += stepDir;
+	// Increments with 31.25 us
+	if(speedCounter < MAX_PHASE_PERIOD) { // No speed after 110 ms  (10/90)
+		speedCounter += 1;
 	} else {
-		speedCounter = 0;
-		realSpeedmmPS = 0;
+		phasePeriod = MAX_PHASE_PERIOD;  // 0.1 RPS
+		realSpeedRPS = 0;
 	}
 	
-	// Every time position reaches value 1, one round is performed (rising edge)
-	if (lastPos != 1 && pos == 1)
-	{
-		if (speedCounter != 0) {
-			realSpeedmmPS = SPEED_CONVERSION_FACTOR / speedCounter; //  [mm/S]
-			speedCounter = 0;
-		}
+	// Every time position reaches value 1, one cycle is performed (rising edge)
+	// Integrate distance travelled.
+	if (lastPos != 1 && pos == 1) {
 		cycles += stepDir;
 	}
 
 	// Safe last position
 	lastPos = pos;
 }
+
+int16_t	abs16 (int16_t value) {
+	if (value < 0)
+		value = -value;
+	
+	return value;
+}
+
+	

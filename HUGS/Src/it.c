@@ -36,7 +36,6 @@ uint32_t msTicks;
 uint32_t timeoutCounter_ms = 0;
 FlagStatus timedOut = SET;
 
-extern int32_t speed;
 extern FlagStatus activateWeakening;
 extern int16_t HUGS_WatchDog;
 
@@ -63,13 +62,15 @@ void ResetTimeout(void)
 //----------------------------------------------------------------------------
 void TIMER13_IRQHandler(void)
 {	
+	// Update speed value
+	GetSpeed();
+	
 	if (timeoutCounter_ms > (HUGS_WatchDog << 1))
 	{
 		// First timeout reset all process values
 		if (timedOut == RESET)
 		{
-			speed = 0;
-			SetPWM(0);
+			SetPower(0);
 		}
 		
 		timedOut = SET;

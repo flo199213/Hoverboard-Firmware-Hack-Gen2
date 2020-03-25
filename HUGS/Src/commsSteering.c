@@ -46,8 +46,6 @@ static uint8_t sUSARTSteerRecordBufferCounter = 0;
 
 void CheckUSARTSteerInput(uint8_t u8USARTBuffer[]);
 
-extern int32_t speed;
-
 //----------------------------------------------------------------------------
 // Send frame to steer device
 //----------------------------------------------------------------------------
@@ -119,7 +117,7 @@ void CheckUSARTSteerInput(uint8_t USARTBuffer[])
 	}
 	
 	// Calculate result speed value -1000 to 1000
-	speed = (int16_t)((USARTBuffer[1] << 8) | USARTBuffer[2]);
+	//  speed = (int16_t)((USARTBuffer[1] << 8) | USARTBuffer[2]);
 	
 	// Reset the pwm timout to avoid stopping motors
 	ResetTimeout();

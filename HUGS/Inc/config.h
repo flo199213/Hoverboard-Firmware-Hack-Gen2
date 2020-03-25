@@ -63,6 +63,7 @@
 #endif
 
 // ###### ARMCHAIR ######
-#define FILTER_SHIFT 12 						// Low-pass filter for pwm, rank k=12
+#define PWM_FILTER_SHIFT 12 						// Low-pass filter for pwm, rank k=12
+#define PHASE_PERIOD_FILTER_SHIFT 7 		// Low-pass filter for phase period, rank k=10
 
 #endif

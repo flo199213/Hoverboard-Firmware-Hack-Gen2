@@ -40,7 +40,6 @@
 #include <math.h>     
 
 #ifdef MASTER
-int32_t speed = 0; 												// global variable for speed.    -1000 to 1000
 FlagStatus activateWeakening = RESET;			// global variable for weakening
 			
 extern uint16_t batteryVoltagemV;					// global variable for battery voltage
@@ -67,8 +66,6 @@ void ShutOff(void);
 //----------------------------------------------------------------------------
 int main (void)
 {
-	FlagStatus chargeStateLowActive = SET;
-	
 	//SystemClock_Config();
   SystemCoreClockUpdate();
   SysTick_Config(SystemCoreClock / 100);
@@ -114,7 +111,7 @@ int main (void)
 	fwdgt_counter_reload();
   buzzerFreq = 0;
 
-	// Wait until button is pressed
+	// Wait until button is pressed ????
 	while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN))
 	{
 		// Reload watchdog while button is pressed
@@ -129,9 +126,6 @@ int main (void)
 			ShutOff();
     }
 
-		// Read charge state
-		chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
-		
 		// Show green battery symbol when battery level BAT_LOW_LVL1 is reached
     if (batteryVoltagemV > BAT_LOW_LVL1_MV)
 		{

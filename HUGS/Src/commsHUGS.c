@@ -48,7 +48,7 @@ static uint8_t sUSARTHUGSRecordBufferCounter = 0;
 
 extern uint16_t batteryVoltagemV;
 extern uint16_t currentDCmA     ;
-extern int16_t  realSpeedmmPS   ;
+extern int16_t  realSpeedRPS   ;
 extern int32_t  cycles      ;
 
 void CheckUSARTHUGSInput(uint8_t u8USARTBuffer[]);
@@ -57,8 +57,8 @@ uint16_t CalcCRC(uint8_t *ptr, int count);
 void ShutOff(void);
 
 
-typedef enum {NOP = 0, RSP, ENA, DIS, POW, ABS, REL, DOG, RES, XXX = 0xFF} CMD_ID;
-typedef enum {NOR = 0, SVEL, SPOS, SVOL, SAMP, SPOW, SDOG, STOP} RSP_ID;
+typedef enum {NOP = 0, RSP, ENA, DIS, POW, ABS, REL, DOG, RES, SPE, XXX = 0xFF} CMD_ID;
+typedef enum {NOR = 0, SSPE, SPOS, SVOL, SAMP, SPOW, SDOG, STOP} RSP_ID;
 
 // Variables updated by HUGS Message
 bool			HUGS_ESTOP = FALSE;
@@ -160,7 +160,7 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 		case POW:
 			HUGS_Enabled = TRUE;
 			SetEnable(SET);  
-			SetPWM((int8_t)USARTBuffer[5] * 10);
+			SetPower((int8_t)USARTBuffer[5] * 10);
 		  break;
 
 		case DOG:
@@ -173,8 +173,17 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 			cycles = 0;
 		  break;
 
+		case SPE:
+			// Set the constant Speed
+			cycles = 0;
+			HUGS_Enabled = TRUE;
+			SetEnable(SET);  
+			SetSpeed((int8_t)USARTBuffer[5] * 10);
+		  break;
+
 		case XXX:
 			// powerdown
+			SetPower(0);
 			HUGS_ESTOP = TRUE;
 			HUGS_ResponseID = STOP;
 		  break;
@@ -210,10 +219,10 @@ void SendHUGSReply()
 	buffer[5] = bitStatus;
 
 	switch(HUGS_ResponseID) {
-		case SVEL:
+		case SSPE:
 			  length = 3;
-				buffer[6] = realSpeedmmPS >> 8;
-				buffer[7] = realSpeedmmPS & 0xFF ;
+				buffer[6] = realSpeedRPS >> 8;
+				buffer[7] = realSpeedRPS & 0xFF ;
 			break;
 
 		case SPOS:
