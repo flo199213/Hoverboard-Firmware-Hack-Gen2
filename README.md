@@ -24,10 +24,12 @@ My initial Hoverboard purchase was the Hover-1 Ultra.  I wanted to do the work o
 I chose this model because it looked like the company had several models and was likely to be a more reliable vendor than most "direct from China" vendors.
 
 Ultimately my choice backfired on me because instead of the more common single board controller, this unit had two boards (one master and one slave).  So I had to work from a more limited development set of Gen2 hoverboard.
-My most upsetting discovery was that when I was all done, I purchased a different model (Maverick vs Ultra) from the same supllier, and discovered that the Ultra code does not translate.  
+
+My most upsetting discovery was that when I was all done, I purchased a different model (Maverick vs Ultra) from the same supllier, and discovered that the Ultra code does not translate.   
+
 Since I'm realy not able to reverse engineer this new hardware, this my be a throw-away hoverboard.
 
-So everything here has been developed on the Hover-1 Ultra unit, and pictures of the controller boards are in the Documentation folder of this repo.
+So "For the record" everything here has been developed on the Hover-1 Ultra unit, and pictures of the controller boards are in the Documentation folder of this repo.
 
 The HOVER-1 Ultra has two sepparate motor controller boards, usually configured as a master and a slave with a USART Serial port passing commands and data back and forth.
 
