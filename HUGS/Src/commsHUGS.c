@@ -38,7 +38,7 @@
 #define HUGS_EOM_OFFSET 7				// Location of EOM char based on variable data length
 #define USART_HUGS_TX_BYTES (HUGS_MAX_DATA + 8)  // Max buffeer size including
 #define USART_HUGS_RX_BYTES (HUGS_MAX_DATA + 8)  // start '/' and stop character '\n'
-#define MM_PER_CYCLE 36 //  36.11
+#define MM_PER_CYCLE 35 					//  35.333
 
 static bool 	  sHUGSRecord = FALSE;
 
@@ -48,7 +48,7 @@ static uint8_t sUSARTHUGSRecordBufferCounter = 0;
 
 extern uint16_t batteryVoltagemV;
 extern uint16_t currentDCmA     ;
-extern int16_t  realSpeedRPS   ;
+extern int16_t  realSpeedmmPS   ;
 extern int32_t  cycles      ;
 
 void CheckUSARTHUGSInput(uint8_t u8USARTBuffer[]);
@@ -134,9 +134,12 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	crc = CalcCRC(USARTBuffer, length + 5 );
 	
 	// Check CRC
-	if ( USARTBuffer[length + 5] != ((crc >> 8) & 0xFF) ||
-		USARTBuffer[length + 6] != (crc & 0xFF))
+	if ( USARTBuffer[length + 5] != (crc & 0xFF) ||
+		   USARTBuffer[length + 6] != ((crc >> 8) & 0xFF) )
 	{
+		// debug
+		SendBuffer(USART_HUGS, USARTBuffer, length + 8);
+		// debug
 		return;
 	}
 	
@@ -160,12 +163,12 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 		case POW:
 			HUGS_Enabled = TRUE;
 			SetEnable(SET);  
-			SetPower((int8_t)USARTBuffer[5] * 10);
+			SetPower((int16_t)((uint16_t)USARTBuffer[6] << 8) +  (uint16_t)USARTBuffer[5]);
 		  break;
 
 		case DOG:
 			// save the new watchdog count (in ms)
-			HUGS_WatchDog = ((uint16_t)USARTBuffer[5] << 8) +  (uint16_t)USARTBuffer[6];
+			HUGS_WatchDog = ((uint16_t)USARTBuffer[6] << 8) +  (uint16_t)USARTBuffer[5];
 		  break;
 
 		case RES:
@@ -174,11 +177,11 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 		  break;
 
 		case SPE:
-			// Set the constant Speed
+			// Set the constant Speed (in mm/s)
 			cycles = 0;
 			HUGS_Enabled = TRUE;
 			SetEnable(SET);  
-			SetSpeed((int8_t)USARTBuffer[5] * 10);
+			SetSpeed((int16_t)((uint16_t)USARTBuffer[6] << 8) +  (uint16_t)USARTBuffer[5]);
 		  break;
 
 		case XXX:
@@ -221,40 +224,41 @@ void SendHUGSReply()
 	switch(HUGS_ResponseID) {
 		case SSPE:
 			  length = 3;
-				buffer[6] = realSpeedRPS >> 8;
-				buffer[7] = realSpeedRPS & 0xFF ;
+				buffer[6] = realSpeedmmPS & 0xFF ;
+				buffer[7] = realSpeedmmPS >> 8;
 			break;
 
 		case SPOS:
 			  length = 5;
 				positionMm = cycles * MM_PER_CYCLE ;
-				buffer[6] = (positionMm >> 24) & 0xFF;
-				buffer[7] = (positionMm >> 16) & 0xFF;
-				buffer[8] = (positionMm >>  8) & 0xFF;
-				buffer[9] = (positionMm) & 0xFF;
+				buffer[6] = (positionMm) & 0xFF;
+				buffer[7] = (positionMm >>  8) & 0xFF;
+				buffer[8] = (positionMm >> 16) & 0xFF;
+				buffer[9] = (positionMm >> 24) & 0xFF;
 			break;
 
 		case SVOL:
 			  length = 3;
-				buffer[6] = batteryVoltagemV >> 8;
-				buffer[7] = batteryVoltagemV & 0xFF ;
+				buffer[6] = batteryVoltagemV & 0xFF ;
+				buffer[7] = batteryVoltagemV >> 8;
 			break;
 
 		case SAMP:
 			  length = 3;
-				buffer[6] = currentDCmA >> 8;
-				buffer[7] = currentDCmA & 0xFF ;
+				buffer[6] = currentDCmA & 0xFF ;
+				buffer[7] = currentDCmA >> 8;
 			break;
 
 		case SPOW:
-			  length = 2;
-				buffer[6] = GetPWM() / 10;
+			  length = 3;
+				buffer[6] = GetPWM() & 0xFF ;
+				buffer[7] = GetPWM() >> 8;
 			break;
 		
 		case SDOG:
 			  length = 3;
-				buffer[6] = HUGS_WatchDog >> 8;
-				buffer[7] = HUGS_WatchDog & 0xFF ;
+				buffer[6] = HUGS_WatchDog & 0xFF ;
+				buffer[7] = HUGS_WatchDog >> 8;
 			break;
 
 		case STOP:
@@ -269,8 +273,8 @@ void SendHUGSReply()
 	
 	// Calculate CRC
   crc = CalcCRC(buffer, length + 5);
-  buffer[length + 5] = (crc >> 8) & 0xFF;
-  buffer[length + 6] = crc & 0xFF;
+  buffer[length + 5] = crc & 0xFF;
+  buffer[length + 6] = (crc >> 8) & 0xFF;
 	buffer[length + 7] = '\n';
 	
 	SendBuffer(USART_HUGS, buffer, length + 8);

@@ -21,6 +21,11 @@
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU General Public License for more details.
+*
+* Overall Project Revision History
+* Rev		Date			Description
+* 2.0		5/8/2019	Switch to HUGS 2.0  (Little Endian)
+*									Change speeds over to mm/s
 */
 
 #define ARM_MATH_CM3
