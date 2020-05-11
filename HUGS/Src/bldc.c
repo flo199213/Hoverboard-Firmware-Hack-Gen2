@@ -31,12 +31,13 @@
 #include "../Inc/bldc.h"
 
 #define KF 2 / 11
-#define KFO	12
+#define KFO	23
 #define KP 3 / 5
 #define FULL_PHASE      360
 #define PHASE_Y_OFFSET	(0)
 #define PHASE_B_OFFSET	(FULL_PHASE / 3)
 #define PHASE_G_OFFSET	(FULL_PHASE * 2 / 3)
+#define TRANSITION_ANGLE	233
 
 // Internal constants
 const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2000
@@ -81,6 +82,7 @@ int32_t phasePeriod 			= 0;
 int8_t  stepDir	 				  = 0;  // determined rotation direction
 int8_t  speedDir					= 0;  // commanded rotation direction
 int8_t  controlMode				= 0;  // 1,2 or 3
+int16_t	PIDoutput					= 0;
 
 bool		stepperMode				= FALSE;
 bool		phaseRestart			= FALSE;
@@ -91,10 +93,10 @@ int16_t	step_y						= PHASE_Y_OFFSET;
 int16_t	step_b						= PHASE_B_OFFSET;
 int16_t	step_g						= PHASE_G_OFFSET;
 
-int y 										= 0;     // yellow = phase A
-int b 										= 0;     // blue   = phase B
-int g 										= 0;     // green  = phase C
-	
+int 		y 								= 0;     // yellow = phase A
+int 		b 								= 0;     // blue   = phase B
+int 		g 								= 0;     // green  = phase C
+
 // Timeoutvariable set by timeout timer
 extern FlagStatus timedOut;
 
@@ -194,8 +196,10 @@ void SetSpeed(int16_t speed)
 		speedDir = 1;
 	else if (speed < 0) 
 		speedDir = -1;
-	else
+	else {
 		speedDir = 0;
+		controlMode = 0;
+	}
 	
 	// Do we need stepper mode?
   if (abs16(speedSetpoint) > STEPPER_LIMIT) { 
@@ -204,6 +208,8 @@ void SetSpeed(int16_t speed)
 	} else {
 
 		// do we need to defer switching to stepper to get synched?
+		// we do this is we are currently in closed loop and are slowing down.
+		// If we don't do this, the wheel jumps forward or back
 		if (controlMode == 3) {
 			phaseRestart = TRUE;
 		} else {
@@ -222,6 +228,9 @@ void SetPower(int16_t power)
 	closedLoopSpeed = FALSE;
 	stepperMode   = FALSE;
 	speedSetpoint = 0;
+	
+	if (power == 0)
+		controlMode = 0;
 	
 	// stepperTicks  = 0;
 	SetPWM(power);
@@ -244,7 +253,8 @@ int16_t GetPWM()
 	if (stepperMode) 
 		return step_y;
 	else
-		return bldcFilteredPwm;
+		return PIDoutput ;
+//		return bldcFilteredPwm;
 }
 
 //----------------------------------------------------------------------------
@@ -258,7 +268,6 @@ int16_t GetSpeed()
 	else{
 		realSpeedmmPS = (SPEED_TICKS_FACTOR / filteredPhasePeriod) * stepDir ;
 	}
-	
 	return realSpeedmmPS;
 }
 
@@ -330,10 +339,7 @@ void CalculateBLDC(void)
 			phaseRestart = FALSE;
 			stepperMode = TRUE;
 			
-			if (stepDir > 0)
-				setPhaseAngle(lastPos * 60);
-			else	
-				setPhaseAngle(180 + (lastPos * 60));
+			setPhaseAngle(getTransitionAngle());
 		}
 	}
 	
@@ -352,12 +358,13 @@ void CalculateBLDC(void)
 		cycles += stepDir;
 	}
 
-	
+	// ======================================================================================	
 	// Determine desired phase commutation and PWM based on operational mode
 	// Three conditions are:  
 	// 1) Open loop power
 	// 2) Closed Loop Stepping (Slow Speed)
 	// 3) Closed Loop Running (PIDF), (Fast Speed)
+	// ======================================================================================	
 	
 	if (closedLoopSpeed) {
 
@@ -369,9 +376,11 @@ void CalculateBLDC(void)
 			
 			// Generate output  feedforward = F = 1/5.4  (approx 2/11) Proportional =  P = 3/5
 			if (speedSetpoint > 0)
-				SetPWM((speedSetpoint * KF) + KFO + (speedError * KP)) ;
+				PIDoutput = (speedSetpoint * KF) + KFO + (speedError * KP);
 			else
-				SetPWM((speedSetpoint * KF) - KFO + (speedError * KP)) ;
+				PIDoutput = (speedSetpoint * KF) - KFO + (speedError * KP);
+			
+			SetPWM(PIDoutput);
 		}
 
 		// Calculate low-pass filter for pwm value (we don't always need it. but best to keep running.)
@@ -381,7 +390,6 @@ void CalculateBLDC(void)
 		if (stepperMode) {
 			// 2) Closed Loop Stepping (Slow Speed)
 			controlMode = 2;
-
 			stepperTicks++;
 			
 			// Are we moving to the next angle?
@@ -390,11 +398,11 @@ void CalculateBLDC(void)
 				stepperTicks = 0;
 			}
 				
-			// Get three PWM values from sine table (use 1/8 power)
+			// Get three PWM values from sine table 
 			y = sineTable[step_y] >> 3;	
 			b = sineTable[step_g] >> 3;	
 			g = sineTable[step_b] >> 3;	
-
+			
 		} else {
 			// 3) Closed Loop Running (PIDF), (Fast Speed)
 			controlMode = 3;
@@ -436,8 +444,20 @@ uint8_t	hallToPos() {
   return hall_to_pos[hall];
 }
 
+int16_t	getTransitionAngle() {
+	int16_t Yangle ; 
+	
+	if (speedDir > 0)
+    Yangle = (pos * 60) + TRANSITION_ANGLE;
+	else	
+    Yangle = (pos * 60) + 180 - TRANSITION_ANGLE;
+	
+	return (Yangle);
+}
+
 
 void	setPhaseAngle(int16_t Yangle) {
+
 	step_y						= Yangle + PHASE_Y_OFFSET;
 	step_b						= Yangle + PHASE_B_OFFSET;
 	step_g						= Yangle + PHASE_G_OFFSET;

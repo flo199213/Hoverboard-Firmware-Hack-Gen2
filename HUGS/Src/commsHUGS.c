@@ -196,6 +196,7 @@ bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 		case RES:
 			// reset the current wheel position
 			cycles = 0;
+			
 		  break;
 
 		case SPE:
@@ -279,6 +280,7 @@ void SendHUGSReply()
 			  length = 3;
 				buffer[6] = GetPWM() & 0xFF ;
 				buffer[7] = GetPWM() >> 8;
+		
 			break;
 		
 		case SDOG:

@@ -75,8 +75,9 @@ int16_t	abs16(int16_t value) ;
 uint8_t	hallToPos(void) ;
 
 //----------------------------------------------------------------------------
-// Set the correct  y b g phase angles based on y phase
+// Set the correct  y b g phase angles based on pos and speedDir
 //----------------------------------------------------------------------------
-void	setPhaseAngle(int16_t Yangle) ;
+void	setPhaseAngle(int16_t Yangle);
+int16_t	getTransitionAngle(void);
 
 #endif
