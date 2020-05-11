@@ -50,8 +50,10 @@ extern uint16_t batteryVoltagemV;
 extern uint16_t currentDCmA     ;
 extern int16_t  realSpeedmmPS   ;
 extern int32_t  cycles      ;
+extern int8_t   controlMode	;
+extern int16_t  step_y;
 
-void CheckUSARTHUGSInput(uint8_t u8USARTBuffer[]);
+bool CheckUSARTHUGSInput(uint8_t USARTBuffer[]);
 void SendHUGSReply(void);
 uint16_t CalcCRC(uint8_t *ptr, int count);
 void ShutOff(void);
@@ -70,7 +72,6 @@ RSP_ID		HUGS_ResponseID = NOR;
 bool			HUGS_Enabled = FALSE;
 
 
-
 //----------------------------------------------------------------------------
 // Update USART HUGS input
 //----------------------------------------------------------------------------
@@ -80,7 +81,7 @@ void UpdateUSARTHUGSInput(void)
 	uint8_t length;
 	
 	// Start character is captured, start record
-	if (character == '/')
+	if (!sHUGSRecord && (character == '/'))
 	{
 		sUSARTHUGSRecordBufferCounter = 0;
 		sHUGSRecord = TRUE;
@@ -103,12 +104,33 @@ void UpdateUSARTHUGSInput(void)
 			}
 			else if (sUSARTHUGSRecordBufferCounter >  (length + HUGS_EOM_OFFSET))
 			{
-				// Completed message lemgth
-				sUSARTHUGSRecordBufferCounter = 0;
-				sHUGSRecord = FALSE;
-			
 				// Check input
-				CheckUSARTHUGSInput (sUSARTHUGSRecordBuffer);
+				if (CheckUSARTHUGSInput (sUSARTHUGSRecordBuffer)) {
+					// A complete message was found.  Reset buffer and status
+					sUSARTHUGSRecordBufferCounter = 0;
+					sHUGSRecord = FALSE;
+				} else {
+					// Message was invalid.  it could have been a bad SOM
+					// check to see if the buffer holds another SOM (/)
+					int slider = 0;
+					int ch;
+					
+					for (ch = 1; ch < sUSARTHUGSRecordBufferCounter; ch++) {
+						if (sUSARTHUGSRecordBuffer[ch] == '/') {
+							slider = ch;
+							break;
+						}
+					}
+					
+					if (slider > 0) {
+						// push the buffer back
+						sUSARTHUGSRecordBufferCounter -= slider;
+						memcpy(sUSARTHUGSRecordBuffer, sUSARTHUGSRecordBuffer + slider, sUSARTHUGSRecordBufferCounter);
+					} else {
+						sUSARTHUGSRecordBufferCounter = 0;
+						sHUGSRecord = FALSE;
+					}
+				}
 			}
 		}
 	}
@@ -117,7 +139,7 @@ void UpdateUSARTHUGSInput(void)
 //----------------------------------------------------------------------------
 // Check USART HUGS input
 //----------------------------------------------------------------------------
-void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
+bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 {
 	// Auxiliary variables
 	uint16_t crc;
@@ -127,7 +149,7 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	if ( USARTBuffer[0] != '/' ||
 		USARTBuffer[length + HUGS_EOM_OFFSET ] != '\n')
 	{
-		return;
+		return FALSE;
 	}
 
 	// Calculate CRC (first bytes up to, not including crc)
@@ -140,7 +162,7 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 		// debug
 		SendBuffer(USART_HUGS, USARTBuffer, length + 8);
 		// debug
-		return;
+		return FALSE;
 	}
 	
 	// command is valid.  Process it now
@@ -200,8 +222,11 @@ void CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	
 	// Reset the pwm timout to avoid stopping motors
 	ResetTimeout();
-}
 	
+	return TRUE;
+}
+
+
 //----------------------------------------------------------------------------
 // Send reply frame via USART
 //----------------------------------------------------------------------------
@@ -210,10 +235,11 @@ void SendHUGSReply()
 	uint8_t length = 1;
 	uint16_t crc = 0;
 	uint8_t buffer[USART_HUGS_TX_BYTES];
-	uint8_t bitStatus = HUGS_ESTOP ? 0x01 : 0x00;
 	int32_t positionMm;
+	uint8_t bitStatus = HUGS_ESTOP ? 0x01 : 0x00;
 	
-	
+	bitStatus |= (controlMode << 1);
+
 	buffer[0] = '/';
 	buffer[1] = 1;
 	buffer[2] = HUGS_Sequence << 4;

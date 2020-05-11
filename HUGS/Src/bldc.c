@@ -30,18 +30,45 @@
 
 #include "../Inc/bldc.h"
 
+#define KF 2 / 11
+#define KFO	12
+#define KP 3 / 5
+#define FULL_PHASE      360
+#define PHASE_Y_OFFSET	(0)
+#define PHASE_B_OFFSET	(FULL_PHASE / 3)
+#define PHASE_G_OFFSET	(FULL_PHASE * 2 / 3)
+
 // Internal constants
 const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2000
 
 const int32_t WHEEL_PERIMETER    = 530 ;  // mm
 const int32_t SPEED_TICKS_FACTOR = 188444 ;  // Divide factor by speed to get ticks per cycle, or visa versa.
-const int16_t MIN_SPEED          = 10 ;      // min usable speed in mm/S
-const int16_t MAX_PHASE_PERIOD   = SPEED_TICKS_FACTOR / MIN_SPEED ;   // one phase count @ MIN_SPEED
-const uint16_t STEPPER_LIMIT     = 500 ;     // Switch to stepper mode if requested speed < 500mm/S 
-const int16_t STEPPER_POWER      = 250 ;     // Power to run stepper motor
+const int32_t SINE_TICKS_FACTOR  = 3010   ;  // Divide factor by speed to get ticks per degree.
+const int32_t MIN_SPEED          = 10 ;      // min usable speed in mm/S
+const int32_t MAX_PHASE_PERIOD   = SPEED_TICKS_FACTOR / MIN_SPEED ;   // one phase count @ MIN_SPEED
+const uint16_t STEPPER_LIMIT     = 200 ;     // Switch to stepper mode if requested speed < 100 mm/S 
 
-#define KF 2 / 11
-#define KP 3 / 5
+//----------------------------------------------------------------------------
+// Sinusoidal Power Commutation table (one degree increments. * 1000)
+//----------------------------------------------------------------------------
+const int16_t	sineTable[FULL_PHASE] = {0, 31, 63, 94, 117, 148, 180, 211, 242, 266, 297, 328, 359, 391, 414, 445, 477, 500, 531, 563, 586, 617, 648, 672, 703, 727, 758, 781, 813, 836, 859, 867, 875, 883, 891, 898, 906, 914, 922, 930, 938, 938, 945, 953, 953, 961, 969, 969, 977, 977, 977, 984, 984, 984, 992, 992, 992, 992, 992, 992, 992, 992, 992, 992, 992, 992, 992, 984, 984, 984, 977, 977, 977, 969, 969, 961, 953, 953, 945, 938, 938, 930, 922, 914, 906, 898, 891, 883, 875, 867, 859, 867, 875, 883, 891, 898, 906, 914, 922, 930, 938, 938, 945, 953, 953, 961, 969, 969, 977, 977, 977, 984, 984, 984, 992, 992, 992, 992, 992, 992, 992, 992, 992, 992, 992, 992, 992, 984, 984, 984, 977, 977, 977, 969, 969, 961, 953, 953, 945, 938, 938, 930, 922, 914, 906, 898, 891, 883, 875, 867, 859, 836, 813, 781, 758, 727, 703, 672, 648, 617, 586, 563, 531, 500, 477, 445, 414, 391, 359, 328, 297, 266, 242, 211, 180, 148, 117, 94, 63, 31, 0, -31, -63, -94, -117, -148, -180, -211, -242, -266, -297, -328, -359, -391, -414, -445, -477, -500, -531, -563, -586, -617, -648, -672, -703, -727, -758, -781, -813, -836, -859, -867, -875, -883, -891, -898, -906, -914, -922, -930, -938, -938, -945, -953, -953, -961, -969, -969, -977, -977, -977, -984, -984, -984, -992, -992, -992, -992, -992, -992, -992, -992, -992, -992, -992, -992, -992, -984, -984, -984, -977, -977, -977, -969, -969, -961, -953, -953, -945, -938, -938, -930, -922, -914, -906, -898, -891, -883, -875, -867, -859, -867, -875, -883, -891, -898, -906, -914, -922, -930, -938, -938, -945, -953, -953, -961, -969, -969, -977, -977, -977, -984, -984, -984, -992, -992, -992, -992, -992, -992, -992, -992, -992, -992, -992, -992, -992, -984, -984, -984, -977, -977, -977, -969, -969, -961, -953, -953, -945, -938, -938, -930, -922, -914, -906, -898, -891, -883, -875, -867, -859, -836, -813, -781, -758, -727, -703, -672, -648, -617, -586, -563, -531, -500, -477, -445, -414, -391, -359, -328, -297, -266, -242, -211, -180, -148, -117, -94, -63, -31};
+
+//----------------------------------------------------------------------------
+// Commutation table Phase increments
+//----------------------------------------------------------------------------
+const uint8_t hall_to_pos[8] =
+{
+	// Note: Changed Comutation numbers 1-based to 0 based.
+	// annotation: for example SA=0 means hall sensor pulls SA down to Ground
+  6, // hall position [0] - No function (access from 0-5) 
+  2, // hall position [1] (SA=1, SB=0, SC=0) -> PWM-position 2
+  4, // hall position [2] (SA=0, SB=1, SC=0) -> PWM-position 4
+  3, // hall position [3] (SA=1, SB=1, SC=0) -> PWM-position 3
+  0, // hall position [4] (SA=0, SB=0, SC=1) -> PWM-position 0
+  1, // hall position [5] (SA=1, SB=0, SC=1) -> PWM-position 1
+  5, // hall position [6] (SA=0, SB=1, SC=1) -> PWM-position 5
+  6, // hall position [7] - No function (access from 0-5) 
+};
 
 int16_t speedError;
 
@@ -49,16 +76,25 @@ uint16_t batteryVoltagemV = 40000;
 uint16_t currentDCmA      = 0;
 int16_t realSpeedmmPS     = 0;
 int32_t cycles            = 0;
-int16_t speedCounter 			= 0;
-int16_t phasePeriod 			= 0;
-int8_t  stepDir						= 0;
+int32_t speedCounter 			= 0;
+int32_t phasePeriod 			= 0;
+int8_t  stepDir	 				  = 0;  // determined rotation direction
+int8_t  speedDir					= 0;  // commanded rotation direction
+int8_t  controlMode				= 0;  // 1,2 or 3
 
 bool		stepperMode				= FALSE;
+bool		phaseRestart			= FALSE;
 int32_t stepperPeriod     = 0;
 int32_t stepperTicks      = 0;
-int8_t  stepperPos 		    = 0;
-int8_t  stepperDir				= 0;
 
+int16_t	step_y						= PHASE_Y_OFFSET;
+int16_t	step_b						= PHASE_B_OFFSET;
+int16_t	step_g						= PHASE_G_OFFSET;
+
+int y 										= 0;     // yellow = phase A
+int b 										= 0;     // blue   = phase B
+int g 										= 0;     // green  = phase C
+	
 // Timeoutvariable set by timeout timer
 extern FlagStatus timedOut;
 
@@ -66,16 +102,12 @@ extern FlagStatus timedOut;
 int16_t 		bldcInputPwm 		= 0;
 FlagStatus 	bldcEnable 			= RESET;
 int16_t 		speedSetpoint   = 0;
-bool				constantSpeed		= FALSE;
+bool				closedLoopSpeed	= FALSE;
 
 // ADC buffer to be filled by DMA
 adc_buf_t adc_buffer;
 
 // Internal calculation variables
-uint8_t hall_a;
-uint8_t hall_b;
-uint8_t hall_c;
-uint8_t hall;
 uint8_t pos;
 uint8_t lastPos;
 
@@ -94,63 +126,47 @@ int32_t PWMFilterReg   = 0;
 int16_t bldcFilteredPwm = 0;
 
 
-
-//----------------------------------------------------------------------------
-// Commutation table
-//----------------------------------------------------------------------------
-const uint8_t hall_to_pos[8] =
-{
-	// annotation: for example SA=0 means hall sensor pulls SA down to Ground
-  0, // hall position [-] - No function (access from 1-6) 
-  3, // hall position [1] (SA=1, SB=0, SC=0) -> PWM-position 3
-  5, // hall position [2] (SA=0, SB=1, SC=0) -> PWM-position 5
-  4, // hall position [3] (SA=1, SB=1, SC=0) -> PWM-position 4
-  1, // hall position [4] (SA=0, SB=0, SC=1) -> PWM-position 1
-  2, // hall position [5] (SA=1, SB=0, SC=1) -> PWM-position 2
-  6, // hall position [6] (SA=0, SB=1, SC=1) -> PWM-position 6
-  0, // hall position [-] - No function (access from 1-6) 
-};
-
 //----------------------------------------------------------------------------
 // Block PWM calculation based on position
 //----------------------------------------------------------------------------
 __INLINE void blockPWM(int pwm, int pwmPos, int *y, int *b, int *g)
 {
+	// Note:  These now cycle from 0 to 5 with positive applied PWM
   switch(pwmPos)
 	{
-    case 1:
-      *b = pwm;
+    case 0:
       *y = 0;
-      *g = -pwm;
+      *b = -pwm;
+      *g = pwm;
+      break;
+    case 1:
+      *y = pwm;
+      *b = -pwm;
+      *g = 0;
       break;
     case 2:
-      *b = pwm;
-      *y = -pwm;
-      *g = 0;
-      break;
-    case 3:
-      *b = 0;
-      *y = -pwm;
-      *g = pwm;
-      break;
-    case 4:
-      *b = -pwm;
-      *y = 0;
-      *g = pwm;
-      break;
-    case 5:
-      *b = -pwm;
       *y = pwm;
-      *g = 0;
-      break;
-    case 6:
       *b = 0;
-      *y = pwm;
       *g = -pwm;
       break;
-    default:
-      *b = 0;
+    case 3:
       *y = 0;
+      *b = pwm;
+      *g = -pwm;
+      break;
+    case 4:
+      *y = -pwm;
+      *b = pwm;
+      *g = 0;
+      break;
+    case 5:
+      *y = -pwm;
+      *b = 0;
+      *g = pwm;
+      break;
+    default:
+      *y = 0;
+      *b = 0;
       *g = 0;
   }
 }
@@ -161,7 +177,7 @@ __INLINE void blockPWM(int pwm, int pwmPos, int *y, int *b, int *g)
 void SetEnable(FlagStatus setEnable)
 {
 	if (!bldcEnable || !setEnable) {
-		stepperMode   = FALSE;
+		closedLoopSpeed   = FALSE;
 	}
 	bldcEnable = setEnable;
 }
@@ -171,20 +187,28 @@ void SetEnable(FlagStatus setEnable)
 //----------------------------------------------------------------------------
 void SetSpeed(int16_t speed)
 {
-	constantSpeed = TRUE;
+	closedLoopSpeed = TRUE;
 	speedSetpoint = CLAMP(speed, -5000, 5000);
 	
-  if (abs16(speedSetpoint) < STEPPER_LIMIT) {  // Sorry about dumb syntax.  Compiler threw warning.
-		
-		if (stepperMode == FALSE) {
-			stepperPos = pos;
+	if (speed > 0)
+		speedDir = 1;
+	else if (speed < 0) 
+		speedDir = -1;
+	else
+		speedDir = 0;
+	
+	// Do we need stepper mode?
+  if (abs16(speedSetpoint) > STEPPER_LIMIT) { 
+		stepperMode = FALSE;
+	} else {
+
+		// do we need to preload commutation angle?
+		if (!stepperMode) {
+			phaseRestart = TRUE;
 		}
 		
 		stepperMode = TRUE; 							 // Turn on stepper for slow speeds
-		stepperPeriod = SPEED_TICKS_FACTOR / abs16(speedSetpoint) ;
-		
-	} else {
-		stepperMode = FALSE;
+		stepperPeriod = SINE_TICKS_FACTOR / abs16(speedSetpoint) ;
 	}
 }
 
@@ -193,7 +217,7 @@ void SetSpeed(int16_t speed)
 //----------------------------------------------------------------------------
 void SetPower(int16_t power)
 {
-	constantSpeed = FALSE;
+	closedLoopSpeed = FALSE;
 	stepperMode   = FALSE;
 	speedSetpoint = 0;
 	
@@ -215,11 +239,14 @@ void SetPWM(int16_t setPwm)
 //----------------------------------------------------------------------------
 int16_t GetPWM()
 {
-	return bldcFilteredPwm;
+	if (stepperMode) 
+		return step_y;
+	else
+		return bldcFilteredPwm;
 }
 
 //----------------------------------------------------------------------------
-// Get Revs Per Second * 100 -1000 to 1000
+// Get speed in mm/Sec
 //----------------------------------------------------------------------------
 int16_t GetSpeed()
 {
@@ -235,14 +262,12 @@ int16_t GetSpeed()
 
 //----------------------------------------------------------------------------
 // Calculation-Routine for BLDC => calculates with 32kHz  (was 16 kHz)
+// Written so there are no function calls requiring stack protection.
 //----------------------------------------------------------------------------
 void CalculateBLDC(void)
 {
-	int y = 0;     // yellow = phase A
-	int b = 0;     // blue   = phase B
-	int g = 0;     // green  = phase C
 	int8_t stepDif;
-	
+
 	// Create square wave for buzzer
 	buzzerTimer++;
 	if (buzzerFreq != 0 && (buzzerTimer / 5000) % (buzzerPattern + 1) == 0){
@@ -278,18 +303,11 @@ void CalculateBLDC(void)
   } else {
 		timer_automatic_output_enable(TIMER_BLDC);
   }
-	
-  // Read hall sensors
-	hall_a = gpio_input_bit_get(HALL_A_PORT, HALL_A_PIN);
-  hall_b = gpio_input_bit_get(HALL_B_PORT, HALL_B_PIN);
-	hall_c = gpio_input_bit_get(HALL_C_PORT, HALL_C_PIN);
-  
-	// Determine current position based on hall sensors
-  hall = (hall_a * 1) + (hall_b * 2) + (hall_c * 4);
-  pos = hall_to_pos[hall];
 
+	// Get current commutation position	
+  pos = hallToPos();
 	
-	// Are we switching steps?  If so, time to calculate phase period 
+	// Are we switching phase steps?  If so, time to calculate phase period 
 	if (pos != lastPos) {
 		phasePeriod = speedCounter;
 		speedCounter = 0;
@@ -297,60 +315,90 @@ void CalculateBLDC(void)
 		// Check direction of rotation
 		stepDif = pos - lastPos;
 		if ((stepDif == 1) ||  (stepDif == -5))
-			stepDir = -1;
+			stepDir = 1;
 		else if ((stepDif == -1) || (stepDif == 5))
-			stepDir = +1;
+			stepDir = -1;
+
+		// Calculate low-pass filter for phase Period
+		phasePeriodFilterReg = phasePeriodFilterReg - (phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT) + phasePeriod;
+		filteredPhasePeriod = phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT;
 	}
 	
-	// Calculate low-pass filter for phase Period
-	phasePeriodFilterReg = phasePeriodFilterReg - (phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT) + phasePeriod;
-	filteredPhasePeriod = phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT;
+	// Accumulate counters for speed and phase duration
+	// Increments with 31.25 us
+	if(speedCounter < MAX_PHASE_PERIOD) { // No speed less than MIN_SPEED
+		speedCounter += 1;
+	} else {
+		phasePeriod = MAX_PHASE_PERIOD;  // MIN_SPEED phase duration 
+		realSpeedmmPS = 0;
+	}
 	
-	// Determine desired PWM based on operational mode
-	if (constantSpeed) {
+	// Integrate distance travelled.
+	// Every time position reaches value 1, one cycle is performed (rising edge)
+	if (lastPos != 1 && pos == 1) {
+		cycles += stepDir;
+	}
+
+	
+	// Determine desired phase commutation and PWM based on operational mode
+	// Three conditions are:  
+	// 1) Open loop power
+	// 2) Closed Loop Stepping (Slow Speed)
+	// 3) Closed Loop Running (PIDF), (Fast Speed)
+	
+	if (closedLoopSpeed) {
 		if (stepperMode) {
+			// 2) Closed Loop Stepping (Slow Speed)
+			controlMode = 2;
+
 			stepperTicks++;
 			
-			// Determine stepper power and direction
-			if (speedSetpoint > MIN_SPEED) {
-				stepperDir = -1;
-				SetPWM (STEPPER_POWER) ;
-			} else if  (speedSetpoint < -MIN_SPEED) {
-				SetPWM (-STEPPER_POWER) ;
-				stepperDir = 1;
-			} else {
-				SetPWM (0) ;
-				stepperDir = 0;
+			// Are we resetting commutation to prevent jerky start?
+			if (phaseRestart) {
+				setPhaseAngle(pos * 60);
+				phaseRestart = FALSE;
+			} else if (stepperTicks >= stepperPeriod) {
+				setPhaseAngle(step_y + speedDir);
+				stepperTicks = 0;
 			}
+				
+			// Get three PWM values from sine table (use 1/8 power)
+			y = sineTable[step_y] >> 3;	
+			b = sineTable[step_g] >> 3;	
+			g = sineTable[step_b] >> 3;	
+
 		} else {
-			// RUN P(id)F to set power
+			// 3) Closed Loop Running (PIDF), (Fast Speed)
+			controlMode = 3;
+
+			if (speedSetpoint == 0){
+				SetPWM(0) ;
+			} else {
+				// determine speed error and set power level
+				speedError = (speedSetpoint - realSpeedmmPS);
+				
+				// Generate output  feedforward = F = 1/5.4  (approx 2/11) Proportional =  P = 3/5
+				if (speedSetpoint > 0)
+					SetPWM((speedSetpoint * KF) + KFO + (speedError * KP)) ;
+				else
+					SetPWM((speedSetpoint * KF) - KFO + (speedError * KP)) ;
+			}
 			
-			// determine speed error and set power level
-			speedError = (speedSetpoint - realSpeedmmPS);
-			
-			// Generate output  F = 1/5.4  (approx 2/11)  P = 3/5
-			SetPWM ((speedSetpoint * KF) + (speedError * KP)) ;
-		}
-	}
-	
-	// Calculate low-pass filter for pwm value
-	PWMFilterReg = PWMFilterReg - (PWMFilterReg >> PWM_FILTER_SHIFT) + bldcInputPwm;
-	bldcFilteredPwm = PWMFilterReg >> PWM_FILTER_SHIFT;
-	
-	// Free run the wheel, or step it based on the mode
-	if (stepperMode) {
-    if (stepperTicks >= 1000) {
+			// Calculate low-pass filter for pwm value
+			PWMFilterReg = PWMFilterReg - (PWMFilterReg >> PWM_FILTER_SHIFT) + bldcInputPwm;
+			bldcFilteredPwm = PWMFilterReg >> PWM_FILTER_SHIFT;
+
 			// Update PWM channels based on position y(ellow), b(lue), g(reen)
-			stepperPos += stepperDir ;
-			if (stepperPos == 0)
-				stepperPos = 6;
-			else if (stepperPos == 7)
-				stepperPos = 1;
-			
-			blockPWM(bldcFilteredPwm, stepperPos, &y, &b, &g);
-			stepperTicks = 0;
+			blockPWM(bldcFilteredPwm, pos, &y, &b, &g);
 		}
 	} else {
+		// 1) Open loop power, so just apply filtered PWM to correct phases
+		controlMode = 1;
+
+		// Calculate low-pass filter for pwm value
+		PWMFilterReg = PWMFilterReg - (PWMFilterReg >> PWM_FILTER_SHIFT) + bldcInputPwm;
+		bldcFilteredPwm = PWMFilterReg >> PWM_FILTER_SHIFT;
+
 		// Update PWM channels based on position y(ellow), b(lue), g(reen)
 		blockPWM(bldcFilteredPwm, pos, &y, &b, &g);
 	}
@@ -360,23 +408,35 @@ void CalculateBLDC(void)
 	timer_channel_output_pulse_value_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_B, CLAMP(b + pwm_res / 2, 10, pwm_res-10));
 	timer_channel_output_pulse_value_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_Y, CLAMP(y + pwm_res / 2, 10, pwm_res-10));
 	
-	// Increments with 31.25 us
-	if(speedCounter < MAX_PHASE_PERIOD) { // No speed less than MIN_SPEED
-		speedCounter += 1;
-	} else {
-		phasePeriod = MAX_PHASE_PERIOD;  // 10 mm/S
-		realSpeedmmPS = 0;
-	}
-	
-	// Every time position reaches value 1, one cycle is performed (rising edge)
-	// Integrate distance travelled.
-	if (lastPos != 1 && pos == 1) {
-		cycles += stepDir;
-	}
-
 	// Safe last position
 	lastPos = pos;
 }
+
+uint8_t	hallToPos() {
+	
+  // Read hall sensors
+	uint8_t hall_a = gpio_input_bit_get(HALL_A_PORT, HALL_A_PIN);
+  uint8_t	hall_b = gpio_input_bit_get(HALL_B_PORT, HALL_B_PIN);
+	uint8_t	hall_c = gpio_input_bit_get(HALL_C_PORT, HALL_C_PIN);
+  
+	// Determine current position based on hall sensors
+  uint8_t hall = (hall_a * 1) + (hall_b * 2) + (hall_c * 4);
+	
+  return hall_to_pos[hall];
+}
+
+
+void	setPhaseAngle(int16_t Yangle) {
+	step_y						= Yangle + PHASE_Y_OFFSET;
+	step_b						= Yangle + PHASE_B_OFFSET;
+	step_g						= Yangle + PHASE_G_OFFSET;
+	
+	// wrap into 0 359 range
+	step_y = (step_y + FULL_PHASE) % FULL_PHASE;
+	step_b = (step_b + FULL_PHASE) % FULL_PHASE;
+	step_g = (step_g + FULL_PHASE) % FULL_PHASE;
+}
+
 
 int16_t	abs16 (int16_t value) {
 	if (value < 0)

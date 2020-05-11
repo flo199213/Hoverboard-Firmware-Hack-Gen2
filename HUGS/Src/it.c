@@ -149,7 +149,6 @@ void DMA_Channel3_4_IRQHandler(void)
 	{
 		// Update USART master slave input mechanism
 		UpdateUSARTHUGSInput();
-		
 		dma_interrupt_flag_clear(DMA_CH4, DMA_INT_FLAG_FTF);        
 	}
 }
