@@ -200,14 +200,16 @@ void SetSpeed(int16_t speed)
 	// Do we need stepper mode?
   if (abs16(speedSetpoint) > STEPPER_LIMIT) { 
 		stepperMode = FALSE;
+		phaseRestart = FALSE;
 	} else {
 
-		// do we need to preload commutation angle?
-		if (!stepperMode) {
+		// do we need to defer switching to stepper to get synched?
+		if (controlMode == 3) {
 			phaseRestart = TRUE;
+		} else {
+			stepperMode = TRUE; 							 // Turn on stepper now
 		}
 		
-		stepperMode = TRUE; 							 // Turn on stepper for slow speeds
 		stepperPeriod = SINE_TICKS_FACTOR / abs16(speedSetpoint) ;
 	}
 }
@@ -322,6 +324,17 @@ void CalculateBLDC(void)
 		// Calculate low-pass filter for phase Period
 		phasePeriodFilterReg = phasePeriodFilterReg - (phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT) + phasePeriod;
 		filteredPhasePeriod = phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT;
+		
+		// if we are waiting for a phase restart, load new angle.
+		if (phaseRestart) {
+			phaseRestart = FALSE;
+			stepperMode = TRUE;
+			
+			if (stepDir > 0)
+				setPhaseAngle(lastPos * 60);
+			else	
+				setPhaseAngle(180 + (lastPos * 60));
+		}
 	}
 	
 	// Accumulate counters for speed and phase duration
@@ -371,11 +384,8 @@ void CalculateBLDC(void)
 
 			stepperTicks++;
 			
-			// Are we resetting commutation to prevent jerky start?
-			if (phaseRestart) {
-				setPhaseAngle(pos * 60);
-				phaseRestart = FALSE;
-			} else if (stepperTicks >= stepperPeriod) {
+			// Are we moving to the next angle?
+			if (stepperTicks >= stepperPeriod) {
 				setPhaseAngle(step_y + speedDir);
 				stepperTicks = 0;
 			}
