@@ -347,6 +347,24 @@ void CalculateBLDC(void)
 	// 3) Closed Loop Running (PIDF), (Fast Speed)
 	
 	if (closedLoopSpeed) {
+
+		if (speedSetpoint == 0){
+			SetPWM(0) ;
+		} else {
+			// determine speed error and set power level
+			speedError = (speedSetpoint - realSpeedmmPS);
+			
+			// Generate output  feedforward = F = 1/5.4  (approx 2/11) Proportional =  P = 3/5
+			if (speedSetpoint > 0)
+				SetPWM((speedSetpoint * KF) + KFO + (speedError * KP)) ;
+			else
+				SetPWM((speedSetpoint * KF) - KFO + (speedError * KP)) ;
+		}
+
+		// Calculate low-pass filter for pwm value (we don't always need it. but best to keep running.)
+		PWMFilterReg = PWMFilterReg - (PWMFilterReg >> PWM_FILTER_SHIFT) + bldcInputPwm;
+		bldcFilteredPwm = PWMFilterReg >> PWM_FILTER_SHIFT;
+
 		if (stepperMode) {
 			// 2) Closed Loop Stepping (Slow Speed)
 			controlMode = 2;
@@ -370,24 +388,7 @@ void CalculateBLDC(void)
 		} else {
 			// 3) Closed Loop Running (PIDF), (Fast Speed)
 			controlMode = 3;
-
-			if (speedSetpoint == 0){
-				SetPWM(0) ;
-			} else {
-				// determine speed error and set power level
-				speedError = (speedSetpoint - realSpeedmmPS);
-				
-				// Generate output  feedforward = F = 1/5.4  (approx 2/11) Proportional =  P = 3/5
-				if (speedSetpoint > 0)
-					SetPWM((speedSetpoint * KF) + KFO + (speedError * KP)) ;
-				else
-					SetPWM((speedSetpoint * KF) - KFO + (speedError * KP)) ;
-			}
-			
-			// Calculate low-pass filter for pwm value
-			PWMFilterReg = PWMFilterReg - (PWMFilterReg >> PWM_FILTER_SHIFT) + bldcInputPwm;
-			bldcFilteredPwm = PWMFilterReg >> PWM_FILTER_SHIFT;
-
+		
 			// Update PWM channels based on position y(ellow), b(lue), g(reen)
 			blockPWM(bldcFilteredPwm, pos, &y, &b, &g);
 		}
