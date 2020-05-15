@@ -24,8 +24,9 @@
 *
 * Overall Project Revision History
 * Rev		Date			Description
-* 2.0		5/8/2019	Switch to HUGS 2.0  (Little Endian)
+* 2.0		5/8/2020	Switch to HUGS 2.0  (Little Endian)
 *									Change speeds over to mm/s
+* 2.1		5/14/2020	Added Motion Response.
 */
 
 #define ARM_MATH_CM3

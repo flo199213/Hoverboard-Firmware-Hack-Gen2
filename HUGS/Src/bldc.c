@@ -48,6 +48,7 @@ const int32_t SINE_TICKS_FACTOR  = 3010   ;  // Divide factor by speed to get ti
 const int32_t MIN_SPEED          = 10 ;      // min usable speed in mm/S
 const int32_t MAX_PHASE_PERIOD   = SPEED_TICKS_FACTOR / MIN_SPEED ;   // one phase count @ MIN_SPEED
 const uint16_t STEPPER_LIMIT     = 200 ;     // Switch to stepper mode if requested speed < 100 mm/S 
+const float MM_PER_CYCLE_FLOAT   = 5.888;	   //  (530 / 90)
 
 //----------------------------------------------------------------------------
 // Sinusoidal Power Commutation table (one degree increments. * 1000)
@@ -244,17 +245,12 @@ void SetPWM(int16_t setPwm)
 	bldcInputPwm = CLAMP(setPwm, -1000, 1000);
 }
 
-
 //----------------------------------------------------------------------------
 // Get pwm -1000 to 1000
 //----------------------------------------------------------------------------
 int16_t GetPWM()
 {
-	if (stepperMode) 
-		return step_y;
-	else
-		return PIDoutput ;
-//		return bldcFilteredPwm;
+	return PIDoutput ;
 }
 
 //----------------------------------------------------------------------------
@@ -269,6 +265,13 @@ int16_t GetSpeed()
 		realSpeedmmPS = (SPEED_TICKS_FACTOR / filteredPhasePeriod) * stepDir ;
 	}
 	return realSpeedmmPS;
+}
+
+//----------------------------------------------------------------------------
+// Get position in mm
+//----------------------------------------------------------------------------
+int32_t GetPosition(void) {
+	return (int32_t)((float)cycles * MM_PER_CYCLE_FLOAT) ;
 }
 
 //----------------------------------------------------------------------------
@@ -290,7 +293,6 @@ void CalculateBLDC(void)
 		gpio_bit_write(BUZZER_PORT, BUZZER_PIN, RESET);
 	}
 
-	
 	// Calibrate ADC offsets for the first 1000 cycles
   if (offsetcount < 1000) {  
     offsetcount++;
@@ -306,7 +308,6 @@ void CalculateBLDC(void)
 		batteryVoltagemV 	+= ((tempV - batteryVoltagemV) / 100);
 		currentDCmA 			+= ((tempI - currentDCmA) / 100);
   }
-	
 
   // Disable PWM when current limit is reached (current chopping), enable is not set or timeout is reached
 	if (currentDCmA > DC_CUR_LIMIT_MA || bldcEnable == RESET || timedOut == SET) {
@@ -330,6 +331,9 @@ void CalculateBLDC(void)
 		else if ((stepDif == -1) || (stepDif == 5))
 			stepDir = -1;
 
+		// Integrate steps to measure distance
+		cycles += stepDir;
+
 		// Calculate low-pass filter for phase Period
 		phasePeriodFilterReg = phasePeriodFilterReg - (phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT) + phasePeriod;
 		filteredPhasePeriod = phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT;
@@ -352,12 +356,6 @@ void CalculateBLDC(void)
 		realSpeedmmPS = 0;
 	}
 	
-	// Integrate distance travelled.
-	// Every time position reaches value 1, one cycle is performed (rising edge)
-	if (lastPos != 1 && pos == 1) {
-		cycles += stepDir;
-	}
-
 	// ======================================================================================	
 	// Determine desired phase commutation and PWM based on operational mode
 	// Three conditions are:  

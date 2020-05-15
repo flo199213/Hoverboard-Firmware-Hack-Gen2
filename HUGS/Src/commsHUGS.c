@@ -34,11 +34,10 @@
 #include "stdio.h"
 #include "string.h"
 
-#define HUGS_MAX_DATA 5  			  // Max variable Data Length'
+#define HUGS_MAX_DATA 9  			  // Max variable Data Length'
 #define HUGS_EOM_OFFSET 7				// Location of EOM char based on variable data length
 #define USART_HUGS_TX_BYTES (HUGS_MAX_DATA + 8)  // Max buffeer size including
 #define USART_HUGS_RX_BYTES (HUGS_MAX_DATA + 8)  // start '/' and stop character '\n'
-#define MM_PER_CYCLE 35 					//  35.333
 
 static bool 	  sHUGSRecord = FALSE;
 
@@ -60,7 +59,7 @@ void ShutOff(void);
 
 
 typedef enum {NOP = 0, RSP, ENA, DIS, POW, ABS, REL, DOG, RES, SPE, XXX = 0xFF} CMD_ID;
-typedef enum {NOR = 0, SSPE, SPOS, SVOL, SAMP, SPOW, SDOG, STOP} RSP_ID;
+typedef enum {NOR = 0, SSPE, SPOS, SVOL, SAMP, SPOW, SDOG, SMOT, STOP} RSP_ID;
 
 // Variables updated by HUGS Message
 bool			HUGS_ESTOP = FALSE;
@@ -159,9 +158,6 @@ bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	if ( USARTBuffer[length + 5] != (crc & 0xFF) ||
 		   USARTBuffer[length + 6] != ((crc >> 8) & 0xFF) )
 	{
-		// debug
-		SendBuffer(USART_HUGS, USARTBuffer, length + 8);
-		// debug
 		return FALSE;
 	}
 	
@@ -196,12 +192,10 @@ bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 		case RES:
 			// reset the current wheel position
 			cycles = 0;
-			
 		  break;
 
 		case SPE:
 			// Set the constant Speed (in mm/s)
-			cycles = 0;
 			HUGS_Enabled = TRUE;
 			SetEnable(SET);  
 			SetSpeed((int16_t)((uint16_t)USARTBuffer[6] << 8) +  (uint16_t)USARTBuffer[5]);
@@ -238,6 +232,7 @@ void SendHUGSReply()
 	uint8_t buffer[USART_HUGS_TX_BYTES];
 	int32_t positionMm;
 	uint8_t bitStatus = HUGS_ESTOP ? 0x01 : 0x00;
+	uint16_t tempInt = 0;
 	
 	bitStatus |= (controlMode << 1);
 
@@ -257,7 +252,7 @@ void SendHUGSReply()
 
 		case SPOS:
 			  length = 5;
-				positionMm = cycles * MM_PER_CYCLE ;
+				positionMm = GetPosition() ;
 				buffer[6] = (positionMm) & 0xFF;
 				buffer[7] = (positionMm >>  8) & 0xFF;
 				buffer[8] = (positionMm >> 16) & 0xFF;
@@ -278,8 +273,9 @@ void SendHUGSReply()
 
 		case SPOW:
 			  length = 3;
-				buffer[6] = GetPWM() & 0xFF ;
-				buffer[7] = GetPWM() >> 8;
+				tempInt = GetPWM();
+				buffer[6] = tempInt & 0xFF ;
+				buffer[7] = tempInt >> 8;
 		
 			break;
 		
@@ -287,6 +283,21 @@ void SendHUGSReply()
 			  length = 3;
 				buffer[6] = HUGS_WatchDog & 0xFF ;
 				buffer[7] = HUGS_WatchDog >> 8;
+			break;
+
+		case SMOT:
+			  length = 9;
+				tempInt = GetPWM();
+				positionMm = GetPosition() ;
+
+				buffer[6] = realSpeedmmPS & 0xFF ;
+				buffer[7] = realSpeedmmPS >> 8;
+				buffer[8] = (positionMm) & 0xFF;
+				buffer[9] = (positionMm >>  8) & 0xFF;
+				buffer[10] = (positionMm >> 16) & 0xFF;
+				buffer[11] = (positionMm >> 24) & 0xFF;
+				buffer[12] = tempInt & 0xFF ;
+				buffer[13] = tempInt >> 8;
 			break;
 
 		case STOP:
