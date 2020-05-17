@@ -39,6 +39,13 @@
 #define PHASE_G_OFFSET	(FULL_PHASE * 2 / 3)
 #define TRANSITION_ANGLE	233
 
+#define SPEED_MODE_PF				0
+#define SPEED_MODE_STEP			1
+#define SPEED_MODE_DUAL			2
+#define DEFAULT_SPEED_MODE	SPEED_MODE_PF
+#define DEFAULT_MAX_STEP_SPEED 200
+
+
 // Internal constants
 const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2000
 
@@ -47,7 +54,6 @@ const int32_t SPEED_TICKS_FACTOR = 188444 ;  // Divide factor by speed to get ti
 const int32_t SINE_TICKS_FACTOR  = 3010   ;  // Divide factor by speed to get ticks per degree.
 const int32_t MIN_SPEED          = 10 ;      // min usable speed in mm/S
 const int32_t MAX_PHASE_PERIOD   = SPEED_TICKS_FACTOR / MIN_SPEED ;   // one phase count @ MIN_SPEED
-const uint16_t STEPPER_LIMIT     = 200 ;     // Switch to stepper mode if requested speed < 100 mm/S 
 const float MM_PER_CYCLE_FLOAT   = 5.888;	   //  (530 / 90)
 
 //----------------------------------------------------------------------------
@@ -84,6 +90,8 @@ int8_t  stepDir	 				  = 0;  // determined rotation direction
 int8_t  speedDir					= 0;  // commanded rotation direction
 int8_t  controlMode				= 0;  // 1,2 or 3
 int16_t	PIDoutput					= 0;
+uint8_t speedMode					= DEFAULT_SPEED_MODE;      // Desired Closed Loop Speed Mode.  0 = PF, 1 = STEP, 2 = Dual 
+uint8_t maxStepSpeed			= DEFAULT_MAX_STEP_SPEED;  // 
 
 bool		stepperMode				= FALSE;
 bool		phaseRestart			= FALSE;
@@ -203,7 +211,9 @@ void SetSpeed(int16_t speed)
 	}
 	
 	// Do we need stepper mode?
-  if (abs16(speedSetpoint) > STEPPER_LIMIT) { 
+  if ( (speedMode == SPEED_MODE_PF) ||
+       ((speedMode == SPEED_MODE_DUAL) && (abs16(speedSetpoint) > maxStepSpeed))
+		 ) { 
 		stepperMode = FALSE;
 		phaseRestart = FALSE;
 	} else {
@@ -222,7 +232,7 @@ void SetSpeed(int16_t speed)
 }
 
 //----------------------------------------------------------------------------
-// Set power -100 to 100
+// Set power -1000 to 1000
 //----------------------------------------------------------------------------
 void SetPower(int16_t power)
 {
@@ -250,7 +260,7 @@ void SetPWM(int16_t setPwm)
 //----------------------------------------------------------------------------
 int16_t GetPWM()
 {
-	return PIDoutput ;
+	return bldcFilteredPwm ;
 }
 
 //----------------------------------------------------------------------------

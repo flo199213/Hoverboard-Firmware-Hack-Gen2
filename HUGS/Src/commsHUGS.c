@@ -50,7 +50,8 @@ extern uint16_t currentDCmA     ;
 extern int16_t  realSpeedmmPS   ;
 extern int32_t  cycles      ;
 extern int8_t   controlMode	;
-extern int16_t  step_y;
+extern uint8_t  speedMode ;
+extern uint8_t  maxStepSpeed ;
 
 bool CheckUSARTHUGSInput(uint8_t USARTBuffer[]);
 void SendHUGSReply(void);
@@ -58,8 +59,8 @@ uint16_t CalcCRC(uint8_t *ptr, int count);
 void ShutOff(void);
 
 
-typedef enum {NOP = 0, RSP, ENA, DIS, POW, ABS, REL, DOG, RES, SPE, XXX = 0xFF} CMD_ID;
-typedef enum {NOR = 0, SSPE, SPOS, SVOL, SAMP, SPOW, SDOG, SMOT, STOP} RSP_ID;
+typedef enum {NOP = 0, RSP, RES, ENA, DIS, POW, SPE, ABS, REL, DOG, MOD, XXX = 0xFF} CMD_ID;
+typedef enum {NOR = 0, SMOT, SPOW, SSPE, SPOS, SVOL, SAMP, SDOG, SMOD, STOP = 0xFF} RSP_ID;
 
 // Variables updated by HUGS Message
 bool			HUGS_ESTOP = FALSE;
@@ -189,6 +190,12 @@ bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 			HUGS_WatchDog = ((uint16_t)USARTBuffer[6] << 8) +  (uint16_t)USARTBuffer[5];
 		  break;
 
+		case MOD:
+			// save the new speed Mode
+			speedMode = USARTBuffer[5];
+		  maxStepSpeed = USARTBuffer[6];
+		  break;
+
 		case RES:
 			// reset the current wheel position
 			cycles = 0;
@@ -283,6 +290,13 @@ void SendHUGSReply()
 			  length = 3;
 				buffer[6] = HUGS_WatchDog & 0xFF ;
 				buffer[7] = HUGS_WatchDog >> 8;
+			break;
+
+		case SMOD:
+			  length = 3;
+				buffer[6] = speedMode ;
+				buffer[7] = maxStepSpeed ;
+		
 			break;
 
 		case SMOT:

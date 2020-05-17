@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\HUGS.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\HUGS.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu May 14 22:24:37 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat May 16 17:43:24 2020
 <BR><P>
 <H3>Maximum Stack Usage =        160 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -267,7 +267,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSpeed
 </UL>
 
-<P><STRONG><a name="[61]"></a>SetSpeed</STRONG> (Thumb, 140 bytes, Stack size 4 bytes, bldc.o(.text))
+<P><STRONG><a name="[61]"></a>SetSpeed</STRONG> (Thumb, 158 bytes, Stack size 4 bytes, bldc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SetSpeed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abs16
@@ -324,7 +324,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalculateBLDC
 </UL>
 
-<P><STRONG><a name="[69]"></a>CalculateBLDC</STRONG> (Thumb, 1286 bytes, Stack size 32 bytes, bldc.o(.text))
+<P><STRONG><a name="[69]"></a>CalculateBLDC</STRONG> (Thumb, 1292 bytes, Stack size 32 bytes, bldc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = CalculateBLDC &rArr; __aeabi_cdcmple
 </UL>
 <BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_channel_output_pulse_value_config
@@ -614,7 +614,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Channel1_2_IRQHandler
 </UL>
 
-<P><STRONG><a name="[52]"></a>SendHUGSReply</STRONG> (Thumb, 376 bytes, Stack size 48 bytes, commshugs.o(.text))
+<P><STRONG><a name="[52]"></a>SendHUGSReply</STRONG> (Thumb, 420 bytes, Stack size 48 bytes, commshugs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = SendHUGSReply &rArr; SendBuffer &rArr; usart_flag_get
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcCRC
@@ -626,7 +626,7 @@ Global Symbols
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ShutOff
 </UL>
 
-<P><STRONG><a name="[b7]"></a>CheckUSARTHUGSInput</STRONG> (Thumb, 260 bytes, Stack size 16 bytes, commshugs.o(.text))
+<P><STRONG><a name="[b7]"></a>CheckUSARTHUGSInput</STRONG> (Thumb, 278 bytes, Stack size 16 bytes, commshugs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = CheckUSARTHUGSInput &rArr; SendHUGSReply &rArr; SendBuffer &rArr; usart_flag_get
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcCRC
