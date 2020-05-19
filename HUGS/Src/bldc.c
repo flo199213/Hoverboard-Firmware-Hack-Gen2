@@ -30,9 +30,6 @@
 
 #include "../Inc/bldc.h"
 
-#define KF 2 / 11
-#define KFO	23
-#define KP 3 / 5
 #define FULL_PHASE      360
 #define PHASE_Y_OFFSET	(0)
 #define PHASE_B_OFFSET	(FULL_PHASE / 3)
@@ -52,7 +49,7 @@ const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2000
 const int32_t WHEEL_PERIMETER    = 530 ;  // mm
 const int32_t SPEED_TICKS_FACTOR = 188444 ;  // Divide factor by speed to get ticks per cycle, or visa versa.
 const int32_t SINE_TICKS_FACTOR  = 3010   ;  // Divide factor by speed to get ticks per degree.
-const int32_t MIN_SPEED          = 10 ;      // min usable speed in mm/S
+const int32_t MIN_SPEED          = 5 ;       // min usable speed in mm/S
 const int32_t MAX_PHASE_PERIOD   = SPEED_TICKS_FACTOR / MIN_SPEED ;   // one phase count @ MIN_SPEED
 const float MM_PER_CYCLE_FLOAT   = 5.888;	   //  (530 / 90)
 
@@ -78,20 +75,23 @@ const uint8_t hall_to_pos[8] =
   6, // hall position [7] - No function (access from 0-5) 
 };
 
-int16_t speedError;
-
 uint16_t batteryVoltagemV = 40000;
 uint16_t currentDCmA      = 0;
-int16_t realSpeedmmPS     = 0;
 int32_t cycles            = 0;
 int32_t speedCounter 			= 0;
 int32_t phasePeriod 			= 0;
 int8_t  stepDir	 				  = 0;  // determined rotation direction
 int8_t  speedDir					= 0;  // commanded rotation direction
 int8_t  controlMode				= 0;  // 1,2 or 3
-int16_t	PIDoutput					= 0;
 uint8_t speedMode					= DEFAULT_SPEED_MODE;      // Desired Closed Loop Speed Mode.  0 = PF, 1 = STEP, 2 = Dual 
 uint8_t maxStepSpeed			= DEFAULT_MAX_STEP_SPEED;  // 
+
+int16_t outF 							= 0;
+int16_t outP 							= 0;
+int16_t outI 							= 0;
+	
+int32_t speedError 				= 0;
+int32_t errorIntegral			= 0;	// PID components scaled up by 15 bits
 
 bool		stepperMode				= FALSE;
 bool		phaseRestart			= FALSE;
@@ -112,7 +112,8 @@ extern FlagStatus timedOut;
 // Variables to be set from the main routine
 int16_t 		bldcInputPwm 		= 0;
 FlagStatus 	bldcEnable 			= RESET;
-int16_t 		speedSetpoint   = 0;
+int32_t 		speedSetpoint   = 0;
+int32_t 		lastSpeedSetpoint   = 0;
 bool				closedLoopSpeed	= FALSE;
 
 // ADC buffer to be filled by DMA
@@ -130,10 +131,10 @@ int16_t  offsetcount = 0;
 int16_t  offsetdc = 2000;
 
 // Low Pass Filter Regs
-int32_t phasePeriodFilterReg = 0;
-int16_t filteredPhasePeriod = 0;
+int32_t realSpeedFilterReg = 0;
+int16_t realSpeedmmPS      = 0;
 
-int32_t PWMFilterReg   = 0;
+int32_t PWMFilterReg    = 0;
 int16_t bldcFilteredPwm = 0;
 
 
@@ -268,13 +269,26 @@ int16_t GetPWM()
 //----------------------------------------------------------------------------
 int16_t GetSpeed()
 {
-	if (filteredPhasePeriod == MAX_PHASE_PERIOD ) {
-		realSpeedmmPS = 0 ;
+	return realSpeedmmPS ;
+}	
+
+//----------------------------------------------------------------------------
+// Get speed in mm/Sec
+//----------------------------------------------------------------------------
+void CalculateSpeed()
+{
+	int16_t speed;
+	
+	if (phasePeriod == MAX_PHASE_PERIOD ) {
+		speed = 0 ;
 	}
 	else{
-		realSpeedmmPS = (SPEED_TICKS_FACTOR / filteredPhasePeriod) * stepDir ;
+		speed = (SPEED_TICKS_FACTOR / phasePeriod) * stepDir ;
 	}
-	return realSpeedmmPS;
+	
+	// Calculate low-pass filter for phase Period
+	realSpeedFilterReg = realSpeedFilterReg - (realSpeedFilterReg >> SPEED_FILTER_SHIFT) + speed;
+	realSpeedmmPS = realSpeedFilterReg >> SPEED_FILTER_SHIFT;
 }
 
 //----------------------------------------------------------------------------
@@ -343,10 +357,6 @@ void CalculateBLDC(void)
 
 		// Integrate steps to measure distance
 		cycles += stepDir;
-
-		// Calculate low-pass filter for phase Period
-		phasePeriodFilterReg = phasePeriodFilterReg - (phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT) + phasePeriod;
-		filteredPhasePeriod = phasePeriodFilterReg >> PHASE_PERIOD_FILTER_SHIFT;
 		
 		// if we are waiting for a phase restart, load new angle.
 		if (phaseRestart) {
@@ -379,16 +389,10 @@ void CalculateBLDC(void)
 		if (speedSetpoint == 0){
 			SetPWM(0) ;
 		} else {
+			
 			// determine speed error and set power level
-			speedError = (speedSetpoint - realSpeedmmPS);
-			
-			// Generate output  feedforward = F = 1/5.4  (approx 2/11) Proportional =  P = 3/5
-			if (speedSetpoint > 0)
-				PIDoutput = (speedSetpoint * KF) + KFO + (speedError * KP);
-			else
-				PIDoutput = (speedSetpoint * KF) - KFO + (speedError * KP);
-			
-			SetPWM(PIDoutput);
+			SetPWM(runPID());
+	
 		}
 
 		// Calculate low-pass filter for pwm value (we don't always need it. but best to keep running.)
@@ -437,6 +441,39 @@ void CalculateBLDC(void)
 	
 	// Safe last position
 	lastPos = pos;
+}
+
+
+// PIDF coefficients are all scaled up by 15 bits (32768)
+const int32_t KF      = (int32_t)(32768.0 *   0.16) ;
+const int32_t KFO     = (int32_t)(32768.0 *  28.0) ;
+const int32_t KP      = (int32_t)(32768.0 *   0.2) ;
+const int32_t KI      = (int32_t)(32768.0 *   0.00005) ;
+const int32_t ILIMIT  = (int32_t)(32768.0 * 150) ;
+
+
+int16_t	runPID() {
+	speedError = (speedSetpoint - realSpeedmmPS) ;
+	
+	// Determine Feed Forward and Proportional terms
+	outF = ((speedSetpoint * KF) + (speedDir * KFO)) >> 15 ;
+	outP = (speedError * KP) >> 15;
+
+	// reset integral term if speed request is zero, or has changed signs.
+	// otherwise intergrate error
+	if ((speedSetpoint == 0) ||
+      ((speedSetpoint * lastSpeedSetpoint) < 0))	{
+		errorIntegral = 0;
+	} else {
+		errorIntegral += (speedError * KI) ;
+		errorIntegral = CLAMP(errorIntegral, (-ILIMIT), ILIMIT);  // do not let integral wind up over 10% of full range
+	}
+	outI = errorIntegral >> 15;
+	
+	lastSpeedSetpoint = speedSetpoint;
+	
+	// Combine terms to form output
+	return (outF + outP + outI) ;
 }
 
 uint8_t	hallToPos() {

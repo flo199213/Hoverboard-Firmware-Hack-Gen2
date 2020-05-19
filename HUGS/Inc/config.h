@@ -42,10 +42,7 @@
 // ################################################################################
 
 #define DELAY_IN_MAIN_LOOP 	5         // Delay in ms
-
 #define TIMEOUT_MS          2000      // Time in milliseconds without steering commands before pwm emergency off
-
-#ifdef MASTER
 #define INACTIVITY_TIMEOUT 	8        	// Minutes of not driving until poweroff (not very precise)
 
 // ################################################################################
@@ -58,13 +55,10 @@
 #define BAT_LOW_LVL2_MV  33000      // Battery almost empty, show orange battery symbol above this Level. Charge now! 
 #define BAT_LOW_DEAD_MV  31000      // Undervoltage lockout, show red battery symbol above this Level.
 
-
 // ################################################################################
-#endif
 
 // ###### ARMCHAIR ######
-#define PWM_FILTER_SHIFT 11 						// Low-pass filter for pwm, rank k=12
-//#define PHASE_PERIOD_FILTER_SHIFT 7 		// Low-pass filter for phase period, rank k=7
-#define PHASE_PERIOD_FILTER_SHIFT 3 		// Low-pass filter for phase period, rank k=10
+#define PWM_FILTER_SHIFT  10   			// Low-pass filter for pwm, rank k=12
+#define SPEED_FILTER_SHIFT 7 				// Low-pass filter for phase period, rank k=10
 
 #endif

@@ -48,10 +48,16 @@ static uint8_t sUSARTHUGSRecordBufferCounter = 0;
 extern uint16_t batteryVoltagemV;
 extern uint16_t currentDCmA     ;
 extern int16_t  realSpeedmmPS   ;
+extern int32_t  phasePeriod ;
 extern int32_t  cycles      ;
 extern int8_t   controlMode	;
 extern uint8_t  speedMode ;
 extern uint8_t  maxStepSpeed ;
+extern int16_t  outF ;
+extern int16_t  outP ;
+extern int16_t  outI ;
+extern int32_t  phasePeriod ;
+
 
 bool CheckUSARTHUGSInput(uint8_t USARTBuffer[]);
 void SendHUGSReply(void);
@@ -60,7 +66,7 @@ void ShutOff(void);
 
 
 typedef enum {NOP = 0, RSP, RES, ENA, DIS, POW, SPE, ABS, REL, DOG, MOD, XXX = 0xFF} CMD_ID;
-typedef enum {NOR = 0, SMOT, SPOW, SSPE, SPOS, SVOL, SAMP, SDOG, SMOD, STOP = 0xFF} RSP_ID;
+typedef enum {NOR = 0, SMOT, SPOW, SSPE, SPOS, SVOL, SAMP, SDOG, SMOD, SFPI, STOP = 0xFF} RSP_ID;
 
 // Variables updated by HUGS Message
 bool			HUGS_ESTOP = FALSE;
@@ -239,7 +245,8 @@ void SendHUGSReply()
 	uint8_t buffer[USART_HUGS_TX_BYTES];
 	int32_t positionMm;
 	uint8_t bitStatus = HUGS_ESTOP ? 0x01 : 0x00;
-	uint16_t tempInt = 0;
+	int16_t tempInt = 0;
+	int32_t tempLong = 0;
 	
 	bitStatus |= (controlMode << 1);
 
@@ -299,6 +306,17 @@ void SendHUGSReply()
 		
 			break;
 
+		case SFPI:
+			  length = 7;
+				buffer[6]  = outF & 0xFF ;
+				buffer[7]  = outF >> 8;
+				buffer[8]  = outP & 0xFF ;
+				buffer[9]  = outP >> 8;
+				buffer[10] = outI & 0xFF ;
+				buffer[11] = outI >> 8;
+		
+			break;
+
 		case SMOT:
 			  length = 9;
 				tempInt = GetPWM();
@@ -306,10 +324,15 @@ void SendHUGSReply()
 
 				buffer[6] = realSpeedmmPS & 0xFF ;
 				buffer[7] = realSpeedmmPS >> 8;
-				buffer[8] = (positionMm) & 0xFF;
-				buffer[9] = (positionMm >>  8) & 0xFF;
-				buffer[10] = (positionMm >> 16) & 0xFF;
-				buffer[11] = (positionMm >> 24) & 0xFF;
+		
+				tempLong = positionMm;
+				//tempLong = phasePeriod;
+				//tempLong = phasePeriod ;
+				buffer[8]  = (tempLong) & 0xFF;
+				buffer[9]  = (tempLong >>  8) & 0xFF;
+				buffer[10] = (tempLong >> 16) & 0xFF;
+				buffer[11] = (tempLong >> 24) & 0xFF;
+
 				buffer[12] = tempInt & 0xFF ;
 				buffer[13] = tempInt >> 8;
 			break;

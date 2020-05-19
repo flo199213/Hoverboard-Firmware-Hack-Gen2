@@ -63,7 +63,7 @@ void ResetTimeout(void)
 void TIMER13_IRQHandler(void)
 {	
 	// Update speed value
-	GetSpeed();
+	CalculateSpeed();
 	
 	if (timeoutCounter_ms > (HUGS_WatchDog << 1))
 	{
