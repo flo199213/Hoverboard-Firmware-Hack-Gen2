@@ -7,6 +7,17 @@ Based on: Hoverboard-Firmware-Hack-Gen2
 The HUGS project goal is to enable Hoverboards, or Hoverboard drive components to be re-purposed to provide low-cost mobility to other systems, such as assistive devices for the disabled, general purpose robots or other labor saving devices.
 To implement this goal, new code will be developed and installed in existing hoverboards, to provide a generic purpose control protocol.  This protocol will be used by external devices to run one or more “hoverboard” type wheels.  
 
+### Latest release:
+A major modification to the base control strategy was adding several different motor control methods.
+
+The basic method is a simple PWM power control where the the user requests a PWM level from 0 to 1000 and the comutation happens as required by the current sensed position.  The resulting speed is an open loop response.
+
+The next method was a closed loop response using the resultant phase transition speed as feedback. A Feed forward control loop with proportional and integral gain was created to regulate the resulting speed.  Control input is an actual linear speed in the +/- 5MPS range, expressed in mmPS.
+
+The third method is a low speed closed loop mode that uses a sinusoidal stepper motor sequence to drive the commutation at a fixed rate, depending on the requested speed.  The method optains higgly accurate speeds at rates less than about 200 mmPS.
+
+The fourth and final mode is a hybrid of the last two which switches automatically between the low speed stepper mode and the PID control mode.
+
 ### Background:
 The popular “Hoverboard” toy uses a somewhat unique drive system.  A powerful brushless DC motor has been integrated inside each of the small rubber wheels, and paired with a low cost motor controller.  This mechanical/electrical combination provides a compact drive system that produce precise motions, under considerable load, for relatively low cost.
 

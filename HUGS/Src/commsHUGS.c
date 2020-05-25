@@ -226,7 +226,9 @@ bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	}
 
 	// Send answer
-	SendHUGSReply();
+	if (HUGS_ResponseID != NOR) {
+		SendHUGSReply();
+	}
 	
 	// Reset the pwm timout to avoid stopping motors
 	ResetTimeout();
