@@ -328,8 +328,6 @@ void SendHUGSReply()
 				buffer[7] = realSpeedmmPS >> 8;
 		
 				tempLong = positionMm;
-				//tempLong = phasePeriod;
-				//tempLong = phasePeriod ;
 				buffer[8]  = (tempLong) & 0xFF;
 				buffer[9]  = (tempLong >>  8) & 0xFF;
 				buffer[10] = (tempLong >> 16) & 0xFF;
