@@ -195,7 +195,7 @@ void SetEnable(FlagStatus setEnable)
 }
 
 //----------------------------------------------------------------------------
-// Set speed -100 to 100
+// Set speed -5000 to 5000
 //----------------------------------------------------------------------------
 void SetSpeed(int16_t speed)
 {
@@ -459,14 +459,14 @@ int16_t	runPID() {
 	outF = ((speedSetpoint * KF) + (speedDir * KFO)) >> 15 ;
 	outP = (speedError * KP) >> 15;
 
-	// reset integral term if speed request is zero, or has changed signs.
+	// reset integral term if speed request near zero, or has changed signs.
 	// otherwise intergrate error
-	if ((speedSetpoint == 0) ||
+	if ((abs32(speedSetpoint) < MIN_SPEED) ||
       ((speedSetpoint * lastSpeedSetpoint) < 0))	{
 		errorIntegral = 0;
 	} else {
 		errorIntegral += (speedError * KI) ;
-		errorIntegral = CLAMP(errorIntegral, (-ILIMIT), ILIMIT);  // do not let integral wind up over 10% of full range
+		errorIntegral = CLAMP(errorIntegral, (-ILIMIT), ILIMIT);  // do not let integral wind up too much
 	}
 	outI = errorIntegral >> 15;
 	
@@ -515,6 +515,13 @@ void	setPhaseAngle(int16_t Yangle) {
 
 
 int16_t	abs16 (int16_t value) {
+	if (value < 0)
+		value = -value;
+	
+	return value;
+}
+
+int32_t	abs32 (int32_t value) {
 	if (value < 0)
 		value = -value;
 	

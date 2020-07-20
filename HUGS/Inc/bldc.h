@@ -76,9 +76,10 @@ void CalculateBLDC(void);
 int16_t	runPID(void) ;
 
 //----------------------------------------------------------------------------
-// Determine int16 Absolute value
+// Determine Absolute values
 //----------------------------------------------------------------------------
 int16_t	abs16(int16_t value) ;
+int32_t	abs32(int32_t value) ;
 
 //----------------------------------------------------------------------------
 // Determine the current commutation position (0-5)
