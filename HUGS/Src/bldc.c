@@ -448,7 +448,7 @@ void CalculateBLDC(void)
 const int32_t KF      = (int32_t)(32768.0 *   0.16) ;
 const int32_t KFO     = (int32_t)(32768.0 *  28.0) ;
 const int32_t KP      = (int32_t)(32768.0 *   0.2) ;
-const int32_t KI      = (int32_t)(32768.0 *   0.00005) ;
+const int32_t KI      = (int32_t)(32768.0 *   0.00004) ; //  was 0.00005
 const int32_t ILIMIT  = (int32_t)(32768.0 * 150) ;
 
 

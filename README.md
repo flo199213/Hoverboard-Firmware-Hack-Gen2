@@ -1,7 +1,11 @@
 
 ### Hoverboard Utility Gateway System (HUGS).
 
-Based on: Hoverboard-Firmware-Hack-Gen2
+Based on: Hoverboard-Firmware-Hack-Gen2 
+
+Hackaday Project Page: https://hackaday.io/project/170932-hoverboards-for-assistive-devices
+
+More includive Repo: https://github.com/gearsincorg/Hoverboards-for-assistive-devices
 
 ### Purpose:
 The HUGS project goal is to enable Hoverboards, or Hoverboard drive components to be re-purposed to provide low-cost mobility to other systems, such as assistive devices for the disabled, general purpose robots or other labor saving devices.
