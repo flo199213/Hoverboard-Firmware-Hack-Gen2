@@ -26,6 +26,7 @@
 #include "gd32f1x0.h"
 #include "../Inc/it.h"
 #include "../Inc/comms.h"
+#include "../Inc/commsHUGS.h"
 #include "../Inc/commsSteering.h"
 #include "../Inc/setup.h"
 #include "../Inc/config.h"
@@ -34,32 +35,23 @@
 #include "stdio.h"
 #include "string.h"
 
-// Only master communicates with steerin device
-#ifdef MASTER
-#define USART_STEER_TX_BYTES 2   // Transmit byte count including start '/' and stop character '\n'
-#define USART_STEER_RX_BYTES 8   // Receive byte count including start '/' and stop character '\n'
+#define STEER_MAX_DATA 4  			  // Max variable Data Length'
+#define STEER_EOM_OFFSET 7				// Location of EOM char based on variable data length
+#define USART_STEER_RX_BYTES (STEER_MAX_DATA + 8)  // start '/' and stop character '\n'
+#define USART_STEER_TX_BYTES 2    // Max buffeer size including
 
 extern uint8_t usartSteer_COM_rx_buf[USART_STEER_COM_RX_BUFFERSIZE];
-static uint8_t sSteerRecord = 0;
+
+static bool 	 sSteerRecord = FALSE;
 static uint8_t sUSARTSteerRecordBuffer[USART_STEER_RX_BYTES];
 static uint8_t sUSARTSteerRecordBufferCounter = 0;
+static uint8_t 	steerReply[USART_STEER_TX_BYTES] = {'/', '\n'};
 
-void CheckUSARTSteerInput(uint8_t u8USARTBuffer[]);
+CMD_ID    Steer_CommandID  = NOP;
+RSP_ID		Steer_ResponseID = NOR;
 
-//----------------------------------------------------------------------------
-// Send frame to steer device
-//----------------------------------------------------------------------------
-void SendSteerDevice(void)
-{
-	int index = 0;
-	uint8_t buffer[USART_STEER_TX_BYTES];
-	
-	// Ask for steer input
-	buffer[index++] = '/';
-	buffer[index++] = '\n';
-	
-	SendBuffer(USART_STEER_COM, buffer, index);
-}
+bool CheckUSARTSteerInput(uint8_t u8USARTBuffer[]);
+
 
 //----------------------------------------------------------------------------
 // Update USART steer input
@@ -67,59 +59,153 @@ void SendSteerDevice(void)
 void UpdateUSARTSteerInput(void)
 {
 	uint8_t character = usartSteer_COM_rx_buf[0];
+	uint8_t length;
+	
 	
 	// Start character is captured, start record
-	if (character == '/')
+	if (!sSteerRecord && (character == '/'))
 	{
 		sUSARTSteerRecordBufferCounter = 0;
-		sSteerRecord = 1;
+		sSteerRecord = TRUE;
 	}
 
+	// Process the new charcter
 	if (sSteerRecord)
 	{
 		sUSARTSteerRecordBuffer[sUSARTSteerRecordBufferCounter] = character;
 		sUSARTSteerRecordBufferCounter++;
 		
-		if (sUSARTSteerRecordBufferCounter >= USART_STEER_RX_BYTES)
-		{
-			sUSARTSteerRecordBufferCounter = 0;
-			sSteerRecord = 0;
+	  // Check to see if we know the length yet
+		if (sUSARTSteerRecordBufferCounter > 1) {
 			
-			// Check input
-			CheckUSARTSteerInput (sUSARTSteerRecordBuffer);
+			// Check for an invalid length, or a completed message
+			if ((length = sUSARTSteerRecordBuffer[1]) > STEER_MAX_DATA){
+				// Bad data length
+				sUSARTSteerRecordBufferCounter = 0;
+				sSteerRecord = FALSE;
+			}
+			else if (sUSARTSteerRecordBufferCounter >  (length + STEER_EOM_OFFSET))
+			{
+				
+				// Check input using HUGS message processing
+				if (CheckUSARTSteerInput (sUSARTSteerRecordBuffer)) {
+
+					// FOR TEST PURPOSES
+					// SendBuffer(USART_STEER_COM, sUSARTSteerRecordBuffer, sUSARTSteerRecordBufferCounter);
+					
+					// A complete message was found.  Reset buffer and status
+					sUSARTSteerRecordBufferCounter = 0;
+					sSteerRecord = FALSE;
+				} else {
+					// Message was invalid.  it could have been a bad SOM
+					// check to see if the buffer holds another SOM (/)
+					int slider = 0;
+					int ch;
+					
+					for (ch = 1; ch < sUSARTSteerRecordBufferCounter; ch++) {
+						if (sUSARTSteerRecordBuffer[ch] == '/') {
+							slider = ch;
+							break;
+						}
+					}
+					
+					if (slider > 0) {
+						// push the buffer back
+						sUSARTSteerRecordBufferCounter -= slider;
+						memcpy(sUSARTSteerRecordBuffer, sUSARTSteerRecordBuffer + slider, sUSARTSteerRecordBufferCounter);
+					} else {
+						sUSARTSteerRecordBufferCounter = 0;
+						sSteerRecord = FALSE;
+					}
+				}
+			}
 		}
 	}
+	
 }
 
 //----------------------------------------------------------------------------
 // Check USART steer input
 //----------------------------------------------------------------------------
-void CheckUSARTSteerInput(uint8_t USARTBuffer[])
+bool CheckUSARTSteerInput(uint8_t USARTBuffer[])
 {
 	// Auxiliary variables
-	uint16_t crc;
+	uint16_t  crc;
+	uint8_t	  length = USARTBuffer[1];	
+	int16_t		turn_mmPS;
+	int16_t		left_mmPS;
+	int16_t		right_mmPS;
+	int16_t		smax;
+
 	
 	// Check start and stop character
 	if ( USARTBuffer[0] != '/' ||
-		USARTBuffer[USART_STEER_RX_BYTES - 1] != '\n')
+		USARTBuffer[length + STEER_EOM_OFFSET ] != '\n')
 	{
-		return;
+		return FALSE;
 	}
-	
-	// Calculate CRC (first bytes except crc and stop byte)
-	crc = CalcCRC(USARTBuffer, USART_STEER_RX_BYTES - 3);
+
+	// Calculate CRC (first bytes up to, not including crc)
+	crc = CalcCRC(USARTBuffer, length + 5 );
 	
 	// Check CRC
-	if ( USARTBuffer[USART_STEER_RX_BYTES - 3] != ((crc >> 8) & 0xFF) ||
-		USARTBuffer[USART_STEER_RX_BYTES - 2] != (crc & 0xFF))
+	if ( USARTBuffer[length + 5] != (crc & 0xFF) ||
+		   USARTBuffer[length + 6] != ((crc >> 8) & 0xFF) )
 	{
-		return;
+		return FALSE;
 	}
 	
-	// Calculate result speed value -1000 to 1000
-	//  speed = (int16_t)((USARTBuffer[1] << 8) | USARTBuffer[2]);
+	// command is valid.  Process it now
+	Steer_CommandID		= (CMD_ID)USARTBuffer[3] ;
+	Steer_ResponseID	= (RSP_ID)USARTBuffer[4] ;
+	
+	switch(Steer_CommandID) {
+		case DSPE:
+	
+			// Set the constant Speed (in mm/s)
+			SetEnable(SET); 
+		
+			left_mmPS  = (int16_t)((uint16_t)USARTBuffer[6] << 8) +  (uint16_t)USARTBuffer[5];
+			right_mmPS = left_mmPS;
+
+			turn_mmPS  = (int16_t)((float)((int16_t)((uint16_t)USARTBuffer[8] << 8) +  (uint16_t)USARTBuffer[7]) * MM_PER_DEGREE);
+
+			left_mmPS  += turn_mmPS;
+			right_mmPS -= turn_mmPS;
+
+			// normalize so no speed is > +/-TOP_SPEED
+			smax = max(abs16(left_mmPS), abs16(right_mmPS));
+
+			if (smax > MAX_SPEED) {
+				left_mmPS  = (left_mmPS  * MAX_SPEED) / smax;
+				right_mmPS = (right_mmPS * MAX_SPEED) / smax;
+			}
+
+			SendHUGSCmd(SPE, -left_mmPS) ;
+			SetSpeed(right_mmPS);
+		  break;
+
+		case XXX:
+			// powerdown
+		  SendHUGSCmd(SPE, 0) ;
+		  SendHUGSCmd(XXX, 0) ;
+			SetPower(0);
+			SetESTOP();
+		  break;
+
+		default:
+		  break;
+	}
+
+	// Send keep-alive reply
+	SendBuffer(USART_STEER_COM, steerReply,  sizeof(steerReply));
 	
 	// Reset the pwm timout to avoid stopping motors
 	ResetTimeout();
+	
+	return TRUE;
 }
-#endif
+
+int16_t		max(int16_t a, int16_t b){
+	return (a >= b)? a : b;
+}

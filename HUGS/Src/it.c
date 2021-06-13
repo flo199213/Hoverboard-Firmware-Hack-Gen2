@@ -32,53 +32,61 @@
 #include "../Inc/commsHUGS.h"
 #include "../Inc/commsSteering.h"
 
-uint32_t msTicks;
-uint32_t timeoutCounter_ms = 0;
-FlagStatus timedOut = SET;
+uint32_t   msTicks 		 = 0;
+uint32_t   sysTicks 	 = 0;
+uint32_t   driveSafeMs = 0;
+FlagStatus timedOut 	 = SET;
+bool	     msToggle 	 = FALSE;
 
 extern FlagStatus activateWeakening;
 extern int16_t HUGS_WatchDog;
 
 //----------------------------------------------------------------------------
-// SysTick_Handler
+// SysTick_Handler  (Fires every 10 mS)
 //----------------------------------------------------------------------------
 void SysTick_Handler(void)
 {
-  msTicks++;
+	sysTicks++;
 }
 
 //----------------------------------------------------------------------------
-// Resets the timeout to zero
+// Resets the drive timeout to zero
 //----------------------------------------------------------------------------
 void ResetTimeout(void)
 {
-  timeoutCounter_ms = 0;
+  driveSafeMs = 0;
 }
 
 //----------------------------------------------------------------------------
 // Timer13_Update_Handler
 // Is called when upcouting of timer13 is finished and the UPDATE-flag is set
-// -> period of timer13 running with 1kHz -> interrupt every 1ms  (actually 500 uS)
+// -> period of timer13 running with 2kHz -> interrupt every 500 uS  
 //----------------------------------------------------------------------------
 void TIMER13_IRQHandler(void)
 {	
-	// Update speed value
-	CalculateSpeed();
+	msToggle = msToggle ? FALSE : TRUE;
 	
-	if (timeoutCounter_ms > (HUGS_WatchDog << 1))
-	{
-		// First timeout reset all process values
-		if (timedOut == RESET)
-		{
-			SetPower(0);
-		}
+	if (msToggle) {
+		msTicks++;
+
+		// Update speed value
+		CalculateSpeed();
 		
-		timedOut = SET;
-	}
-	else
-	{
-		timedOut = RESET;
-		timeoutCounter_ms++;
+		if (driveSafeMs > HUGS_WatchDog)
+		{
+			// First timeout reset all process values
+			if (timedOut == RESET)
+			{
+				SetPower(0);
+			}
+			
+			timedOut = SET;
+		}
+		else
+		{
+			timedOut = RESET;
+			driveSafeMs++;
+		}
 	}
 
 	// Clear timer update interrupt flag
@@ -162,7 +170,7 @@ uint32_t millis()
 }
 
 //----------------------------------------------------------------------------
-// Delays number of tick Systicks (happens every 10 ms)
+// Delays number of mSec 
 //----------------------------------------------------------------------------
 void Delay (uint32_t dlyTicks)
 {

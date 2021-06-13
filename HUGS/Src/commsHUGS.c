@@ -64,10 +64,6 @@ void SendHUGSReply(void);
 uint16_t CalcCRC(uint8_t *ptr, int count);
 void ShutOff(void);
 
-
-typedef enum {NOP = 0, RSP, RES, ENA, DIS, POW, SPE, ABS, REL, DOG, MOD, XXX = 0xFF} CMD_ID;
-typedef enum {NOR = 0, SMOT, SPOW, SSPE, SPOS, SVOL, SAMP, SDOG, SMOD, SFPI, STOP = 0xFF} RSP_ID;
-
 // Variables updated by HUGS Message
 bool			HUGS_ESTOP = FALSE;
 uint16_t	HUGS_WatchDog = 1000 ; // TIMEOUT_MS;
@@ -75,8 +71,11 @@ uint8_t	  HUGS_Destination = 0;
 uint8_t	  HUGS_Sequence = 0;
 CMD_ID    HUGS_CommandID = NOP;
 RSP_ID		HUGS_ResponseID = NOR;
-bool			HUGS_Enabled = FALSE;
 
+
+void SetESTOP(void) {
+	HUGS_ESTOP = TRUE;
+}
 
 //----------------------------------------------------------------------------
 // Update USART HUGS input
@@ -176,17 +175,14 @@ bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 	
 	switch(HUGS_CommandID) {
 		case ENA:
-			HUGS_Enabled = TRUE;
 			SetEnable(SET);
 			break;
 
 		case DIS:
-			HUGS_Enabled = FALSE;
 			SetEnable(RESET);
 		  break;
 		
 		case POW:
-			HUGS_Enabled = TRUE;
 			SetEnable(SET);  
 			SetPower((int16_t)((uint16_t)USARTBuffer[6] << 8) +  (uint16_t)USARTBuffer[5]);
 		  break;
@@ -209,7 +205,6 @@ bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 
 		case SPE:
 			// Set the constant Speed (in mm/s)
-			HUGS_Enabled = TRUE;
 			SetEnable(SET);  
 			SetSpeed((int16_t)((uint16_t)USARTBuffer[6] << 8) +  (uint16_t)USARTBuffer[5]);
 		  break;
@@ -217,7 +212,7 @@ bool CheckUSARTHUGSInput(uint8_t USARTBuffer[])
 		case XXX:
 			// powerdown
 			SetPower(0);
-			HUGS_ESTOP = TRUE;
+			SetESTOP();
 			HUGS_ResponseID = STOP;
 		  break;
 
@@ -354,5 +349,47 @@ void SendHUGSReply()
 	buffer[length + 7] = '\n';
 	
 	SendBuffer(USART_HUGS, buffer, length + 8);
+}
+
+//----------------------------------------------------------------------------
+// Send command via USART (Presumably to SLAVE)
+//----------------------------------------------------------------------------
+void SendHUGSCmd(CMD_ID SlaveCmd, int16_t value) 
+{
+	int8_t length = -1;
+	uint16_t crc = 0;
+	uint8_t buffer[USART_HUGS_TX_BYTES];
+	
+	switch(SlaveCmd) {
+		case SPE:
+			  length = 2;
+				buffer[5] = value & 0xFF ;
+				buffer[6] = value >> 8;
+			break;
+
+		case XXX:
+			  length = 0;
+			break;
+
+		default:
+			break;
+	}
+
+	// Only send a cmd if we have recognized the command and set a valid length
+	if (length >= 0) {
+		buffer[0] = '/';
+		buffer[1] = length;
+		buffer[2] = 0;
+		buffer[3] = SlaveCmd;
+		buffer[4] = NOR;
+		
+		// Calculate CRC
+		crc = CalcCRC(buffer, length + 5);
+		buffer[length + 5] = crc & 0xFF;
+		buffer[length + 6] = (crc >> 8) & 0xFF;
+		buffer[length + 7] = '\n';
+		
+		SendBuffer(USART_HUGS, buffer, length + 8);
+	}
 }
 

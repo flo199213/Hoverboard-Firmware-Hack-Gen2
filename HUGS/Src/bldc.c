@@ -36,16 +36,8 @@
 #define PHASE_G_OFFSET	(FULL_PHASE * 2 / 3)
 #define TRANSITION_ANGLE	233
 
-#define SPEED_MODE_PF				0
-#define SPEED_MODE_STEP			1
-#define SPEED_MODE_DUAL			2
-#define DEFAULT_SPEED_MODE	SPEED_MODE_PF
-#define DEFAULT_MAX_STEP_SPEED 200
-
-
 // Internal constants
 const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2000
-
 const int32_t WHEEL_PERIMETER    = 530 ;  // mm
 const int32_t SPEED_TICKS_FACTOR = 188444 ;  // Divide factor by speed to get ticks per cycle, or visa versa.
 const int32_t SINE_TICKS_FACTOR  = 3010   ;  // Divide factor by speed to get ticks per degree.
@@ -199,6 +191,11 @@ void SetEnable(FlagStatus setEnable)
 //----------------------------------------------------------------------------
 void SetSpeed(int16_t speed)
 {
+	//  Keep driver alive
+	if (abs16(speed) >= 10) {
+		resetInactivityTimer();
+	}
+
 	closedLoopSpeed = TRUE;
 	speedSetpoint = CLAMP(speed, -5000, 5000);
 	
@@ -237,6 +234,10 @@ void SetSpeed(int16_t speed)
 //----------------------------------------------------------------------------
 void SetPower(int16_t power)
 {
+	//  Keep driver alive
+	if (abs16(power) > 5) {
+		resetInactivityTimer();
+	}
 	closedLoopSpeed = FALSE;
 	stepperMode   = FALSE;
 	speedSetpoint = 0;
@@ -448,7 +449,7 @@ void CalculateBLDC(void)
 const int32_t KF      = (int32_t)(32768.0 *   0.16) ;
 const int32_t KFO     = (int32_t)(32768.0 *  28.0) ;
 const int32_t KP      = (int32_t)(32768.0 *   0.2) ;
-const int32_t KI      = (int32_t)(32768.0 *   0.00004) ; //  was 0.00005
+const int32_t KI      = (int32_t)(32768.0 *   0.00005) ;
 const int32_t ILIMIT  = (int32_t)(32768.0 * 150) ;
 
 

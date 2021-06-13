@@ -209,7 +209,6 @@ void GPIO_init(void)
 	gpio_af_set(USART_STEER_COM_TX_PORT, GPIO_AF_0, USART_STEER_COM_TX_PIN);
 	gpio_af_set(USART_STEER_COM_RX_PORT, GPIO_AF_0, USART_STEER_COM_RX_PIN);
 	
-#ifdef MASTER	
 	// Init buzzer
 	gpio_mode_set(BUZZER_PORT , GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, BUZZER_PIN);	
 	gpio_output_options_set(BUZZER_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, BUZZER_PIN);
@@ -219,7 +218,6 @@ void GPIO_init(void)
 	
 	// Init charge state
 	gpio_mode_set(CHARGE_STATE_PORT, GPIO_MODE_INPUT, GPIO_PUPD_PULLUP, CHARGE_STATE_PIN);
-#endif
 }
 	
 //----------------------------------------------------------------------------
@@ -444,8 +442,8 @@ void USART_Steer_COM_init(void)
 	rcu_periph_clock_enable(RCU_USART0);
 	rcu_periph_clock_enable(RCU_DMA);
 	
-	// Init USART for 19200 baud, 8N1
-	usart_baudrate_set(USART_STEER_COM, 19200);
+	// Init USART for 38400 baud, 8N1  (Works best with PIC 8MHz)
+	usart_baudrate_set(USART_STEER_COM, 38400);
 	usart_parity_config(USART_STEER_COM, USART_PM_NONE);
 	usart_word_length_set(USART_STEER_COM, USART_WL_8BIT);
 	usart_stop_bit_set(USART_STEER_COM, USART_STB_1BIT);

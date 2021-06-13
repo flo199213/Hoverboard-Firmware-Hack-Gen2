@@ -38,6 +38,7 @@
 #include "../Inc/config.h"
 #include "../Inc/it.h"
 #include "../Inc/bldc.h"
+#include "../Inc/comms.h"
 #include "../Inc/commsHUGS.h"
 #include "../Inc/commsSteering.h"
 #include "stdio.h"
@@ -45,27 +46,21 @@
 #include "string.h"
 #include <math.h>     
 
-#ifdef MASTER
 FlagStatus activateWeakening = RESET;			// global variable for weakening
 			
 extern uint16_t batteryVoltagemV;					// global variable for battery voltage
 	
 extern FlagStatus timedOut;								// Timeoutvariable set by timeout timer
 
-extern bool			HUGS_Enabled;							// Set by HUGS communications
 extern bool			HUGS_ESTOP;
 
-extern uint8_t buzzerFreq;    						// global variable for the buzzer pitch. can be 1, 2, 3, 4, 5, 6, 7...
+extern uint8_t buzzerFreq;    						// global variable for the buzzer pitch.   can be 1, 2, 3, 4, 5, 6, 7...
 extern uint8_t buzzerPattern; 						// global variable for the buzzer pattern. can be 1, 2, 3, 4, 5, 6, 7...
 
-
-uint16_t command_timeout_counter = 0;	    // motor safety counter ms From last command
-uint32_t inactivity_timeout_counter = 0;	// Inactivity counter ms From last command
+uint32_t inactivityTimer = 0;			  			// Inactivity counter ms From last command
 
 void ShowBatteryState(uint32_t pin);
 void ShutOff(void);
-#endif
-
 
 //----------------------------------------------------------------------------
 // MAIN function
@@ -111,9 +106,9 @@ int main (void)
 	// Init usart steer/bluetooth
 	USART_Steer_COM_init();
 
-	// Startup-Sound
+	// Startup-Sound.  This plays for 1 second
 	buzzerFreq = 7;
-  Delay(100);
+  Delay(1000);
 	fwdgt_counter_reload();
   buzzerFreq = 0;
 
@@ -123,7 +118,7 @@ int main (void)
 		// Reload watchdog while button is pressed
 		fwdgt_counter_reload();
 	}
-
+	
   while(1)
 	{
 		// Shut device if ESTOP requested or when button is pressed
@@ -132,34 +127,44 @@ int main (void)
 			ShutOff();
     }
 
-		// Show green battery symbol when battery level BAT_LOW_LVL1 is reached
-    if (batteryVoltagemV > BAT_LOW_LVL1_MV)
-		{
-			// Show green battery light
-			ShowBatteryState(LED_GREEN);
-		}
-		// Make silent sound and show orange battery symbol when battery level BAT_LOW_LVL2 is reached
-    else if (batteryVoltagemV > BAT_LOW_LVL2_MV && batteryVoltagemV < BAT_LOW_LVL1_MV)
-		{
-			// Show orange battery light
-			ShowBatteryState(LED_ORANGE);
-    }
-		// Make even more sound and show red battery symbol when battery level BAT_LOW_DEAD is reached
-		else if  (batteryVoltagemV > BAT_LOW_DEAD_MV && batteryVoltagemV < BAT_LOW_LVL2_MV)
-		{
-			// Show red battery light
-			ShowBatteryState(LED_RED);
-    }
-		else
-		{
-			ShutOff();
-    }
-
 		// Shut off device after INACTIVITY_TIMEOUT in minutes
-    if (inactivity_timeout_counter++ > (INACTIVITY_TIMEOUT * 60 * 1000) / (DELAY_IN_MAIN_LOOP + 1))
+    if (inactivityTimer++ > INACTIVITY_COUNTER)
 		{ 
       ShutOff();
-    }
+    } else if (inactivityTimer > INACTIVITY_WARNING) { 
+			buzzerFreq = 8;
+      buzzerPattern = 8;
+    } else {
+		
+			// Show green battery symbol when battery level BAT_LOW_LVL1 is reached
+			if (batteryVoltagemV > BAT_LOW_LVL1_MV)
+			{
+				// Show green battery light
+				ShowBatteryState(LED_GREEN);
+				buzzerFreq = 0;
+			}
+			// Make silent sound and show orange battery symbol when battery level BAT_LOW_LVL2 is reached
+			else if (batteryVoltagemV > BAT_LOW_LVL2_MV && batteryVoltagemV < BAT_LOW_LVL1_MV)
+			{
+				// Show orange battery light
+				ShowBatteryState(LED_ORANGE);
+				buzzerFreq = 5;
+				buzzerPattern = 8;
+			}
+			// Make even more sound and show red battery symbol when battery level BAT_LOW_DEAD is reached
+			else if  (batteryVoltagemV > BAT_LOW_DEAD_MV && batteryVoltagemV < BAT_LOW_LVL2_MV)
+			{
+				// Show red battery light
+				ShowBatteryState(LED_RED);
+				buzzerFreq = 5;
+				buzzerPattern = 1;
+			}
+			else
+			{
+				ShutOff();
+			}
+		}
+
 
 		Delay(DELAY_IN_MAIN_LOOP);
 		
@@ -181,16 +186,17 @@ void ShutOff(void)
 	
 	// Ensure that drive is off and estop status set.
 	SetPWM(0);
-	HUGS_Enabled = FALSE;
 	HUGS_ESTOP   = TRUE;	
 	SetEnable(RESET);
 	SendHUGSReply();			// Transfer ESTOP to Controller
+	SendHUGSCmd(XXX, 0);	// Tell possible slave to stop as well.
+	
 
 	// Play shutdown sound
 	for (index = 0; index < 8; index++)
 	{
 		buzzerFreq = index;
-		Delay(10);
+		Delay(100);
 	}
 	buzzerFreq = 0;
 
@@ -216,3 +222,7 @@ void ShowBatteryState(uint32_t pin)
 	gpio_bit_write(LED_RED_PORT, LED_RED, pin == LED_RED ? SET : RESET);
 }
 
+
+void	resetInactivityTimer(void) {
+	inactivityTimer = 0;
+}
