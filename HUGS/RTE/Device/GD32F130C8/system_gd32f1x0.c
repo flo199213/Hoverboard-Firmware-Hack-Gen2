@@ -43,8 +43,8 @@
 /* select a system clock by uncommenting the following line */
 //#define __SYSTEM_CLOCK_8M_HXTAL              (__HXTAL)
 //#define __SYSTEM_CLOCK_8M_IRC8M              (__IRC8M)
-//#define __SYSTEM_CLOCK_72M_PLL_HXTAL         (uint32_t)(72000000)
-#define __SYSTEM_CLOCK_72M_PLL_IRC8M_DIV2    (uint32_t)(72000000)
+#define __SYSTEM_CLOCK_72M_PLL_HXTAL         (uint32_t)(72000000)
+//#define __SYSTEM_CLOCK_72M_PLL_IRC8M_DIV2    (uint32_t)(72000000)
 
 #define SEL_IRC8M       0x00
 #define SEL_HXTAL       0x01
@@ -88,7 +88,7 @@ void SystemInit (void)
     RCU_CFG0 &= ~(RCU_CFG0_SCS | RCU_CFG0_AHBPSC | RCU_CFG0_APB1PSC | RCU_CFG0_APB2PSC |\
                   RCU_CFG0_ADCPSC | RCU_CFG0_CKOUT0SEL | RCU_CFG0_CKOUT0DIV | RCU_CFG0_PLLDV);
 #endif /* GD32F130_150 */
-    RCU_CFG0 &= ~(RCU_CFG0_PLLSEL | RCU_CFG0_PLLMF | RCU_CFG0_PLLDV);
+    RCU_CFG0 &= ~(RCU_CFG0_PLLSEL | RCU_CFG0_PLLMF | RCU_CFG0_PLLPREDV);
 #ifdef GD32F130_150
     RCU_CFG0 &= ~(RCU_CFG0_USBDPSC);
 #endif /* GD32F130_150 */
@@ -100,7 +100,7 @@ void SystemInit (void)
 #elif defined (GD32F170_190)
     RCU_CFG2 &= ~RCU_CFG2_IRC28MDIV;
     RCU_CTL1 &= ~RCU_CTL1_IRC28MEN;
-    RCU_CFG3 &= ~RCU_CFG3_CKOUT1SRC;
+    RCU_CFG3 &= ~RCU_CFG3_CKOUT1SEL;
     RCU_CFG3 &= ~RCU_CFG3_CKOUT1DIV;
 #endif /* GD32F130_150 */
     RCU_INT = 0x00000000U;

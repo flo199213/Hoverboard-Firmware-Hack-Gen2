@@ -29,14 +29,30 @@
 #include "gd32f1x0.h"
 #include "../Inc/config.h"
 
+#define	 MAX_SPEED	5000
+
+typedef enum {NOP = 0, RSP, RES, ENA, DIS, POW, SPE, ABS, REL, DOG, MOD, DSPE=0x86, XXX = 0xFF} CMD_ID;
+typedef enum {NOR = 0, SMOT, SPOW, SSPE, SPOS, SVOL, SAMP, SDOG, SMOD, SFPI, STOP = 0xFF} RSP_ID;
+
 //----------------------------------------------------------------------------
 // Update USART master slave input
 //----------------------------------------------------------------------------
 void UpdateUSARTHUGSInput(void);
 
 //----------------------------------------------------------------------------
+// Send a command across to the other controller.
+//----------------------------------------------------------------------------
+void SendHUGSCmd(CMD_ID SlaveCmd, int16_t value);
+
+//----------------------------------------------------------------------------
 // Send reply frame via USART
 //----------------------------------------------------------------------------
 void SendHUGSReply(void);
+
+//----------------------------------------------------------------------------
+// Signal an ESTOP power down
+//----------------------------------------------------------------------------
+void SetESTOP(void);
+
 
 #endif

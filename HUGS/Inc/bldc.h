@@ -29,6 +29,12 @@
 #include "gd32f1x0.h"
 #include "../Inc/config.h"
 
+#define SPEED_MODE_PF				0
+#define SPEED_MODE_STEP			1
+#define SPEED_MODE_DUAL			2
+#define DEFAULT_SPEED_MODE	SPEED_MODE_PF
+#define DEFAULT_MAX_STEP_SPEED 200
+
 //----------------------------------------------------------------------------
 // Set motor enable
 //----------------------------------------------------------------------------

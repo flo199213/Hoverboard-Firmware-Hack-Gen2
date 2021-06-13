@@ -1,610 +1,612 @@
 Dependencies for Project 'HUGS', Target 'Target 1': (DO NOT MODIFY !)
-CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
-F (.\Src\main.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-I (Src\../Inc/setup.h)(0x5F3FD357)
-I (Src\../Inc/../Inc/config.h)(0x5F3FD357)
-I (Src\../Inc/defines.h)(0x5F3FD357)
-I (Src\../Inc/it.h)(0x5F3FD357)
-I (Src\../Inc/bldc.h)(0x5F3FD357)
-I (Src\../Inc/commsHUGS.h)(0x5F3FD357)
-I (Src\../Inc/commsSteering.h)(0x5F3FD357)
-I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B88EA)
-I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B88EA)
-I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B88E8)
-I (d:\Keil_v5\ARM\ARMCC\include\math.h)(0x5D9B88E2)
-F (.\Src\bldc.c)(0x5F553225)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\bldc.o --omf_browse .\objects\bldc.crf --depend .\objects\bldc.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-I (Src\../Inc/setup.h)(0x5F3FD357)
-I (Src\../Inc/../Inc/config.h)(0x5F3FD357)
-I (Src\../Inc/defines.h)(0x5F3FD357)
-I (Src\../Inc/bldc.h)(0x5F3FD357)
-F (.\Src\setup.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\setup.o --omf_browse .\objects\setup.crf --depend .\objects\setup.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-I (Src\../Inc/setup.h)(0x5F3FD357)
-I (Src\../Inc/../Inc/config.h)(0x5F3FD357)
-I (Src\../Inc/defines.h)(0x5F3FD357)
-I (Src\../Inc/it.h)(0x5F3FD357)
-F (.\Src\it.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\it.o --omf_browse .\objects\it.crf --depend .\objects\it.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-I (Src\../Inc/it.h)(0x5F3FD357)
-I (Src\../Inc/../Inc/config.h)(0x5F3FD357)
-I (Src\../Inc/defines.h)(0x5F3FD357)
-I (Src\../Inc/bldc.h)(0x5F3FD357)
-I (Src\../Inc/led.h)(0x5F3FD357)
-I (Src\../Inc/commsHUGS.h)(0x5F3FD357)
-I (Src\../Inc/commsSteering.h)(0x5F3FD357)
-F (.\Src\comms.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\comms.o --omf_browse .\objects\comms.crf --depend .\objects\comms.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (.\Src\commsSteering.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\commssteering.o --omf_browse .\objects\commssteering.crf --depend .\objects\commssteering.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-I (Src\../Inc/it.h)(0x5F3FD357)
-I (Src\../Inc/../Inc/config.h)(0x5F3FD357)
-I (Src\../Inc/comms.h)(0x5F3FD357)
-I (Src\../Inc/commsSteering.h)(0x5F3FD357)
-I (Src\../Inc/setup.h)(0x5F3FD357)
-I (Src\../Inc/defines.h)(0x5F3FD357)
-I (Src\../Inc/bldc.h)(0x5F3FD357)
-I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B88EA)
-I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B88E8)
-F (.\Src\led.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-I (Src\../Inc/led.h)(0x5F3FD357)
-I (Src\../Inc/../Inc/config.h)(0x5F3FD357)
-I (Src\../Inc/defines.h)(0x5F3FD357)
-F (.\Src\commsHUGS.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\commshugs.o --omf_browse .\objects\commshugs.crf --depend .\objects\commshugs.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-I (Src\../Inc/it.h)(0x5F3FD357)
-I (Src\../Inc/../Inc/config.h)(0x5F3FD357)
-I (Src\../Inc/comms.h)(0x5F3FD357)
-I (Src\../Inc/commsHUGS.h)(0x5F3FD357)
-I (Src\../Inc/setup.h)(0x5F3FD357)
-I (Src\../Inc/defines.h)(0x5F3FD357)
-I (Src\../Inc/bldc.h)(0x5F3FD357)
-I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B88EA)
-I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B88E8)
-F (.\Inc\defines.h)(0x5F3FD357)()
-F (.\Inc\config.h)(0x5F3FD357)()
-F (.\Inc\bldc.h)(0x5F3FD357)()
-F (.\Inc\setup.h)(0x5F3FD357)()
-F (.\Inc\it.h)(0x5F3FD357)()
-F (.\Inc\comms.h)(0x5F3FD357)()
-F (.\Inc\commsSteering.h)(0x5F3FD357)()
-F (.\Inc\led.h)(0x5F3FD357)()
-F (.\Inc\commsHUGS.h)(0x5F3FD357)()
-F (RTE\Device\GD32F130C8\gd32f1x0_adc.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_adc.o --omf_browse .\objects\gd32f1x0_adc.crf --depend .\objects\gd32f1x0_adc.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_dbg.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_dbg.o --omf_browse .\objects\gd32f1x0_dbg.crf --depend .\objects\gd32f1x0_dbg.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_dma.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_dma.o --omf_browse .\objects\gd32f1x0_dma.crf --depend .\objects\gd32f1x0_dma.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_fwdgt.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_fwdgt.o --omf_browse .\objects\gd32f1x0_fwdgt.crf --depend .\objects\gd32f1x0_fwdgt.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_gpio.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_gpio.o --omf_browse .\objects\gd32f1x0_gpio.crf --depend .\objects\gd32f1x0_gpio.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_i2c.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_i2c.o --omf_browse .\objects\gd32f1x0_i2c.crf --depend .\objects\gd32f1x0_i2c.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_misc.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_misc.o --omf_browse .\objects\gd32f1x0_misc.crf --depend .\objects\gd32f1x0_misc.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_opa.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_opa.o --omf_browse .\objects\gd32f1x0_opa.crf --depend .\objects\gd32f1x0_opa.d)
-F (RTE\Device\GD32F130C8\gd32f1x0_pmu.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_pmu.o --omf_browse .\objects\gd32f1x0_pmu.crf --depend .\objects\gd32f1x0_pmu.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_rcu.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_rcu.o --omf_browse .\objects\gd32f1x0_rcu.crf --depend .\objects\gd32f1x0_rcu.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_syscfg.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_syscfg.o --omf_browse .\objects\gd32f1x0_syscfg.crf --depend .\objects\gd32f1x0_syscfg.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_timer.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_timer.o --omf_browse .\objects\gd32f1x0_timer.crf --depend .\objects\gd32f1x0_timer.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_usart.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_usart.o --omf_browse .\objects\gd32f1x0_usart.crf --depend .\objects\gd32f1x0_usart.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\gd32f1x0_wwdgt.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\gd32f1x0_wwdgt.o --omf_browse .\objects\gd32f1x0_wwdgt.crf --depend .\objects\gd32f1x0_wwdgt.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
-F (RTE\Device\GD32F130C8\startup_gd32f1x0.s)(0x5F3FD358)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include--pd "__UVISION_VERSION SETA 529" --pd "_RTE_ SETA 1" --pd "GD32F130_150 SETA 1"--list .\listings\startup_gd32f1x0.lst --xref -o .\objects\startup_gd32f1x0.o --depend .\objects\startup_gd32f1x0.d)
-F (RTE\Device\GD32F130C8\system_gd32f1x0.c)(0x5F3FD358)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-Id:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc-Id:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include-D__UVISION_VERSION="529" -D_RTE_ -DGD32F130_150-o .\objects\system_gd32f1x0.o --omf_browse .\objects\system_gd32f1x0.crf --depend .\objects\system_gd32f1x0.d)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm3.h)(0x5D264786)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B88E8)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h)(0x5C9004A4)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\system_gd32f1x0.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Include\gd32f1x0_libopt.h)(0x5A7C67E6)
-I (.\RTE\_Target_1\RTE_Components.h)(0x5F3FD358)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5A7B6648)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5A7B664A)
-I (d:\Users\Phil\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.1.1\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5A7B6648)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\Src\main.c)(0x60C63284)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -I C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc -I .\Inc -I .\RTE\target_1-I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+I (Src\../Inc/setup.h)(0x60C6314A)
+I (Src\../Inc/../Inc/config.h)(0x60C63284)
+I (Src\../Inc/defines.h)(0x60C63284)
+I (Src\../Inc/it.h)(0x60C6314A)
+I (Src\../Inc/bldc.h)(0x60C63284)
+I (Src\../Inc/comms.h)(0x60C6314A)
+I (Src\../Inc/commsHUGS.h)(0x60C63284)
+I (Src\../Inc/commsSteering.h)(0x60C63284)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8EE582)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8EE582)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8EE582)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8EE582)
+F (.\Src\bldc.c)(0x60C63284)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -I C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc -I .\Inc -I .\RTE\target_1-I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\bldc.o --omf_browse .\objects\bldc.crf --depend .\objects\bldc.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+I (Src\../Inc/setup.h)(0x60C6314A)
+I (Src\../Inc/../Inc/config.h)(0x60C63284)
+I (Src\../Inc/defines.h)(0x60C63284)
+I (Src\../Inc/bldc.h)(0x60C63284)
+F (.\Src\setup.c)(0x60C67783)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -I C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc -I .\Inc -I .\RTE\target_1-I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\setup.o --omf_browse .\objects\setup.crf --depend .\objects\setup.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+I (Src\../Inc/setup.h)(0x60C6314A)
+I (Src\../Inc/../Inc/config.h)(0x60C63284)
+I (Src\../Inc/defines.h)(0x60C63284)
+I (Src\../Inc/it.h)(0x60C6314A)
+F (.\Src\it.c)(0x60C63284)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -I C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc -I .\Inc -I .\RTE\target_1-I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\it.o --omf_browse .\objects\it.crf --depend .\objects\it.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+I (Src\../Inc/it.h)(0x60C6314A)
+I (Src\../Inc/../Inc/config.h)(0x60C63284)
+I (Src\../Inc/defines.h)(0x60C63284)
+I (Src\../Inc/bldc.h)(0x60C63284)
+I (Src\../Inc/led.h)(0x60C6314A)
+I (Src\../Inc/commsHUGS.h)(0x60C63284)
+I (Src\../Inc/commsSteering.h)(0x60C63284)
+F (.\Src\comms.c)(0x60C6314B)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -I C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc -I .\Inc -I .\RTE\target_1-I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\comms.o --omf_browse .\objects\comms.crf --depend .\objects\comms.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (.\Src\commsSteering.c)(0x60C63284)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -I C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc -I .\Inc -I .\RTE\target_1-I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\commssteering.o --omf_browse .\objects\commssteering.crf --depend .\objects\commssteering.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+I (Src\../Inc/it.h)(0x60C6314A)
+I (Src\../Inc/../Inc/config.h)(0x60C63284)
+I (Src\../Inc/comms.h)(0x60C6314A)
+I (Src\../Inc/commsHUGS.h)(0x60C63284)
+I (Src\../Inc/commsSteering.h)(0x60C63284)
+I (Src\../Inc/setup.h)(0x60C6314A)
+I (Src\../Inc/defines.h)(0x60C63284)
+I (Src\../Inc/bldc.h)(0x60C63284)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8EE582)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8EE582)
+F (.\Src\led.c)(0x60C6314B)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -I C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc -I .\Inc -I .\RTE\target_1-I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+I (Src\../Inc/led.h)(0x60C6314A)
+I (Src\../Inc/../Inc/config.h)(0x60C63284)
+I (Src\../Inc/defines.h)(0x60C63284)
+F (.\Src\commsHUGS.c)(0x60C63284)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -I C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc -I .\Inc -I .\RTE\target_1-I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\commshugs.o --omf_browse .\objects\commshugs.crf --depend .\objects\commshugs.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+I (Src\../Inc/it.h)(0x60C6314A)
+I (Src\../Inc/../Inc/config.h)(0x60C63284)
+I (Src\../Inc/comms.h)(0x60C6314A)
+I (Src\../Inc/commsHUGS.h)(0x60C63284)
+I (Src\../Inc/setup.h)(0x60C6314A)
+I (Src\../Inc/defines.h)(0x60C63284)
+I (Src\../Inc/bldc.h)(0x60C63284)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8EE582)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8EE582)
+F (.\Inc\defines.h)(0x60C63284)()
+F (.\Inc\config.h)(0x60C63284)()
+F (.\Inc\bldc.h)(0x60C63284)()
+F (.\Inc\setup.h)(0x60C6314A)()
+F (.\Inc\it.h)(0x60C6314A)()
+F (.\Inc\comms.h)(0x60C6314A)()
+F (.\Inc\commsSteering.h)(0x60C63284)()
+F (.\Inc\led.h)(0x60C6314A)()
+F (.\Inc\commsHUGS.h)(0x60C63284)()
+F (RTE\Device\GD32F130C8\gd32f1x0_adc.c)(0x5DB37F10)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_adc.o --omf_browse .\objects\gd32f1x0_adc.crf --depend .\objects\gd32f1x0_adc.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_dbg.c)(0x5DAF19B4)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_dbg.o --omf_browse .\objects\gd32f1x0_dbg.crf --depend .\objects\gd32f1x0_dbg.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_dma.c)(0x5DB37F10)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_dma.o --omf_browse .\objects\gd32f1x0_dma.crf --depend .\objects\gd32f1x0_dma.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_fwdgt.c)(0x5DB37F10)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_fwdgt.o --omf_browse .\objects\gd32f1x0_fwdgt.crf --depend .\objects\gd32f1x0_fwdgt.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_gpio.c)(0x5DAF19B4)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_gpio.o --omf_browse .\objects\gd32f1x0_gpio.crf --depend .\objects\gd32f1x0_gpio.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_i2c.c)(0x5DB37F10)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_i2c.o --omf_browse .\objects\gd32f1x0_i2c.crf --depend .\objects\gd32f1x0_i2c.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_misc.c)(0x5DAF19B4)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_misc.o --omf_browse .\objects\gd32f1x0_misc.crf --depend .\objects\gd32f1x0_misc.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_opa.c)(0x5DB37F10)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_opa.o --omf_browse .\objects\gd32f1x0_opa.crf --depend .\objects\gd32f1x0_opa.d)
+F (RTE\Device\GD32F130C8\gd32f1x0_pmu.c)(0x5DAF19B4)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_pmu.o --omf_browse .\objects\gd32f1x0_pmu.crf --depend .\objects\gd32f1x0_pmu.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_rcu.c)(0x5DB37F10)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_rcu.o --omf_browse .\objects\gd32f1x0_rcu.crf --depend .\objects\gd32f1x0_rcu.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_syscfg.c)(0x5DAF19B4)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_syscfg.o --omf_browse .\objects\gd32f1x0_syscfg.crf --depend .\objects\gd32f1x0_syscfg.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_timer.c)(0x5DB37F10)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_timer.o --omf_browse .\objects\gd32f1x0_timer.crf --depend .\objects\gd32f1x0_timer.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_usart.c)(0x5DAF19B4)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_usart.o --omf_browse .\objects\gd32f1x0_usart.crf --depend .\objects\gd32f1x0_usart.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\gd32f1x0_wwdgt.c)(0x5DB37F10)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\gd32f1x0_wwdgt.o --omf_browse .\objects\gd32f1x0_wwdgt.crf --depend .\objects\gd32f1x0_wwdgt.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)
+F (RTE\Device\GD32F130C8\startup_gd32f1x0.s)(0x5DAF19B4)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include--pd "__UVISION_VERSION SETA 534" --pd "_RTE_ SETA 1" --pd "GD32F1x0 SETA 1" --pd "GD32F130_150 SETA 1" --pd "USE_STDPERIPH_DRIVER SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_gd32f1x0.lst --xref -o .\objects\startup_gd32f1x0.o --depend .\objects\startup_gd32f1x0.d)
+F (RTE\Device\GD32F130C8\system_gd32f1x0.c)(0x5DB38C2C)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc-IC:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DGD32F1x0 -DGD32F130_150 -DUSE_STDPERIPH_DRIVER -D_RTE_-o .\objects\system_gd32f1x0.o --omf_browse .\objects\system_gd32f1x0.crf --depend .\objects\system_gd32f1x0.d)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8EE582)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\system_gd32f1x0.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Include\gd32f1x0_libopt.h)(0x5DB7635A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x60C66209)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_adc.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dbg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_dma.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_gpio.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_syscfg.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_i2c.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_fwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_pmu.h)(0x5DB762E0)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_rcu.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_timer.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_usart.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_wwdgt.h)(0x5DB37F10)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_misc.h)(0x5DAF19B4)
+I (C:\Users\13015\AppData\Local\Arm\Packs\GigaDevice\GD32F1x0_DFP\3.2.0\Device\Firmware\Peripherals\inc\gd32f1x0_opa.h)(0x5DB762E0)

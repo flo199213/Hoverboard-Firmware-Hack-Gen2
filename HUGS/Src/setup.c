@@ -333,7 +333,7 @@ void ADC_init(void)
 	dma_init_struct_adc.periph_inc = DMA_PERIPH_INCREASE_DISABLE;
 	dma_init_struct_adc.periph_width = DMA_PERIPHERAL_WIDTH_16BIT;
 	dma_init_struct_adc.priority = DMA_PRIORITY_ULTRA_HIGH;
-	dma_init(DMA_CH0, dma_init_struct_adc);
+	dma_init(DMA_CH0, &dma_init_struct_adc);
 	
 	// Configure DMA mode
 	dma_circulation_enable(DMA_CH0);
@@ -355,7 +355,7 @@ void ADC_init(void)
 	
 	// Set trigger of ADC
 	adc_external_trigger_config(ADC_REGULAR_CHANNEL, ENABLE);
-	adc_external_trigger_source_config(ADC_REGULAR_CHANNEL, ADC_EXTTRIG_REGULAR_SWRCST);
+	adc_external_trigger_source_config(ADC_REGULAR_CHANNEL, ADC_EXTTRIG_REGULAR_NONE);
 	
 	// Disable the temperature sensor, Vrefint and vbat channel
 	adc_tempsensor_vrefint_disable();
@@ -414,7 +414,7 @@ void USART_HUGS_init(void)
 	dma_init_struct_usart.periph_inc = DMA_PERIPH_INCREASE_DISABLE;
 	dma_init_struct_usart.periph_width = DMA_PERIPHERAL_WIDTH_8BIT;
 	dma_init_struct_usart.priority = DMA_PRIORITY_ULTRA_HIGH;
-	dma_init(DMA_CH4, dma_init_struct_usart);
+	dma_init(DMA_CH4, &dma_init_struct_usart);
 	
 	// Configure DMA mode
 	dma_circulation_enable(DMA_CH4);
@@ -470,7 +470,7 @@ void USART_Steer_COM_init(void)
 	dma_init_struct_usart.periph_inc = DMA_PERIPH_INCREASE_DISABLE;
 	dma_init_struct_usart.periph_width = DMA_PERIPHERAL_WIDTH_8BIT;
 	dma_init_struct_usart.priority = DMA_PRIORITY_ULTRA_HIGH;
-	dma_init(DMA_CH2, dma_init_struct_usart);
+	dma_init(DMA_CH2, &dma_init_struct_usart);
 	
 	// Configure DMA mode
 	dma_circulation_enable(DMA_CH2);

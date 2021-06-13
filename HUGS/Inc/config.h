@@ -28,28 +28,20 @@
 
 // ################################################################################
 
-#define MASTER										  	// Select if firmware is for master or slave board
-//#define SLAVE 												// Select if firmware is for master or slave board
-
-// ################################################################################
-
 #define PWM_FREQ         		16000     // PWM frequency in Hz
 #define DEAD_TIME        		60        // PWM deadtime (60 = 1µs, measured by oscilloscope)
-
-#define DC_CUR_LIMIT     		15        // Motor DC current limit in amps
 #define DC_CUR_LIMIT_MA  		15000     // Motor DC current limit in milli Amps
 
 // ################################################################################
 
-#define DELAY_IN_MAIN_LOOP 	5         // Delay in ms
-#define TIMEOUT_MS          2000      // Time in milliseconds without steering commands before pwm emergency off
-#define INACTIVITY_TIMEOUT 	8        	// Minutes of not driving until poweroff (not very precise)
+#define DELAY_IN_MAIN_LOOP 	50        // Delay in ms
+#define INACTIVITY_TIMEOUT 	10       	// Minutes of not driving until poweroff
+
+#define INACTIVITY_COUNTER	((INACTIVITY_TIMEOUT * 60 * 1000) / (DELAY_IN_MAIN_LOOP))       	
+#define INACTIVITY_WARNING	(INACTIVITY_COUNTER - (15000 / DELAY_IN_MAIN_LOOP))
+
 
 // ################################################################################
-
-#define BAT_LOW_LVL1     35.0       // Gently beeps, show green battery symbol above this Level.
-#define BAT_LOW_LVL2     33.0       // Battery almost empty, show orange battery symbol above this Level. Charge now! 
-#define BAT_LOW_DEAD     31.0       // Undervoltage lockout, show red battery symbol above this Level.
 
 #define BAT_LOW_LVL1_MV  35000      // Gently beeps, show green battery symbol above this Level.
 #define BAT_LOW_LVL2_MV  33000      // Battery almost empty, show orange battery symbol above this Level. Charge now! 
