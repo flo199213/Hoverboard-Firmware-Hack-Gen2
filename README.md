@@ -5,11 +5,11 @@ Based on: Hoverboard-Firmware-Hack-Gen2
 
 Hackaday Project Page: https://hackaday.io/project/170932-hoverboards-for-assistive-devices
 
-More includive Repo: https://github.com/gearsincorg/Hoverboards-for-assistive-devices
+More inclusive Repo: https://github.com/gearsincorg/Hoverboards-for-assistive-devices
 
 ### Purpose:
 The HUGS project goal is to enable Hoverboards, or Hoverboard drive components to be re-purposed to provide low-cost mobility to other systems, such as assistive devices for the disabled, general purpose robots or other labor saving devices.
-To implement this goal, new code will be developed and installed in existing hoverboards, to provide a generic purpose control protocol.  This protocol will be used by external devices to run one or more ìhoverboardî type wheels.  
+To implement this goal, new code will be developed and installed in existing hoverboards, to provide a generic purpose control protocol.  This protocol will be used by external devices to run one or more ‚Äúhoverboard‚Äù type wheels.  
 
 ### Latest release:
 A major modification to the base control strategy was adding several different motor control methods.
@@ -23,7 +23,7 @@ The third method is a low speed closed loop mode that uses a sinusoidal stepper 
 The fourth and final mode is a hybrid of the last two which switches automatically between the low speed stepper mode and the PID control mode.
 
 ### Background:
-The popular ìHoverboardî toy uses a somewhat unique drive system.  A powerful brushless DC motor has been integrated inside each of the small rubber wheels, and paired with a low cost motor controller.  This mechanical/electrical combination provides a compact drive system that produce precise motions, under considerable load, for relatively low cost.
+The popular ‚ÄúHoverboard‚Äù toy uses a somewhat unique drive system.  A powerful brushless DC motor has been integrated inside each of the small rubber wheels, and paired with a low cost motor controller.  This mechanical/electrical combination provides a compact drive system that produce precise motions, under considerable load, for relatively low cost.
 
 Through reverse engineering the controller electronics and firmware, code is now available which can be modified to provide alternative operation of the drive system (no longer tied to a tilt-and-drive control system).
 
