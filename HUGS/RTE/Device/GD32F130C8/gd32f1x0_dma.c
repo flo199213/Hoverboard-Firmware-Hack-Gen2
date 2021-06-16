@@ -1,39 +1,15 @@
 /*!
     \file  gd32f1x0_dma.c
     \brief DMA driver
-
-    \version 2014-12-26, V1.0.0, platform GD32F1x0(x=3,5)
-    \version 2016-01-15, V2.0.0, platform GD32F1x0(x=3,5,7,9)
-    \version 2016-04-30, V3.0.0, firmware update for GD32F1x0(x=3,5,7,9)
-    \version 2017-06-19, V3.1.0, firmware update for GD32F1x0(x=3,5,7,9)
-    \version 2019-11-20, V3.2.0, firmware update for GD32F1x0(x=3,5,7,9)
 */
 
 /*
-    Copyright (c) 2019, GigaDevice Semiconductor Inc.
+    Copyright (C) 2017 GigaDevice
 
-    Redistribution and use in source and binary forms, with or without modification, 
-are permitted provided that the following conditions are met:
-
-    1. Redistributions of source code must retain the above copyright notice, this 
-       list of conditions and the following disclaimer.
-    2. Redistributions in binary form must reproduce the above copyright notice, 
-       this list of conditions and the following disclaimer in the documentation 
-       and/or other materials provided with the distribution.
-    3. Neither the name of the copyright holder nor the names of its contributors 
-       may be used to endorse or promote products derived from this software without 
-       specific prior written permission.
-
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
-INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
-NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
-OF SUCH DAMAGE.
+    2014-12-26, V1.0.0, platform GD32F1x0(x=3,5)
+    2016-01-15, V2.0.0, platform GD32F1x0(x=3,5,7,9)
+    2016-04-30, V3.0.0, firmware update for GD32F1x0(x=3,5,7,9)
+    2017-06-19, V3.1.0, firmware update for GD32F1x0(x=3,5,7,9)
 */
 
 #include "gd32f1x0_dma.h"
@@ -41,7 +17,6 @@ OF SUCH DAMAGE.
 /*!
     \brief      deinitialize DMA a channel registers 
     \param[in]  channelx: specify which DMA channel is deinitialized
-                only one parameter can be selected which is shown as below:
       \arg        DMA_CHx(x=0..6)
     \param[out] none
     \retval     none
@@ -59,29 +34,8 @@ void dma_deinit(dma_channel_enum channelx)
 }
 
 /*!
-    \brief      initialize the parameters of DMA struct with the default values
-    \param[in]  init_struct: the initialization data needed to initialize DMA channel
-    \param[out] none
-    \retval     none
-*/
-void dma_struct_para_init(dma_parameter_struct* init_struct)
-{
-    /* set the DMA struct with the default values */
-    init_struct->periph_addr  = 0U;
-    init_struct->periph_width = 0U;
-    init_struct->periph_inc   = DMA_PERIPH_INCREASE_DISABLE;
-    init_struct->memory_addr  = 0U;
-    init_struct->memory_width = 0U;
-    init_struct->memory_inc   = DMA_MEMORY_INCREASE_DISABLE;
-    init_struct->direction    = DMA_PERIPHERAL_TO_MEMORY;
-    init_struct->number       = 0U;
-    init_struct->priority     = DMA_PRIORITY_LOW;
-}
-
-/*!
     \brief      initialize DMA channel 
     \param[in]  channelx: specify which DMA channel is initialized
-                only one parameter can be selected which is shown as below:
       \arg        DMA_CHx(x=0..6)
     \param[in]  init_struct: the data needed to initialize DMA channel
                   periph_addr: peripheral base address
@@ -96,53 +50,52 @@ void dma_struct_para_init(dma_parameter_struct* init_struct)
     \param[out] none
     \retval     none
 */
-void dma_init(dma_channel_enum channelx, dma_parameter_struct* init_struct)
+void dma_init(dma_channel_enum channelx, dma_parameter_struct init_struct)
 {
     uint32_t ctl;
     /* configure peripheral base address */
-    DMA_CHPADDR(channelx) = init_struct->periph_addr;
-
+    DMA_CHPADDR(channelx) = init_struct.periph_addr;
+    
     /* configure memory base address */
-    DMA_CHMADDR(channelx) = init_struct->memory_addr;
-
+    DMA_CHMADDR(channelx) = init_struct.memory_addr;
+    
     /* configure the number of remaining data to be transferred */
-    DMA_CHCNT(channelx) = init_struct->number;
-
+    DMA_CHCNT(channelx) = init_struct.number;
+    
     /* configure peripheral transfer width,memory transfer width, */
     ctl = DMA_CHCTL(channelx);
     ctl &= ~(DMA_CHXCTL_PWIDTH | DMA_CHXCTL_MWIDTH | DMA_CHXCTL_PRIO);
-    ctl |= (init_struct->periph_width | init_struct->memory_width | init_struct->priority);
+    ctl |= (init_struct.periph_width | init_struct.memory_width | init_struct.priority);
     DMA_CHCTL(channelx)=ctl;
 
     /* configure peripheral increasing mode */
-    if(DMA_PERIPH_INCREASE_ENABLE == init_struct->periph_inc){
+    if(DMA_PERIPH_INCREASE_ENABLE == init_struct.periph_inc){
         DMA_CHCTL(channelx) |= DMA_CHXCTL_PNAGA;
     }else{
         DMA_CHCTL(channelx) &= ~DMA_CHXCTL_PNAGA;
     }
 
     /* configure memory increasing mode */
-    if(DMA_MEMORY_INCREASE_ENABLE == init_struct->memory_inc){
+    if(DMA_MEMORY_INCREASE_ENABLE == init_struct.memory_inc){
         DMA_CHCTL(channelx) |= DMA_CHXCTL_MNAGA;
     }else{
         DMA_CHCTL(channelx) &= ~DMA_CHXCTL_MNAGA;
     }
-
+    
     /* configure the direction of  data transfer */
-    if(DMA_PERIPHERAL_TO_MEMORY == init_struct->direction){
+    if(DMA_PERIPHERAL_TO_MEMORY == init_struct.direction){
         DMA_CHCTL(channelx) &= ~DMA_CHXCTL_DIR;
     }else{
         DMA_CHCTL(channelx) |= DMA_CHXCTL_DIR;
-    }
+    } 
 }
 
 /*!
     \brief      enable DMA circulation mode  
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
-    \retval     none
+    \retval     none 
 */
 void dma_circulation_enable(dma_channel_enum channelx)
 {
@@ -151,11 +104,10 @@ void dma_circulation_enable(dma_channel_enum channelx)
 
 /*!
     \brief      disable DMA circulation mode  
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
-    \retval     none
+    \retval     none 
 */
 void dma_circulation_disable(dma_channel_enum channelx)
 {
@@ -164,8 +116,7 @@ void dma_circulation_disable(dma_channel_enum channelx)
 
 /*!
     \brief      enable memory to memory mode
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
     \retval     none
@@ -177,8 +128,7 @@ void dma_memory_to_memory_enable(dma_channel_enum channelx)
 
 /*!
     \brief      disable memory to memory mode
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
     \retval     none
@@ -190,11 +140,10 @@ void dma_memory_to_memory_disable(dma_channel_enum channelx)
 
 /*!
     \brief      enable DMA channel 
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
-    \retval     none
+    \retval     none 
 */
 void dma_channel_enable(dma_channel_enum channelx)
 {
@@ -203,11 +152,10 @@ void dma_channel_enable(dma_channel_enum channelx)
 
 /*!
     \brief      disable DMA channel 
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
-    \retval     none
+    \retval     none 
 */
 void dma_channel_disable(dma_channel_enum channelx)
 {
@@ -216,12 +164,11 @@ void dma_channel_disable(dma_channel_enum channelx)
 
 /*!
     \brief      set DMA peripheral base address  
-    \param[in]  channelx: specify which DMA channel to set peripheral base address
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel to set peripheral base address 
       \arg        DMA_CHx(x=0..6)
     \param[in]  address: peripheral base address
     \param[out] none
-    \retval     none
+    \retval     none 
 */
 void dma_periph_address_config(dma_channel_enum channelx, uint32_t address)
 {
@@ -230,12 +177,11 @@ void dma_periph_address_config(dma_channel_enum channelx, uint32_t address)
 
 /*!
     \brief      set DMA Memory base address  
-    \param[in]  channelx: specify which DMA channel to set Memory base address
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel to set Memory base address 
       \arg        DMA_CHx(x=0..6)
     \param[in]  address: Memory base address
     \param[out] none
-    \retval     none
+    \retval     none 
 */
 void dma_memory_address_config(dma_channel_enum channelx, uint32_t address)
 {
@@ -244,12 +190,11 @@ void dma_memory_address_config(dma_channel_enum channelx, uint32_t address)
 
 /*!
     \brief      set the number of remaining data to be transferred by the DMA  
-    \param[in]  channelx: specify which DMA channel to set number
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel to set number 
       \arg        DMA_CHx(x=0..6)
     \param[in]  number: the number of remaining data to be transferred by the DMA
     \param[out] none
-    \retval     none
+    \retval     none 
 */
 void dma_transfer_number_config(dma_channel_enum channelx, uint32_t number)
 {
@@ -258,11 +203,10 @@ void dma_transfer_number_config(dma_channel_enum channelx, uint32_t number)
 
 /*!
     \brief      get the number of remaining data to be transferred by the DMA  
-    \param[in]  channelx: specify which DMA channel to set number
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel to set number 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
-    \retval     uint32_t: the number of remaining data to be transferred by the DMA
+    \retval     uint32_t: the number of remaining data to be transferred by the DMA 
 */
 uint32_t dma_transfer_number_get(dma_channel_enum channelx)
 {
@@ -271,17 +215,15 @@ uint32_t dma_transfer_number_get(dma_channel_enum channelx)
 
 /*!
     \brief      configure priority level of DMA channel   
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[in]  priority: priority Level of this channel
-                only one parameter can be selected which is shown as below:
       \arg        DMA_PRIORITY_LOW: low priority
       \arg        DMA_PRIORITY_MEDIUM: medium priority
       \arg        DMA_PRIORITY_HIGH: high priority
       \arg        DMA_PRIORITY_ULTRA_HIGH: ultra high priority
     \param[out] none
-    \retval     none
+    \retval     none 
 */
 void dma_priority_config(dma_channel_enum channelx, uint32_t priority)
 {
@@ -296,11 +238,9 @@ void dma_priority_config(dma_channel_enum channelx, uint32_t priority)
 
 /*!
     \brief      configure transfer data size of memory 
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[in]  msize: transfer data size of memory
-                only one parameter can be selected which is shown as below:
       \arg        DMA_MEMORY_WIDTH_8BIT: transfer data size of memory is 8-bit
       \arg        DMA_MEMORY_WIDTH_16BIT: transfer data size of memory is 16-bit
       \arg        DMA_MEMORY_WIDTH_32BIT: transfer data size of memory is 32-bit
@@ -320,11 +260,9 @@ void dma_memory_width_config (dma_channel_enum channelx, uint32_t msize)
 
 /*!
     \brief      configure transfer data size of peripheral 
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[in]  msize: transfer data size of peripheral
-                only one parameter can be selected which is shown as below:
       \arg        DMA_PERIPHERAL_WIDTH_8BIT: transfer data size of peripheral is 8-bit
       \arg        DMA_PERIPHERAL_WIDTH_16BIT: transfer data size of peripheral is 16-bit
       \arg        DMA_PERIPHERAL_WIDTH_32BIT: transfer data size of peripheral is 32-bit
@@ -344,8 +282,7 @@ void dma_periph_width_config (dma_channel_enum channelx, uint32_t psize)
 
 /*!
     \brief      enable next address increasement algorithm of memory  
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
     \retval     none
@@ -357,8 +294,7 @@ void dma_memory_increase_enable(dma_channel_enum channelx)
 
 /*!
     \brief      disable next address increasement algorithm of memory  
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
     \retval     none
@@ -370,8 +306,7 @@ void dma_memory_increase_disable(dma_channel_enum channelx)
 
 /*!
     \brief      enable next address increasement algorithm of peripheral  
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
     \retval     none
@@ -383,8 +318,7 @@ void dma_periph_increase_enable(dma_channel_enum channelx)
 
 /*!
     \brief      disable next address increasement algorithm of peripheral  
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[out] none
     \retval     none
@@ -396,17 +330,15 @@ void dma_periph_increase_disable(dma_channel_enum channelx)
 
 /*!
     \brief      configure the direction of  data transfer on the channel  
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[in]  direction: specify the direction of  data transfer
-                only one parameter can be selected which is shown as below:
       \arg        DMA_PERIPHERAL_TO_MEMORY: read from peripheral and write to memory
       \arg        DMA_MEMORY_TO_PERIPHERAL: read from memory and write to peripheral
     \param[out] none
     \retval     none
 */
-void dma_transfer_direction_config(dma_channel_enum channelx, uint32_t direction)
+void dma_transfer_direction_config(dma_channel_enum channelx, uint8_t direction)
 {
     if(DMA_PERIPHERAL_TO_MEMORY == direction){
         DMA_CHCTL(channelx) &= ~DMA_CHXCTL_DIR;
@@ -418,7 +350,6 @@ void dma_transfer_direction_config(dma_channel_enum channelx, uint32_t direction
 /*!
     \brief      check DMA flag and interrupt enable bit is set or not 
     \param[in]  channelx: specify which DMA channel to get flag
-                only one parameter can be selected which is shown as below:
       \arg        DMA_CHx(x=0..6)
     \param[in]  flag: specify get which flag
                 only one parameter can be selected which is shown as below:
@@ -433,7 +364,7 @@ FlagStatus dma_interrupt_flag_get(dma_channel_enum channelx, uint32_t flag)
 {
     uint32_t interrupt_enable = 0U, interrupt_flag = 0U;
     uint32_t gif_check = 0x0FU, gif_enable = 0x0EU;
-
+    
     switch(flag){
         case DMA_INT_FLAG_FTF:
             interrupt_flag = DMA_INTF & DMA_FLAG_ADD(flag, channelx);
@@ -458,7 +389,7 @@ FlagStatus dma_interrupt_flag_get(dma_channel_enum channelx, uint32_t flag)
         default:
             break;
     }
-
+    
     if(interrupt_flag & interrupt_enable){
         return SET;
     }else{
@@ -489,7 +420,6 @@ void dma_interrupt_flag_clear(dma_channel_enum channelx, uint32_t flag)
     \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[in]  source: specify which interrupt to enbale
-                only one parameter can be selected which is shown as below:
       \arg        DMA_INT_ERR: channel error interrupt
       \arg        DMA_INT_HTF: channel transfer half complete interrupt
       \arg        DMA_INT_FTF: channel transfer complete interrupt
@@ -503,11 +433,9 @@ void dma_interrupt_enable(dma_channel_enum channelx, uint32_t source)
 
 /*!
     \brief      disable DMA interrupt
-    \param[in]  channelx: specify which DMA channel
-                only one parameter can be selected which is shown as below:
+    \param[in]  channelx: specify which DMA channel 
       \arg        DMA_CHx(x=0..6)
     \param[in]  source: specify which interrupt to disbale
-                only one parameter can be selected which is shown as below:
       \arg        DMA_INT_ERR: channel error interrupt
       \arg        DMA_INT_HTF: channel transfer half complete interrupt
       \arg        DMA_INT_FTF: for channel transfer complete interrupt
@@ -520,9 +448,8 @@ void dma_interrupt_disable(dma_channel_enum channelx, uint32_t source)
 }
 
 /*!
-    \brief      check DMA flag is set or not
+    \brief      check DMA flag is set or not 
     \param[in]  channelx: specify which DMA channel to get flag
-                only one parameter can be selected which is shown as below:
       \arg        DMA_CHx(x=0..6)
     \param[in]  flag: specify get which flag
                 only one parameter can be selected which is shown as below:
@@ -542,14 +469,13 @@ FlagStatus dma_flag_get(dma_channel_enum channelx, uint32_t flag)
     }else{
         reval = RESET;
     }
-
+    
     return reval;
 }
 
 /*!
     \brief      clear DMA a channel flag
     \param[in]  channelx: specify which DMA channel to clear flag
-                only one parameter can be selected which is shown as below:
       \arg        DMA_CHx(x=0..6)
     \param[in]  flag: specify get which flag
                 only one parameter can be selected which is shown as below:

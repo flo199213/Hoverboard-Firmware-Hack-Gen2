@@ -11,7 +11,9 @@ More inclusive Repo: https://github.com/gearsincorg/Hoverboards-for-assistive-de
 The HUGS project goal is to enable Hoverboards, or Hoverboard drive components to be re-purposed to provide low-cost mobility to other systems, such as assistive devices for the disabled, general purpose robots or other labor saving devices.
 To implement this goal, new code will be developed and installed in existing hoverboards, to provide a generic purpose control protocol.  This protocol will be used by external devices to run one or more “hoverboard” type wheels.  
 
-### Updated to use new Giga Device Libraries: (3.2) and latest KEIL release (as of 6/13/2021)
+### This project requires Rev 3.1 of the Giga Device libraries.
+In Keil compliier, use Project/Manage/Pack Installer and then File/Import and point to the pack file in this repo:  GigaDevice.GD32F1x0_DFP.3.1.0.pack
+Ensure this is the device associated with this project.
 
 ### Latest release:
 A major modification to the base control strategy was adding several different motor control methods.
