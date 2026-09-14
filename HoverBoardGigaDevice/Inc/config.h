@@ -35,8 +35,11 @@
 
 // ################################################################################
 
-#define MASTER										  	// Select if firmware is for master or slave board
-//#define SLAVE 												// Select if firmware is for master or slave board
+// Select if firmware is for master or slave board.
+// Default is MASTER; override with `make BOARD=slave` (passes -DSLAVE).
+#if !defined(MASTER) && !defined(SLAVE)
+#define MASTER
+#endif
 
 // ################################################################################
 

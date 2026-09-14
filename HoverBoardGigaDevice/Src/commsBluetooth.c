@@ -255,7 +255,7 @@ void CheckUSARTBluetoothInput(uint8_t USARTBuffer[])
 void SendBluetoothDevice(uint8_t identifier, int16_t value)
 {
 	int index = 0;
-	char charVal[5];
+	char charVal[8];   // "%05d" of int16 (-32768) needs 7 chars incl. NUL
 	uint8_t buffer[USART_BLUETOOTH_TX_BYTES];
 	
 	// Send bluetooth frame
