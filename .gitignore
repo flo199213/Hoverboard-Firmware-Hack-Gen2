@@ -1,0 +1,12 @@
+# Linux/GCC build output (make BOARD=master|slave)
+HoverBoardGigaDevice/build-*/
+*.o
+*.d
+
+# Keil intermediate output (not tracked upstream either)
+HoverBoardGigaDevice/Objects/
+
+# editor / OS noise
+*.swp
+*~
+.DS_Store
